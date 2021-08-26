@@ -24,6 +24,12 @@
   color: white;
 }
 
+.background {
+  background-color: hotpink;
+  background-position: center;
+  color: white;
+}
+
 .App-link {
   color: #61dafb;
 }
