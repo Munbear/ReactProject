@@ -80,5 +80,5 @@ function Detail(props) {
 
 function Info() {
   return <p>재고 : ???</p>;
-}
+} 
 export default Detail;
