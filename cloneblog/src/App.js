@@ -37,10 +37,12 @@ function App() {
               {글}
               <span
                 onClick={() => {
-                  따봉변경(따봉 + 1);
+                  var arrayLike = 따봉;
+                  arrayLike = 0;
+                  따봉변경(arrayLike + 1);
                 }}
               >
-                👍
+                ❤️
               </span>
               {따봉}
             </h3>
@@ -67,7 +69,7 @@ function App() {
         </button>
       </div>
 
-      <Profile />
+      {/* <Profile /> */}
 
       <button
         onClick={() => {
@@ -93,26 +95,26 @@ function Modal(props) {
   );
 }
 
-class Profile extends React.Component {
-  //// 옛날 문법
-  constructor() {
-    super();
-    this.state = { name: 'Park', age: 30 };
-  }
+// class Profile extends React.Component {
+//   //// 옛날 문법
+//   constructor() {
+//     super();
+//     this.state = { name: 'Park', age: 30 };
+//   }
 
-  changeName = () => {
-    this.setState({ name: 'MUN' });
-  };
+//   changeName = () => {
+//     this.setState({ name: 'MUN' });
+//   };
 
-  render() {
-    return (
-      <div>
-        <h3>프로필입니다.</h3>
-        <p>저는 {this.state.name} 입니다.</p>
-        <button onClick={this.changeName}> 버튼 </button>
-      </div>
-    );
-  }
-}
+//   render() {
+//     return (
+//       <div>
+//         <h3>프로필입니다.</h3>
+//         <p>저는 {this.state.name} 입니다.</p>
+//         <button onClick={this.changeName}> 버튼 </button>
+//       </div>
+//     );
+//   }
+// }
 
 export default App;
