@@ -15,17 +15,25 @@ function App() {
     '강남 카페 추천',
   ]);
 
-  let [따봉, 따봉변경] = useState(0);
-  let posts = '김포 고기 맛집';
+  let [따봉, 따봉변경] = useState([0, 0, 0, 0, 0, 0, 0]);
+  // let [최고, 최고변경] = useState(0);
+  // let posts = '김포 고기 맛집';
   let [modal, modal변경] = useState(false);
   let [누른제목, 누른제목변경] = useState(0);
   let [입력값, 입력값변경] = useState('');
+
+  function best(i) {
+    let bestArray = [...따봉];
+    bestArray[i]++;
+    따봉변경(bestArray);
+  }
 
   return (
     <div className='App'>
       <div className='black-nav'>
         <div>개발 Blog</div>
       </div>
+
       {글제목.map(function (글, i) {
         return (
           <div className='list' key={i}>
@@ -37,14 +45,12 @@ function App() {
               {글}
               <span
                 onClick={() => {
-                  var arrayLike = 따봉;
-                  arrayLike = 0;
-                  따봉변경(arrayLike + 1);
+                  best(i);
                 }}
               >
                 ❤️
               </span>
-              {따봉}
+              {따봉[i]}
             </h3>
             <p>10월 3일 발행</p>
             <hr />
