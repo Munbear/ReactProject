@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Navbar, NavDropdown, Nav } from 'react-bootstrap';
 import './App.css';
+import Data from './data.js';
 
 function App() {
+  let [shoes, shoes변경] = useState(Data);
+
   return (
     <div className='App'>
       <Navbar bg='light' expand='lg' className=''>
@@ -50,8 +53,8 @@ function App() {
               src='https://codingapple1.github.io/shop/shoes1.jpg'
               width='100%'
             />
-            <h3>상품명</h3>
-            <p>상품설명 & 가격</p>
+            <h3> {shoes[0].title}</h3>
+            <p>{shoes[0].content}</p>
           </div>
           <div className='col-md-4'>
             <img
