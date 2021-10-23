@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 import React, { useState } from 'react';
 import { Container, Navbar, NavDropdown, Nav } from 'react-bootstrap';
 import './App.css';
@@ -16,12 +18,8 @@ function App() {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='me-auto'>
-              <Nav.Link>
-                <Link to='/'>Home</Link>
-              </Nav.Link>
-              <Nav.Link>
-                <Link to='/detail'>Detail</Link>
-              </Nav.Link>
+              <Nav.Link as={Link} to='/'>Home</Nav.Link>
+              <Nav.Link as={Link} to='/detail'>Detail</Nav.Link>
               <NavDropdown title='Dropdown' id='basic-nav-dropdown'>
                 <NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
                 <NavDropdown.Item href='#action/3.2'>
@@ -58,7 +56,7 @@ function App() {
           <div className='container'>
             <div className='row'>
               {shoes.map((a, i) => {
-                return <Card shoes={shoes[i]} i={i} ket={i} />;
+                return <Card shoes={shoes[i]} i={i} />;
               })}
             </div>
           </div>
