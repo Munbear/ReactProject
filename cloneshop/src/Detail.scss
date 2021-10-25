@@ -1,39 +1,39 @@
-$메인칼라 : #ff0000;
+$메인칼라: #ff0000;
+
+.wow-enter {
+  opacity: 0;
+}
+
+.wow-enter-active {
+  opacity: 1;
+  transition: all 500ms;
+}
 
 .red {
-    color : $메인칼라;
+  color: $메인칼라;
 }
 
 @mixin 함수() {
-    /// 그냥 함수 많드는 문법임 mixin은 
-    background: #eeeeee;
-    padding: 15px;
-    border-radius: 5px;
-    max-width: 500px;
-    width: 100%;
-    margin: auto;
+  /// 그냥 함수 많드는 문법임 mixin은
+  background: #eeeeee;
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
 }
 
-
 .my-alert {
-    @include 함수()
+  @include 함수();
 }
 
 .my-alert2 {
-    @extend .my-alert; /// .my-alert 라는 모든 속성을 가져 오세요 라는 뜻 
-    background: #ffe591;
+  @extend .my-alert; /// .my-alert 라는 모든 속성을 가져 오세요 라는 뜻
+  background: #ffe591;
 }
 
-
-
-
-
-
-
-
-
 .my-alert p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 // div.container h4 {
@@ -51,4 +51,3 @@ $메인칼라 : #ff0000;
 //         color: green;
 //     }
 // }
- 
