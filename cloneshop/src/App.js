@@ -1,12 +1,17 @@
 /*eslint-disable*/
 
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, lazy, Suspense } from 'react';
 import axios from 'axios';
 import { Container, Navbar, NavDropdown, Nav } from 'react-bootstrap';
 import './App.css';
 import Data from './data.js';
-import Detail from './Detail.js';
+// import Detail from './Detail.js';
+let Detail = lazy(() => {
+  return import('./Detail.js');
+});
 import { Link, Route, Switch } from 'react-router-dom';
+import Cart from './cart';
+import { useHistory } from 'react-router';
 
 export let 재고context = React.createContext();
 
@@ -94,8 +99,14 @@ function App() {
 
         <Route path='/detail/:id'>
           <재고context.Provider value={재고}>
-            <Detail shoes={shoes} 재고={재고} 재고변경={재고변경} />
+            <Suspense fallback={<div>로딩중이에요</div>}>
+              <Detail shoes={shoes} 재고={재고} 재고변경={재고변경} />
+            </Suspense>
           </재고context.Provider>
+        </Route>
+
+        <Route path='/cart'>
+          <Cart></Cart>
         </Route>
 
         <Route path='/:id'>
@@ -110,8 +121,14 @@ function App() {
 
 function Card(props) {
   let 재고 = useContext(재고context);
+  let history = useHistory();
   return (
-    <div className='col-md-4'>
+    <div
+      className='col-md-4'
+      onClick={() => {
+        history.push('/detail/' + props.shoes.id);
+      }}
+    >
       <img
         src={
           'https://codingapple1.github.io/shop/shoes' + (props.i + 1) + '.jpg'

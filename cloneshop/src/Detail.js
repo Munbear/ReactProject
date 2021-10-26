@@ -9,6 +9,7 @@ import { 재고context } from './App.js';
 import { CSSTransition } from 'react-transition-group';
 
 import { Nav } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
 let 박스 = styled.div`padding ; 20px`;
 let 제목 = styled.h4`
@@ -81,17 +82,21 @@ function Detail(props) {
           <h4 className='pt-5'>{찾은상품.title}</h4>
           <p>{찾은상품.content}</p>
           <p>{찾은상품.price}</p>
-
           <Info 재고={props.재고}></Info>
-
           <button
             className='btn btn-danger'
             onClick={() => {
               props.재고변경([9, 11, 12]);
+              props.dispatch({
+                type: '항목추가',
+                데이터: { id: 찾은상품.id, name: 찾은상품.title, quan: 1 },
+              });
+              history.push('/cart');
             }}
           >
             주문하기
           </button>
+          &nbsp;
           <button
             className='btn btn-danger'
             onClick={() => {
@@ -152,4 +157,13 @@ function Info(props) {
   return <p>재고 : {props.재고[0]}</p>;
 }
 
-export default Detail;
+function state를props화(state) {
+  return {
+    state: state.reducer,
+    alert열렷니: state.reducer2,
+  };
+}
+
+export default connect(state를props화)(Detail);
+
+// export default Detail;
