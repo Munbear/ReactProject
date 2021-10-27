@@ -38,6 +38,21 @@ function Detail(props) {
   let 재고 = useContext(재고context);
 
   useEffect(() => {
+    var arr = localStorage.getItem('watched');
+    if (arr == null) {
+      arr = [];
+    } else {
+      arr = JSON.parse(arr);
+    }
+
+    arr.push(id);
+    arr = new Set(arr);
+    arr = [...arr];
+
+    localStorage.setItem('watched', JSON.stringify(arr));
+  }, []);
+
+  useEffect(() => {
     let Timer = setTimeout(() => {
       alert변경(false);
     }, 2000);
