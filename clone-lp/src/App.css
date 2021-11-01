@@ -164,18 +164,38 @@ html {
   flex-wrap: wrap;
 }
 
-.card__list {
+.products__list {
   flex: 1 1 40%;
 }
 
-.card__img {
+.products__img {
   width: 100%;
 }
 
-.card__title {
+.products__title {
   margin: 0;
 }
 
-.card__price {
+.products__price {
   margin: 0;
 }
+
+/* .brand__container {
+  flex-direction: column;
+} */
+/* 
+.brand__list {
+}
+
+.brand__rank {
+  margin: 0;
+}
+
+.brand__title {
+  margin: 0;
+}
+
+.brand__img {
+  justify-content: end;
+  width: 20%;
+} */

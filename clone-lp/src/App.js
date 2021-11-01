@@ -8,28 +8,12 @@ import Brands from './Brands.js';
 import logo from './logo.svg';
 import box from './box.svg';
 
-import img1 from './img1.jpg';
-import img2 from './img2.jpg';
-import img3 from './img3.jpg';
-import img4 from './img4.jpg';
-import img5 from './img5.jpg';
-import img6 from './img6.jpg';
-import img7 from './img7.png';
-import img8 from './img8.jpg';
 import img9 from './img9.jpg';
-
-import product1 from './product1.jpg';
-import product2 from './product2.jpg';
-import product3 from './product3.jpg';
-import product4 from './product4.jpg';
-
-import brand1 from './brand1.jpg';
-import brand2 from './brand2.jpg';
-import brand3 from './brand3.jpg';
 
 function App() {
   let [brand, setBrand] = useState(brandData);
   let [product, setProduct] = useState(Data);
+  let [tap, setTap] = useState(0);
 
   return (
     <div className='App'>
@@ -56,7 +40,7 @@ function App() {
         </div>
       </header>
 
-      <Eventbar></Eventbar>
+      <Eventbar />
 
       <div className='item__group'>
         <div className='item__all'>ALL</div>
@@ -71,20 +55,24 @@ function App() {
       </div>
 
       <div className='item__menu'>
-        <button className='product'>상품</button>
+        <button className='product' onClick={() => {}}>
+          상품
+        </button>
         <button className='shoping__mall'>쇼핑몰</button>
         <button className='brand'>브랜드</button>
       </div>
 
       <div className='products__container'>
         {product.map((a, i) => {
-          return <Products product={product[i]} i={i}></Products>;
+          return (
+            <Products product={product[i]} setTap={setTap} i={i}></Products>
+          );
         })}
       </div>
 
       <div className='brand__container'>
-        {brand.map((b, c) => {
-          return <Brands brand={brand[c]} c={c}></Brands>;
+        {brand.map((a, i) => {
+          return <Brands brand={brand[i]} i={i}></Brands>;
         })}
       </div>
     </div>
