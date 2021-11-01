@@ -1,38 +1,181 @@
+html {
+  background-color: gray;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  max-width: 550px;
+  margin: 0 auto;
   min-height: 100vh;
+  background-color: white;
+}
+
+.header {
+  background-color: black;
+  /* 헤더 고정 해야됨 */
+}
+
+.header__container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.container__logo {
+  width: 150px;
+}
+
+.search__container {
+  width: 100%;
+}
+
+.search__input {
+  width: 99%;
+  height: 30px;
+  border-radius: 20px 20px 20px 20px;
+  border: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* .evetn__bar__container {
+  width: 100%;
+} */
+
+.event__img {
+  width: 100%;
+}
+
+.item__group {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+}
+
+.item__all {
+  flex: 0 0 auto;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: red;
+}
+
+.item__top {
+  flex: 0 0 auto;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: orange;
+}
+
+.item__jacket {
+  flex: 0 0 auto;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: yellow;
+}
+
+.item__pants {
+  flex: 0 0 auto;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: green;
+}
+
+.item__shoes {
+  flex: 0 0 auto;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: blue;
+}
+
+.item__makeup {
+  flex: 0 0 auto;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: navy;
+}
+
+.item__bag {
+  flex: 0 0 auto;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: purple;
+}
+
+.item__small {
+  flex: 0 0 auto;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: black;
+}
+
+.item__other {
+  flex: 0 0 auto;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: darkturquoise;
+}
+
+.item__menu {
+  display: flex;
+  flex: 1 1 40%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.product {
+  flex: 1 1 40%;
+  width: 120px;
+  height: 50px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  background-color: deeppink;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shoping__mall {
+  flex: 1 1 40%;
+  width: 120px;
+  height: 50px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  background-color: dodgerblue;
+}
+
+.brand {
+  flex: 1 1 40%;
+  width: 120px;
+  height: 50px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  background-color: gold;
+}
+
+.products__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__list {
+  flex: 1 1 40%;
+}
+
+.card__img {
+  width: 100%;
+}
+
+.card__title {
+  margin: 0;
+}
+
+.card__price {
+  margin: 0;
 }

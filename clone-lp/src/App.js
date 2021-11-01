@@ -1,6 +1,9 @@
 import './App.css';
 import React, { useState } from 'react';
 import Data from './data.js';
+import brandData from './brandData.js';
+import Products from './Products.js';
+import Brands from './Brands.js';
 
 import logo from './logo.svg';
 import box from './box.svg';
@@ -20,8 +23,14 @@ import product2 from './product2.jpg';
 import product3 from './product3.jpg';
 import product4 from './product4.jpg';
 
+import brand1 from './brand1.jpg';
+import brand2 from './brand2.jpg';
+import brand3 from './brand3.jpg';
+
 function App() {
+  let [brand, setBrand] = useState(brandData);
   let [product, setProduct] = useState(Data);
+
   return (
     <div className='App'>
       <header className='header'>
@@ -61,15 +70,21 @@ function App() {
         <div className='item__other'>기타</div>
       </div>
 
-      <div className='item__bar'>
+      <div className='item__menu'>
         <button className='product'>상품</button>
         <button className='shoping__mall'>쇼핑몰</button>
         <button className='brand'>브랜드</button>
       </div>
 
-      <div className='card__container'>
+      <div className='products__container'>
         {product.map((a, i) => {
-          return <Card product={product[i]} i={i}></Card>;
+          return <Products product={product[i]} i={i}></Products>;
+        })}
+      </div>
+
+      <div className='brand__container'>
+        {brand.map((b, c) => {
+          return <Brands brand={brand[c]} c={c}></Brands>;
         })}
       </div>
     </div>
@@ -88,16 +103,6 @@ function Eventbar() {
         <img className='event__img' src={img7} />
         <img className='event__img' src={img8} /> */}
       <img className='event__img' src={img9} />
-    </div>
-  );
-}
-
-function Card(props) {
-  return (
-    <div className='card__list'>
-      <img src={product1} className='card__img' />
-      <p className='card__title'>{props.product.title}</p>
-      <h4 className='card__price'>{props.product.price}</h4>
     </div>
   );
 }
