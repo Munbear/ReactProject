@@ -1,19 +1,29 @@
 import './App.css';
 import React, { useState } from 'react';
-import Data from './data.js';
-import brandData from './brandData.js';
+
+import productData from './productData.js';
 import Products from './Products.js';
-import Brands from './Brands.js';
+
+import mallsData from './mallData.js';
+import Malls from './Malls.js';
+
+import brandData from './brandData';
+import Brand from './Brand.js';
 
 import logo from './logo.svg';
 import box from './box.svg';
-
 import img9 from './img9.jpg';
 
+import product1 from './product1.jpg';
+import mall1 from './mall1.jpg';
+import brand1 from './brand1.jpg';
+
 function App() {
+  let [mall, setMall] = useState(mallsData);
+  let [product, setProduct] = useState(productData);
   let [brand, setBrand] = useState(brandData);
-  let [product, setProduct] = useState(Data);
-  let [tap, setTap] = useState(0);
+
+  let [tab, setTab] = useState(0);
 
   return (
     <div className='App'>
@@ -55,26 +65,51 @@ function App() {
       </div>
 
       <div className='item__menu'>
-        <button className='product' onClick={() => {}}>
+        <button
+          className='product'
+          onClick={() => {
+            setTab(0);
+          }}
+        >
           상품
         </button>
-        <button className='shoping__mall'>쇼핑몰</button>
-        <button className='brand'>브랜드</button>
+        <button
+          className='shoping__mall'
+          onClick={() => {
+            setTab(1);
+          }}
+        >
+          쇼핑몰
+        </button>
+        <button
+          className='brand'
+          onClick={() => {
+            setTab(2);
+          }}
+        >
+          브랜드
+        </button>
       </div>
 
-      <div className='products__container'>
+      <TabContent tab={tab} product={product} mall={mall} brand={brand} />
+
+      {/* <div className='products__container'>
         {product.map((a, i) => {
-          return (
-            <Products product={product[i]} setTap={setTap} i={i}></Products>
-          );
+          return <Products product={product[i]} i={i}></Products>;
         })}
       </div>
 
-      <div className='brand__container'>
-        {brand.map((a, i) => {
-          return <Brands brand={brand[i]} i={i}></Brands>;
+      <div className='mall__container'>
+        {mall.map((a, i) => {
+          return <Malls mall={mall[i]} i={i}></Malls>;
         })}
       </div>
+
+      <div className='bradn__container'>
+        {brand.map((a, i) => {
+          return <Brand brand={brand[i]} i={i}></Brand>;
+        })}
+      </div> */}
     </div>
   );
 }
@@ -93,6 +128,36 @@ function Eventbar() {
       <img className='event__img' src={img9} />
     </div>
   );
+}
+
+function TabContent(props) {
+  if (props.tab === 0) {
+    return (
+      <div className='products__list'>
+        <img src={product1} className='products__img' />
+        <p className='products__title'>{props.product.title}</p>
+        <h4 className='products__price'>{props.product.price}</h4>
+      </div>
+    );
+  } else if (props.tab === 1) {
+    return (
+      <div className='mall__list'>
+        <p className='mall__rank'>{props.mall.rank}</p>
+        <h4 className='mall__title'>{props.mall.title}</h4>
+        <img className='mall__img' src={mall1} />
+        <hr />
+      </div>
+    );
+  } else if (props.tab === 2) {
+    return (
+      <div className='brand__list'>
+        <p className='brand__rank'>{props.brand.rank}</p>
+        <h4 className='bradn__title'>{props.brand.title}</h4>
+        <img className='brand__img' src={brand1} />
+        <hr />
+      </div>
+    );
+  }
 }
 
 export default App;
