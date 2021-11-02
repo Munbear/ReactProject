@@ -2,13 +2,10 @@ import './App.css';
 import React, { useState } from 'react';
 
 import productData from './productData.js';
-import Products from './Products.js';
 
 import mallsData from './mallData.js';
-import Malls from './Malls.js';
 
 import brandData from './brandData';
-import Brand from './Brand.js';
 
 import logo from './logo.svg';
 import box from './box.svg';
@@ -102,6 +99,7 @@ function App() {
           />
         );
       })}
+
       {/* <div className='products__container'>
         {product.map((a, i) => {
           return <Products product={product[i]} i={i}></Products>;
@@ -114,7 +112,7 @@ function App() {
         })}
       </div>
 
-      <div className='bradn__container'>
+      <div className='brand__container'>
         {brand.map((a, i) => {
           return <Brand brand={brand[i]} i={i}></Brand>;
         })}
@@ -142,28 +140,34 @@ function Eventbar() {
 function TabContent(props) {
   if (props.tab === 0) {
     return (
-      <div className='products__list'>
-        <img src={product1} className='products__img' />
-        <p className='products__title'>{props.product.title}</p>
-        <h4 className='products__price'>{props.product.price}</h4>
+      <div className='products__container'>
+        <div className='products__list'>
+          <img src={product1} className='products__img' />
+          <p className='products__title'>{props.product.title}</p>
+          <h4 className='products__price'>{props.product.price}</h4>
+        </div>
       </div>
     );
   } else if (props.tab === 1) {
     return (
-      <div className='mall__list'>
-        <p className='mall__rank'>{props.mall.rank}</p>
-        <h4 className='mall__title'>{props.mall.title}</h4>
-        <img className='mall__img' src={mall1} />
-        <hr />
+      <div className='mall__container'>
+        <div className='mall__list'>
+          <p className='mall__rank'>{props.mall.rank}</p>
+          <h4 className='mall__title'>{props.mall.title}</h4>
+          <img className='mall__img' src={mall1} />
+          <hr />
+        </div>
       </div>
     );
   } else if (props.tab === 2) {
     return (
-      <div className='brand__list'>
-        <p className='brand__rank'>{props.brand.rank}</p>
-        <h4 className='bradn__title'>{props.brand.title}</h4>
-        <img className='brand__img' src={brand1} />
-        <hr />
+      <div className='brand__container'>
+        <div className='brand__list'>
+          <p className='brand__rank'>{props.brand.rank}</p>
+          <h4 className='bradn__title'>{props.brand.title}</h4>
+          <img className='brand__img' src={brand1} />
+          <hr />
+        </div>
       </div>
     );
   }
