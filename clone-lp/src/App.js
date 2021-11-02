@@ -17,6 +17,7 @@ import img9 from './img9.jpg';
 import product1 from './product1.jpg';
 import mall1 from './mall1.jpg';
 import brand1 from './brand1.jpg';
+import { mapToStyles } from '@popperjs/core/lib/modifiers/computeStyles';
 
 function App() {
   let [mall, setMall] = useState(mallsData);
@@ -91,8 +92,16 @@ function App() {
         </button>
       </div>
 
-      <TabContent tab={tab} product={product} mall={mall} brand={brand} />
-
+      {product.map((a, i) => {
+        return (
+          <TabContent
+            tab={tab}
+            product={product[i]}
+            mall={mall[i]}
+            brand={brand[i]}
+          />
+        );
+      })}
       {/* <div className='products__container'>
         {product.map((a, i) => {
           return <Products product={product[i]} i={i}></Products>;
