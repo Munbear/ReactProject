@@ -37,17 +37,12 @@ html {
   margin-bottom: 10px;
 }
 
-/* .evetn__bar__container {
-  width: 100%;
-} */
-
 .event__img {
   width: 100%;
 }
 
 .item__group {
   display: flex;
-  flex-wrap: nowrap;
   overflow: auto;
 }
 
@@ -136,7 +131,6 @@ html {
   font-size: 18px;
   border: none;
   cursor: pointer;
-  background-color: deeppink;
 }
 
 .shoping__mall {
@@ -146,7 +140,6 @@ html {
   font-size: 18px;
   border: none;
   cursor: pointer;
-  background-color: dodgerblue;
 }
 
 .brand {
@@ -156,26 +149,17 @@ html {
   font-size: 18px;
   border: none;
   cursor: pointer;
-  background-color: gold;
-}
-
-.products__container {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .products__list {
-  flex: 1 1 40%;
+  width: 50%;
+  display: inline-block;
 }
 
-.products__img {
-  width: 100%;
+.mall__list {
+  border: 1px solid red;
 }
 
-.products__title {
-  margin: 0;
-}
-
-.products__price {
-  margin: 0;
+.brand__list {
+  border: 1px solid red;
 }
