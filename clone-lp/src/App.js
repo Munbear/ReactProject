@@ -7,19 +7,37 @@ import brandData from './brandData';
 
 import logo from './logo.svg';
 import box from './box.svg';
-import img9 from './img9.jpg';
+
+import img1 from './img/1.jpg';
+import img2 from './img/2.jpg';
+import img3 from './img/3.jpg';
+import img4 from './img/4.jpg';
+import img5 from './img/5.jpg';
+import img6 from './img/6.jpg';
+
+import SimpleImageSlider from 'react-simple-image-slider';
 
 import product1 from './product1.jpg';
 import mall1 from './mall1.jpg';
 import brand1 from './brand1.jpg';
-import { mapToStyles } from '@popperjs/core/lib/modifiers/computeStyles';
 
 function App() {
   let [mall, setMall] = useState(mallsData);
   let [product, setProduct] = useState(productData);
   let [brand, setBrand] = useState(brandData);
-
   let [tab, setTab] = useState(0);
+
+  const images = [
+    {
+      url: './img/1.jpg',
+      url: './img/2.jpg',
+      url: './img/3.jpg',
+      url: './img/4.jpg',
+      url: './img/5.jpg',
+      url: './img/6.jpg',
+      url: './img/7.jpg',
+    },
+  ];
 
   return (
     <div className='App'>
@@ -46,7 +64,13 @@ function App() {
         </div>
       </header>
 
-      <Eventbar />
+      <SimpleImageSlider
+        width={550}
+        height={500}
+        images={images}
+        showBullets={true}
+        showNavs={true}
+      />
 
       <div className='item__group'>
         <div className='item__all'>ALL</div>
@@ -95,25 +119,10 @@ function App() {
             mall={mall[i]}
             brand={brand[i]}
             i={i}
+            key={i}
           />
         );
       })}
-    </div>
-  );
-}
-
-function Eventbar() {
-  return (
-    <div className='event__bar__container'>
-      {/* {/* <img className='event__img' src={img1} />
-        <img className='event__img' src={img2} />
-        <img className='event__img' src={img3} />
-        <img className='event__img' src={img4} />
-        <img className='event__img' src={img5} />
-        <img className='event__img' src={img6} />
-        <img className='event__img' src={img7} />
-        <img className='event__img' src={img8} /> */}
-      <img className='event__img' src={img9} />
     </div>
   );
 }
@@ -132,8 +141,7 @@ function TabContent(props) {
       <div className='mall__list'>
         <p className='mall__rank'>{props.mall.rank}</p>
         <h4 className='mall__title'>{props.mall.title}</h4>
-        <img className='mall__img' src={mall1} />
-        <hr />
+        <img className='mall__img' src={mall1} width='26%' />
       </div>
     );
   } else if (props.tab === 2) {
@@ -142,7 +150,6 @@ function TabContent(props) {
         <p className='brand__rank'>{props.brand.rank}</p>
         <h4 className='bradn__title'>{props.brand.title}</h4>
         <img className='brand__img' src={brand1} />
-        <hr />
       </div>
     );
   }

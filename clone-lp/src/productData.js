@@ -1,8 +1,11 @@
+import product1 from './product1.jpg';
+
 export default [
   {
     id: 0,
     title: '만능 긴팔티',
     price: '18,000원',
+    img: { product1 },
   },
   {
     id: 1,

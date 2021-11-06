@@ -51,6 +51,7 @@ html {
   margin: 10px;
   width: 80px;
   height: 80px;
+  cursor: pointer;
   background-color: red;
 }
 
@@ -59,6 +60,7 @@ html {
   margin: 10px;
   width: 80px;
   height: 80px;
+  cursor: pointer;
   background-color: orange;
 }
 
@@ -67,6 +69,7 @@ html {
   margin: 10px;
   width: 80px;
   height: 80px;
+  cursor: pointer;
   background-color: yellow;
 }
 
@@ -75,6 +78,7 @@ html {
   margin: 10px;
   width: 80px;
   height: 80px;
+  cursor: pointer;
   background-color: green;
 }
 
@@ -83,6 +87,7 @@ html {
   margin: 10px;
   width: 80px;
   height: 80px;
+  cursor: pointer;
   background-color: blue;
 }
 
@@ -91,6 +96,7 @@ html {
   margin: 10px;
   width: 80px;
   height: 80px;
+  cursor: pointer;
   background-color: navy;
 }
 
@@ -99,6 +105,7 @@ html {
   margin: 10px;
   width: 80px;
   height: 80px;
+  cursor: pointer;
   background-color: purple;
 }
 
@@ -107,6 +114,7 @@ html {
   margin: 10px;
   width: 80px;
   height: 80px;
+  cursor: pointer;
   background-color: black;
 }
 
@@ -115,6 +123,7 @@ html {
   margin: 10px;
   width: 80px;
   height: 80px;
+  cursor: pointer;
   background-color: darkturquoise;
 }
 
@@ -158,8 +167,16 @@ html {
 
 .mall__list {
   border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
 .brand__list {
   border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  cursor: pointer;
 }
