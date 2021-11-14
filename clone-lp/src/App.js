@@ -1,5 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
 
 import productData from './productData.js';
 import mallsData from './mallData.js';
@@ -15,7 +18,7 @@ import img4 from './img/4.jpg';
 import img5 from './img/5.jpg';
 import img6 from './img/6.jpg';
 
-import SimpleImageSlider from 'react-simple-image-slider';
+// import SimpleImageSlider from 'react-simple-image-slider';/
 
 import product1 from './product1.jpg';
 import mall1 from './mall1.jpg';
@@ -26,18 +29,13 @@ function App() {
   let [product, setProduct] = useState(productData);
   let [brand, setBrand] = useState(brandData);
   let [tab, setTab] = useState(0);
-
-  const images = [
-    {
-      url: './img/1.jpg',
-      url: './img/2.jpg',
-      url: './img/3.jpg',
-      url: './img/4.jpg',
-      url: './img/5.jpg',
-      url: './img/6.jpg',
-      url: './img/7.jpg',
-    },
-  ];
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
     <div className='App'>
@@ -64,13 +62,17 @@ function App() {
         </div>
       </header>
 
-      <SimpleImageSlider
-        width={550}
-        height={500}
-        images={images}
-        showBullets={true}
-        showNavs={true}
-      />
+      <Slider {...settings}>
+        <img src={img1}></img>
+        <img src={img1}></img>
+        <img src={img1}></img>
+        <img src={img1}></img>
+        <img src={img1}></img>
+      </Slider>
+
+      {/* <div className='event__contaienr'>
+        <img src={img1} width='100%' />
+      </div> */}
 
       <div className='item__group'>
         <div className='item__all'>ALL</div>
