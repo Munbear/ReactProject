@@ -3,7 +3,11 @@ import React, { useState } from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
+import { BsBorderAll, BsHandbag } from 'react-icons/bs';
+import { FaTshirt } from 'react-icons/fa';
+import { GiMonclerJacket, GiArmoredPants, GiSonicShoes } from 'react-icons/gi';
+import { VscWatch } from 'react-icons/vsc';
+import { RiWalletLine } from 'react-icons/ri';
 
 import productData from './productData.js';
 import mallsData from './mallData.js';
@@ -71,6 +75,8 @@ function App() {
         <img src={img2} alt='' />
         <img src={img3} alt='' />
         <img src={img4} alt='' />
+        <img src={img5} alt='' />
+        <img src={img6} alt='' />
       </Slider>
 
       {/* <div className='event__bar'>
@@ -87,15 +93,30 @@ function App() {
       </div>  */}
 
       <div className='item__group'>
-        <div className='item__all'>ALL</div>
-        <div className='item__top'>상의</div>
-        <div className='item__jacket'>아우터</div>
-        <div className='item__pants'>하의</div>
-        <div className='item__shoes'>신발</div>
-        <div className='item__makeup'>그루밍</div>
-        <div className='item__bag'>가방</div>
-        <div className='item__small'>악세사리</div>
-        <div className='item__other'>기타</div>
+        <div className='item__all'>
+          <BsBorderAll size='30' />
+        </div>
+        <div className='item__top'>
+          <FaTshirt size='40' />
+        </div>
+        <div className='item__jacket'>
+          <GiMonclerJacket size='40' />
+        </div>
+        <div className='item__pants'>
+          <GiArmoredPants size='40' />
+        </div>
+        <div className='item__shoes'>
+          <GiSonicShoes size='40' />
+        </div>
+        <div className='item__bag'>
+          <BsHandbag size='40' />
+        </div>
+        <div className='item__small'>
+          <VscWatch size='40' />
+        </div>
+        <div className='item__other'>
+          <RiWalletLine size='40' />
+        </div>
       </div>
 
       <div className='item__menu'>
@@ -171,24 +192,12 @@ function TabContent(props) {
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: 'none' }}
-      onClick={onClick}
-    />
-  );
+  return <div className={className} style={{ ...style, display: 'none' }} />;
 }
 
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: 'none' }}
-      onClick={onClick}
-    />
-  );
+  return <div className={className} style={{ ...style, display: 'none' }} />;
 }
 
 export default App;

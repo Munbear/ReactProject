@@ -86,84 +86,99 @@ html {
 }
 
 .item__all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
   flex: 0 0 auto;
   margin: 10px;
   width: 80px;
   height: 80px;
   cursor: pointer;
-  background-color: red;
 }
 
 .item__top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
   flex: 0 0 auto;
   margin: 10px;
   width: 80px;
   height: 80px;
   cursor: pointer;
-  background-color: orange;
 }
 
 .item__jacket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
   flex: 0 0 auto;
   margin: 10px;
   width: 80px;
   height: 80px;
   cursor: pointer;
-  background-color: yellow;
 }
 
 .item__pants {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
   flex: 0 0 auto;
   margin: 10px;
   width: 80px;
   height: 80px;
   cursor: pointer;
-  background-color: green;
 }
 
 .item__shoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
   flex: 0 0 auto;
   margin: 10px;
   width: 80px;
   height: 80px;
   cursor: pointer;
-  background-color: blue;
-}
-
-.item__makeup {
-  flex: 0 0 auto;
-  margin: 10px;
-  width: 80px;
-  height: 80px;
-  cursor: pointer;
-  background-color: navy;
 }
 
 .item__bag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
   flex: 0 0 auto;
   margin: 10px;
   width: 80px;
   height: 80px;
   cursor: pointer;
-  background-color: purple;
 }
 
 .item__small {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
   flex: 0 0 auto;
   margin: 10px;
   width: 80px;
   height: 80px;
   cursor: pointer;
-  background-color: black;
 }
 
 .item__other {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
   flex: 0 0 auto;
   margin: 10px;
   width: 80px;
   height: 80px;
   cursor: pointer;
-  background-color: darkturquoise;
 }
 
 .item__menu {
