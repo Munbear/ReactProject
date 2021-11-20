@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
+import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 
 import productData from './productData.js';
 import mallsData from './mallData.js';
@@ -10,15 +11,12 @@ import brandData from './brandData';
 
 import logo from './logo.svg';
 import box from './box.svg';
-
 import img1 from './img/1.jpg';
 import img2 from './img/2.jpg';
 import img3 from './img/3.jpg';
 import img4 from './img/4.jpg';
 import img5 from './img/5.jpg';
 import img6 from './img/6.jpg';
-
-// import SimpleImageSlider from 'react-simple-image-slider';/
 
 import product1 from './product1.jpg';
 import mall1 from './mall1.jpg';
@@ -29,12 +27,18 @@ function App() {
   let [product, setProduct] = useState(productData);
   let [brand, setBrand] = useState(brandData);
   let [tab, setTab] = useState(0);
+
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
-    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    speed: 500,
+    autoplaySpeed: 3000,
+    cssEase: 'linear',
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
   };
 
   return (
@@ -63,16 +67,24 @@ function App() {
       </header>
 
       <Slider {...settings}>
-        <img src={img1}></img>
-        <img src={img1}></img>
-        <img src={img1}></img>
-        <img src={img1}></img>
-        <img src={img1}></img>
+        <img src={img1} alt='' />
+        <img src={img2} alt='' />
+        <img src={img3} alt='' />
+        <img src={img4} alt='' />
       </Slider>
 
-      {/* <div className='event__contaienr'>
-        <img src={img1} width='100%' />
-      </div> */}
+      {/* <div className='event__bar'>
+        {/* <FcNext /> */}
+      {/* <button className='slick__next'>
+          <FaAngleRight size='30' />
+        </button>
+        <img src={img1} className='event__bar__img1' />
+        <img src={img2} className='event__bar__img2' />
+        <img src={img3} className='event__bar__img3' />
+        <button className='slick__before'>
+          <FaAngleLeft size='30' />
+        </button>
+      </div>  */}
 
       <div className='item__group'>
         <div className='item__all'>ALL</div>
@@ -155,6 +167,28 @@ function TabContent(props) {
       </div>
     );
   }
+}
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: 'none' }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: 'none' }}
+      onClick={onClick}
+    />
+  );
 }
 
 export default App;
