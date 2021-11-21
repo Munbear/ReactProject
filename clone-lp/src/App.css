@@ -185,18 +185,29 @@ html {
   display: flex;
   flex: 1 1 40%;
   justify-content: center;
+  border-bottom: solid 1px darkgray;
 }
 
 .product {
+  background-color: white;
+  color: gray;
   flex: 1 1 40%;
   width: 120px;
   height: 50px;
   font-size: 18px;
   border: none;
   cursor: pointer;
+}
+
+.product:active {
+  color: black;
+  border-bottom: 1px solid black;
+  font-weight: bold;
 }
 
 .shoping__mall {
+  background-color: white;
+  color: gray;
   flex: 1 1 40%;
   width: 120px;
   height: 50px;
@@ -205,13 +216,27 @@ html {
   cursor: pointer;
 }
 
+.shoping__mall:active {
+  color: black;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+}
+
 .brand {
+  background-color: white;
+  color: gray;
   flex: 1 1 40%;
   width: 120px;
   height: 50px;
   font-size: 18px;
   border: none;
   cursor: pointer;
+}
+
+.brand:active {
+  color: black;
+  border-bottom: 1px solid black;
+  font-weight: bold;
 }
 
 .products__list {
@@ -219,20 +244,38 @@ html {
   display: inline-block;
 }
 
+.products__card {
+  padding: 10px;
+}
+
 .mall__list {
-  border: 1px solid red;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   cursor: pointer;
+  border-bottom: solid 1px;
+}
+
+.mall__info {
+  padding: 10px;
+}
+
+.mall__card {
+  padding: 10px;
 }
 
 .brand__list {
-  border: 1px solid red;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   cursor: pointer;
+  border-bottom: solid 1px;
+}
+
+.brand__info {
+  padding: 10px;
+}
+
+.brand__card {
+  padding: 10px;
 }
 
 .slick-next {
