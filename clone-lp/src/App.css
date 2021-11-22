@@ -25,6 +25,8 @@ html {
 }
 
 .search__container {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -35,6 +37,14 @@ html {
   border: none;
   font-size: 14px;
   margin-bottom: 10px;
+}
+
+.search__icon {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 8px;
+  right: 30px;
 }
 
 .event__bar {
@@ -197,9 +207,10 @@ html {
   font-size: 18px;
   border: none;
   cursor: pointer;
+  transition: all 0.2s ease-in;
 }
 
-.product:active {
+.product:hover {
   color: black;
   border-bottom: 1px solid black;
   font-weight: bold;
@@ -214,9 +225,10 @@ html {
   font-size: 18px;
   border: none;
   cursor: pointer;
+  transition: all 0.2s ease-in;
 }
 
-.shoping__mall:active {
+.shoping__mall:hover {
   color: black;
   border-bottom: 1px solid black;
   font-weight: bold;
@@ -231,9 +243,10 @@ html {
   font-size: 18px;
   border: none;
   cursor: pointer;
+  transition: all 0.2s ease-in;
 }
 
-.brand:active {
+.brand:hover {
   color: black;
   border-bottom: 1px solid black;
   font-weight: bold;

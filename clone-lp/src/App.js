@@ -1,9 +1,12 @@
 import './App.css';
+import { Link, Route, Switch, Routers } from 'react-router-dom';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import { BsBorderAll, BsHandbag } from 'react-icons/bs';
+import { BsBorderAll, BsHandbag, BsSearch } from 'react-icons/bs';
 import { FaTshirt } from 'react-icons/fa';
 import { GiMonclerJacket, GiArmoredPants, GiSonicShoes } from 'react-icons/gi';
 import { VscWatch } from 'react-icons/vsc';
@@ -12,15 +15,16 @@ import { RiWalletLine } from 'react-icons/ri';
 import productData from './productData.js';
 import mallsData from './mallData.js';
 import brandData from './brandData';
+import Shopping from './Shopping.js';
 
 import logo from './logo.svg';
 import box from './box.svg';
-import img1 from './img/1.jpg';
-import img2 from './img/2.jpg';
-import img3 from './img/3.jpg';
-import img4 from './img/4.jpg';
-import img5 from './img/5.jpg';
-import img6 from './img/6.jpg';
+import img1 from './images/1.jpg';
+import img2 from './images/2.jpg';
+import img3 from './images/3.jpg';
+import img4 from './images/4.jpg';
+import img5 from './images/5.jpg';
+import img6 from './images/6.jpg';
 
 import product1 from './product1.jpg';
 import mall1 from './mall1.jpg';
@@ -31,6 +35,7 @@ function App() {
   let [product, setProduct] = useState(productData);
   let [brand, setBrand] = useState(brandData);
   let [tab, setTab] = useState(0);
+  let history = useHistory();
 
   const settings = {
     dots: false,
@@ -47,117 +52,115 @@ function App() {
 
   return (
     <div className='App'>
-      <header className='header'>
-        <div className='header__container'>
-          <div className='container__logo__box'>
-            <a href='https://www.lookpin.co.kr/'>
-              <img className='container__logo' src={logo} />
-            </a>
+      <Route exact path='/'>
+        <header className='header'>
+          <div className='header__container'>
+            <div className='container__logo__box'>
+              <a href='https://www.lookpin.co.kr/'>
+                <img className='container__logo' src={logo} />
+              </a>
+            </div>
+            <div className='container__box'>
+              <img className='=box' src={box} />
+            </div>
           </div>
-          <div className='container__box'>
-            <img className='=box' src={box} />
+          <div className='search__container'>
+            <input
+              className='search__input'
+              type='text'
+              Placeholder='다양한 상품과 브랜드를 검색하세요'
+              name=''
+              id=''
+            />
+            <BsSearch className='search__icon' />
+          </div>
+        </header>
+
+        <Slider {...settings}>
+          <img src={img1} alt='' />
+          <img src={img2} alt='' />
+          <img src={img3} alt='' />
+          <img src={img4} alt='' />
+          <img src={img5} alt='' />
+          <img src={img6} alt='' />
+        </Slider>
+
+        <div className='item__group'>
+          <div
+            className='item__all'
+            onClick={() => {
+              history.push('/shopping');
+            }}
+          >
+            <BsBorderAll size='30' />
+          </div>
+          <div className='item__top'>
+            <FaTshirt size='40' />
+          </div>
+          <div className='item__jacket'>
+            <GiMonclerJacket size='40' />
+          </div>
+          <div className='item__pants'>
+            <GiArmoredPants size='40' />
+          </div>
+          <div className='item__shoes'>
+            <GiSonicShoes size='40' />
+          </div>
+          <div className='item__bag'>
+            <BsHandbag size='40' />
+          </div>
+          <div className='item__small'>
+            <VscWatch size='40' />
+          </div>
+          <div className='item__other'>
+            <RiWalletLine size='40' />
           </div>
         </div>
-        <div className='search__container'>
-          <input
-            className='search__input'
-            type='text'
-            Placeholder='다양한 상품과 브랜드를 검색하세요'
-            name=''
-            id=''
-          />
-          {/*여기에 돋보기 아이콘*/}
-        </div>
-      </header>
 
-      <Slider {...settings}>
-        <img src={img1} alt='' />
-        <img src={img2} alt='' />
-        <img src={img3} alt='' />
-        <img src={img4} alt='' />
-        <img src={img5} alt='' />
-        <img src={img6} alt='' />
-      </Slider>
+        <div className='item__menu'>
+          <button
+            className='product'
+            onClick={() => {
+              setTab(0);
+            }}
+          >
+            상품
+          </button>
+          <button
+            className='shoping__mall'
+            onClick={() => {
+              setTab(1);
+            }}
+          >
+            쇼핑몰
+          </button>
+          <button
+            className='brand'
+            onClick={() => {
+              setTab(2);
+            }}
+          >
+            브랜드
+          </button>
+        </div>
 
-      {/* <div className='event__bar'>
-        {/* <FcNext /> */}
-      {/* <button className='slick__next'>
-          <FaAngleRight size='30' />
-        </button>
-        <img src={img1} className='event__bar__img1' />
-        <img src={img2} className='event__bar__img2' />
-        <img src={img3} className='event__bar__img3' />
-        <button className='slick__before'>
-          <FaAngleLeft size='30' />
-        </button>
-      </div>  */}
+        {product.map((a, i) => {
+          return (
+            <TabContent
+              tab={tab}
+              product={product[i]}
+              mall={mall[i]}
+              brand={brand[i]}
+              i={i}
+              key={i}
+            />
+          );
+        })}
+      </Route>
 
-      <div className='item__group'>
-        <div className='item__all'>
-          <BsBorderAll size='30' />
-        </div>
-        <div className='item__top'>
-          <FaTshirt size='40' />
-        </div>
-        <div className='item__jacket'>
-          <GiMonclerJacket size='40' />
-        </div>
-        <div className='item__pants'>
-          <GiArmoredPants size='40' />
-        </div>
-        <div className='item__shoes'>
-          <GiSonicShoes size='40' />
-        </div>
-        <div className='item__bag'>
-          <BsHandbag size='40' />
-        </div>
-        <div className='item__small'>
-          <VscWatch size='40' />
-        </div>
-        <div className='item__other'>
-          <RiWalletLine size='40' />
-        </div>
-      </div>
-
-      <div className='item__menu'>
-        <button
-          className='product'
-          onClick={() => {
-            setTab(0);
-          }}
-        >
-          상품
-        </button>
-        <button
-          className='shoping__mall'
-          onClick={() => {
-            setTab(1);
-          }}
-        >
-          쇼핑몰
-        </button>
-        <button
-          className='brand'
-          onClick={() => {
-            setTab(2);
-          }}
-        >
-          브랜드
-        </button>
-      </div>
-
-      {product.map((a, i) => {
-        return (
-          <TabContent
-            tab={tab}
-            product={product[i]}
-            mall={mall[i]}
-            brand={brand[i]}
-            i={i}
-            key={i}
-          />
-        );
-      })}
+      <Route path='/shopping'>
+        <Shopping />
+      </Route>
     </div>
   );
 }
