@@ -159,7 +159,7 @@ function App() {
       </Route>
 
       <Route path='/shopping'>
-        <Shopping />
+        <Shopping product={product} />
       </Route>
     </div>
   );
@@ -170,9 +170,11 @@ function TabContent(props) {
     return (
       <div className='products__list'>
         <div className='products__card'>
-          <img src={product1} width='100%' />
+          <img src={product1} className='items__img' width='100%' />
+        </div>
+        <div className='products__info'>
           <p className='products__title'>{props.product.title}</p>
-          <h4 className='products__price'>{props.product.price}</h4>
+          <p className='products__price'>{props.product.price}</p>
         </div>
       </div>
     );
