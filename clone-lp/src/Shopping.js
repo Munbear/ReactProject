@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -27,6 +29,9 @@ let Button = styled.button`
 `;
 
 function Shopping(props) {
+  let testItem = useSelector((state) => state);
+  console.log(testItem);
+
   return (
     <div>
       <Div>
@@ -39,8 +44,7 @@ function Shopping(props) {
         <Button>악세사리</Button>
         <Button>기타</Button>
       </Div>
-      <TabProducts />
-      <p>{props.product[1].title}</p>
+      <TabProducts state={props.state[1]} />
     </div>
   );
 }
@@ -52,11 +56,17 @@ function TabProducts(props) {
         <img src={outerImg} width='100%' />
       </div>
       <div className='items__info'>
-        <p>상품명</p>
-        <p>상품 가격</p>
+        <p>{props.state[1].title}</p>
+        <p>{props.state[1].price}</p>
       </div>
     </div>
   );
 }
+
+// function Store(state) {
+//   return { state: state };
+// }
+
+// export default connect(Store)(Shopping);
 
 export default Shopping;
