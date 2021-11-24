@@ -28,6 +28,11 @@ let Button = styled.button`
   }
 `;
 
+let cardContainer = styled.div`
+  width : 50%
+  display : inline-block;
+`;
+
 function Shopping(props) {
   let testItem = useSelector((state) => state);
   console.log(testItem);
@@ -44,23 +49,27 @@ function Shopping(props) {
         <Button>악세사리</Button>
         <Button>기타</Button>
       </Div>
-      <TabProducts state={props.state[1]} />
+
+      <cadrContainer>
+        {props.product.map((a, i) => {
+          return (
+            <div className='tab__cards'>
+              <img src={outerImg} width='100%' />
+              <p>{props.product[1].title}</p>
+              <p>{props.product[1].price}</p>
+            </div>
+          );
+        })}
+      </cadrContainer>
     </div>
   );
 }
 
-function TabProducts(props) {
-  return (
-    <div className='tab__cards__list'>
-      <div className='tab__cards'>
-        <img src={outerImg} width='100%' />
-      </div>
-      <div className='items__info'>
-        <p>{props.state[1].title}</p>
-        <p>{props.state[1].price}</p>
-      </div>
-    </div>
-  );
+{
+  /* <div className='items__info'>
+<p>{props.product[1].title}</p>
+<p>{props.product[1].price}</p>
+</div> */
 }
 
 // function Store(state) {
