@@ -1,10 +1,13 @@
 import React, { useContext, useState } from 'react';
+import { GiConsoleController } from 'react-icons/gi';
 import { useSelector } from 'react-redux';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import { IoMdArrowBack } from 'react-icons/io';
 
 import outerImg from './images/outer1.jpg';
+import itemsData from './productData.js';
 
 let Div = styled.div`
   display: flex;
@@ -28,17 +31,26 @@ let Button = styled.button`
   }
 `;
 
+let Arrow = styled.button`
+  background-color: white;
+  border none;
+  size : 20px;
+`;
+
 let cardContainer = styled.div`
   width : 50%
   display : inline-block;
 `;
 
 function Shopping(props) {
-  let testItem = useSelector((state) => state);
-  console.log(testItem);
-
+  let [items, setItems] = useState(itemsData);
   return (
     <div>
+      <div>
+        <Arrow>
+          <IoMdArrowBack />
+        </Arrow>
+      </div>
       <Div>
         <Button>전체</Button>
         <Button>상의</Button>
@@ -50,17 +62,19 @@ function Shopping(props) {
         <Button>기타</Button>
       </Div>
 
-      <cadrContainer>
-        {props.product.map((a, i) => {
-          return (
+      {props.product.map((a, i) => {
+        return (
+          <cardContainer>
             <div className='tab__cards'>
-              <img src={outerImg} width='100%' />
+              <div className='card__img__area'>
+                <img src={outerImg} className='card__img' />
+              </div>
               <p>{props.product[1].title}</p>
               <p>{props.product[1].price}</p>
             </div>
-          );
-        })}
-      </cadrContainer>
+          </cardContainer>
+        );
+      })}
     </div>
   );
 }

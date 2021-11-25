@@ -263,6 +263,7 @@ html {
 
 .items__img {
   border-radius: 6%;
+  box-shadow: 2px 1px 7px 0px;
 }
 
 .mall__list {
@@ -297,4 +298,19 @@ html {
 
 .slick-next {
   right: 20px;
+}
+
+.tab__cards {
+  width: 50%;
+  display: inline-block;
+}
+
+.card__img__area {
+  padding: 8px;
+}
+
+.card__img {
+  width: 100%;
+  border-radius: 6%;
+  box-shadow: 2px 1px 7px 0px;
 }
