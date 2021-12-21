@@ -210,6 +210,12 @@ html {
   transition: all 0.2s ease-in;
 }
 
+.productOn {
+  color: black;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+}
+
 .product:hover {
   color: black;
   border-bottom: 1px solid black;

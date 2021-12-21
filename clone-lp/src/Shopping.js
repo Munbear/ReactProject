@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { IoMdArrowBack } from 'react-icons/io';
+import { useHistory } from 'react-router-dom';
 
 import outerImg from './images/outer1.jpg';
 import itemsData from './productData.js';
@@ -23,7 +24,7 @@ let Button = styled.button`
   cursor: pointer;
   padding : 15px;
   font-size : large;
-
+  
   &:hover {
     color: black;
     border-bottom: 1px solid black;
@@ -34,7 +35,6 @@ let Button = styled.button`
 let Arrow = styled.button`
   background-color: white;
   border none;
-  size : 20px;
 `;
 
 let cardContainer = styled.div`
@@ -43,12 +43,18 @@ let cardContainer = styled.div`
 `;
 
 function Shopping(props) {
+  let history = useHistory();
   let [items, setItems] = useState(itemsData);
   return (
     <div>
       <div>
         <Arrow>
-          <IoMdArrowBack />
+          <IoMdArrowBack
+            onClick={() => {
+              history.goBack();
+            }}
+            size='20'
+          />
         </Arrow>
       </div>
       <Div>

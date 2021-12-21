@@ -94,32 +94,92 @@ function App() {
           >
             <BsBorderAll size='30' />
           </div>
-          <div className='item__top'>
+          <div
+            className='item__top'
+            onClick={() => {
+              history.push('/shopping');
+            }}
+          >
             <FaTshirt size='40' />
           </div>
-          <div className='item__jacket'>
-            <GiMonclerJacket size='40' />
+          <div
+            className='item__jacket'
+            onClick={() => {
+              history.push('/shopping');
+            }}
+          >
+            <GiMonclerJacket
+              size='40'
+              onClick={() => {
+                history.push('/shopping');
+              }}
+            />
           </div>
-          <div className='item__pants'>
-            <GiArmoredPants size='40' />
+          <div
+            className='item__pants'
+            onClick={() => {
+              history.push('/shopping');
+            }}
+          >
+            <GiArmoredPants
+              size='40'
+              onClick={() => {
+                history.push('/shopping');
+              }}
+            />
           </div>
-          <div className='item__shoes'>
-            <GiSonicShoes size='40' />
+          <div
+            className='item__shoes'
+            onClick={() => {
+              history.push('/shopping');
+            }}
+          >
+            <GiSonicShoes
+              size='40'
+              onClick={() => {
+                history.push('/shopping');
+              }}
+            />
           </div>
-          <div className='item__bag'>
-            <BsHandbag size='40' />
+          <div
+            className='item__bag'
+            onClick={() => {
+              history.push('/shopping');
+            }}
+          >
+            <BsHandbag
+              size='40'
+              onClick={() => {
+                history.push('/shopping');
+              }}
+            />
           </div>
-          <div className='item__small'>
-            <VscWatch size='40' />
+          <div
+            className='item__small'
+            onClick={() => {
+              history.push('/shopping');
+            }}
+          >
+            <VscWatch
+              size='40'
+              onClick={() => {
+                history.push('/shopping');
+              }}
+            />
           </div>
           <div className='item__other'>
-            <RiWalletLine size='40' />
+            <RiWalletLine
+              size='40'
+              onClick={() => {
+                history.push('/shopping');
+              }}
+            />
           </div>
         </div>
 
         <div className='item__menu'>
           <button
-            className='product'
+            className='product productOn'
             onClick={() => {
               setTab(0);
             }}
@@ -127,7 +187,7 @@ function App() {
             상품
           </button>
           <button
-            className='shoping__mall'
+            className='shoping__mall productOn'
             onClick={() => {
               setTab(1);
             }}
@@ -135,7 +195,7 @@ function App() {
             쇼핑몰
           </button>
           <button
-            className='brand'
+            className='brand productOn'
             onClick={() => {
               setTab(2);
             }}
