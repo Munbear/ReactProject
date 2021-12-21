@@ -210,17 +210,17 @@ html {
   transition: all 0.2s ease-in;
 }
 
-.productOn {
+.pointOn:hover {
   color: black;
   border-bottom: 1px solid black;
   font-weight: bold;
 }
 
-.product:hover {
+/* .product:hover {
   color: black;
   border-bottom: 1px solid black;
   font-weight: bold;
-}
+} */
 
 .shoping__mall {
   background-color: white;
@@ -234,11 +234,11 @@ html {
   transition: all 0.2s ease-in;
 }
 
-.shoping__mall:hover {
+/* .shoping__mall:hover {
   color: black;
   border-bottom: 1px solid black;
   font-weight: bold;
-}
+} */
 
 .brand {
   background-color: white;
@@ -252,11 +252,11 @@ html {
   transition: all 0.2s ease-in;
 }
 
-.brand:hover {
+/* .brand:hover {
   color: black;
   border-bottom: 1px solid black;
   font-weight: bold;
-}
+} */
 
 .products__list {
   width: 50%;
@@ -270,6 +270,16 @@ html {
 .items__img {
   border-radius: 6%;
   box-shadow: 2px 1px 7px 0px;
+}
+
+.products__info {
+  display: box;
+  position: relative;
+  left: 12px;
+}
+
+p {
+  margin: 0;
 }
 
 .mall__list {

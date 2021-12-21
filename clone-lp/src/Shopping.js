@@ -37,11 +37,6 @@ let Arrow = styled.button`
   border none;
 `;
 
-let cardContainer = styled.div`
-  width : 50%
-  display : inline-block;
-`;
-
 function Shopping(props) {
   let history = useHistory();
   let [items, setItems] = useState(itemsData);
@@ -70,32 +65,19 @@ function Shopping(props) {
 
       {props.product.map((a, i) => {
         return (
-          <cardContainer>
-            <div className='tab__cards'>
-              <div className='card__img__area'>
-                <img src={outerImg} className='card__img' />
-              </div>
+          <div className='tab__cards'>
+            <div className='card__img__area'>
+              <img src={outerImg} className='card__img' />
+            </div>
+            <div className='products__info'>
               <p>{props.product[1].title}</p>
               <p>{props.product[1].price}</p>
             </div>
-          </cardContainer>
+          </div>
         );
       })}
     </div>
   );
 }
-
-{
-  /* <div className='items__info'>
-<p>{props.product[1].title}</p>
-<p>{props.product[1].price}</p>
-</div> */
-}
-
-// function Store(state) {
-//   return { state: state };
-// }
-
-// export default connect(Store)(Shopping);
 
 export default Shopping;

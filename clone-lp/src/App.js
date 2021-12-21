@@ -179,7 +179,7 @@ function App() {
 
         <div className='item__menu'>
           <button
-            className='product productOn'
+            className='product pointOn'
             onClick={() => {
               setTab(0);
             }}
@@ -187,7 +187,7 @@ function App() {
             상품
           </button>
           <button
-            className='shoping__mall productOn'
+            className='shoping__mall pointOn'
             onClick={() => {
               setTab(1);
             }}
@@ -195,7 +195,7 @@ function App() {
             쇼핑몰
           </button>
           <button
-            className='brand productOn'
+            className='brand pointOn'
             onClick={() => {
               setTab(2);
             }}
