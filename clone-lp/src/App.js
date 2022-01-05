@@ -16,6 +16,7 @@ import productData from './productData.js';
 import mallsData from './mallData.js';
 import brandData from './brandData';
 import Shopping from './Shopping.js';
+import Detail from './Detail.js';
 
 import logo from './logo.svg';
 import box from './box.svg';
@@ -25,10 +26,9 @@ import img3 from './images/3.jpg';
 import img4 from './images/4.jpg';
 import img5 from './images/5.jpg';
 import img6 from './images/6.jpg';
-
-import product1 from './product1.jpg';
-import mall1 from './mall1.jpg';
-import brand1 from './brand1.jpg';
+import product1 from './images/product1.jpg';
+import mall1 from './images/mall1.jpg';
+import brand1 from './images/brand1.jpg';
 
 function App() {
   let [mall, setMall] = useState(mallsData);
@@ -221,14 +221,24 @@ function App() {
       <Route path='/shopping'>
         <Shopping product={product} />
       </Route>
+
+      <Route path='/detail/:id'>
+        <Detail product={product} />
+      </Route>
     </div>
   );
 }
 
 function TabContent(props) {
+  let history2 = useHistory();
   if (props.tab === 0) {
     return (
-      <div className='products__list'>
+      <div
+        className='products__list'
+        onClick={() => {
+          history2.push('/detail/' + props.product.id);
+        }}
+      >
         <div className='products__card'>
           <img src={product1} className='items__img' width='100%' />
         </div>

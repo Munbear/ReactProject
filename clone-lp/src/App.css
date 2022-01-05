@@ -263,6 +263,10 @@ html {
   display: inline-block;
 }
 
+.products__price {
+  font-weight: bold;
+}
+
 .products__card {
   padding: 8px;
 }
@@ -329,4 +333,9 @@ p {
   width: 100%;
   border-radius: 6%;
   box-shadow: 2px 1px 7px 0px;
+}
+
+.deteail__header {
+  display: flex;
+  justify-content: space-between;
 }

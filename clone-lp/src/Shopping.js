@@ -71,7 +71,7 @@ function Shopping(props) {
             </div>
             <div className='products__info'>
               <p>{props.product[1].title}</p>
-              <p>{props.product[1].price}</p>
+              <p className='products__price'>{props.product[1].price}</p>
             </div>
           </div>
         );

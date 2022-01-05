@@ -113,7 +113,6 @@ function App() {
           <div>아무거나 적었을대 보여주셈 </div>
         </Route>
       </Switch>
-
       {/* <Route path='/어쩌구' component={Modal}></Route> */}
     </div>
   );
