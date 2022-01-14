@@ -26,8 +26,8 @@ import img3 from './images/3.jpg';
 import img4 from './images/4.jpg';
 import img5 from './images/5.jpg';
 import img6 from './images/6.jpg';
-import product1 from './images/product1.jpg';
-import mall1 from './images/mall1.jpg';
+import product1 from './images/product5.jpg';
+import mall1 from './images/brand2.jpg';
 import brand1 from './images/brand1.jpg';
 
 function App() {
@@ -87,7 +87,7 @@ function App() {
 
         <div className='item__group'>
           <div
-            className='item__all'
+            className='item__box'
             onClick={() => {
               history.push('/shopping');
             }}
@@ -95,7 +95,7 @@ function App() {
             <BsBorderAll size='30' />
           </div>
           <div
-            className='item__top'
+            className='item__box'
             onClick={() => {
               history.push('/shopping');
             }}
@@ -103,7 +103,7 @@ function App() {
             <FaTshirt size='40' />
           </div>
           <div
-            className='item__jacket'
+            className='item__box'
             onClick={() => {
               history.push('/shopping');
             }}
@@ -116,7 +116,7 @@ function App() {
             />
           </div>
           <div
-            className='item__pants'
+            className='item__box'
             onClick={() => {
               history.push('/shopping');
             }}
@@ -129,7 +129,7 @@ function App() {
             />
           </div>
           <div
-            className='item__shoes'
+            className='item__box'
             onClick={() => {
               history.push('/shopping');
             }}
@@ -142,7 +142,7 @@ function App() {
             />
           </div>
           <div
-            className='item__bag'
+            className='item__box'
             onClick={() => {
               history.push('/shopping');
             }}
@@ -155,7 +155,7 @@ function App() {
             />
           </div>
           <div
-            className='item__small'
+            className='item__box'
             onClick={() => {
               history.push('/shopping');
             }}
@@ -167,7 +167,7 @@ function App() {
               }}
             />
           </div>
-          <div className='item__other'>
+          <div className='item__box'>
             <RiWalletLine
               size='40'
               onClick={() => {
@@ -177,9 +177,9 @@ function App() {
           </div>
         </div>
 
-        <div className='item__menu'>
+        <nav className='btn__menu'>
           <button
-            className='product pointOn'
+            className='btn pointOn'
             onClick={() => {
               setTab(0);
             }}
@@ -187,7 +187,7 @@ function App() {
             상품
           </button>
           <button
-            className='shoping__mall pointOn'
+            className='btn pointOn'
             onClick={() => {
               setTab(1);
             }}
@@ -195,14 +195,14 @@ function App() {
             쇼핑몰
           </button>
           <button
-            className='brand pointOn'
+            className='btn pointOn'
             onClick={() => {
               setTab(2);
             }}
           >
             브랜드
           </button>
-        </div>
+        </nav>
 
         {product.map((a, i) => {
           return (
@@ -254,6 +254,7 @@ function TabContent(props) {
         <div className='mall__info'>
           <p className='mall__rank'>{props.mall.rank}</p>
           <h2 className='mall__title'>{props.mall.title}</h2>
+          <p className='title__tag'>{props.mall.chr}</p>
         </div>
         <div className='mall__card'>
           <img className='mall__img' src={mall1} width='100%' />
@@ -266,6 +267,7 @@ function TabContent(props) {
         <div className='brand__info'>
           <p className='brand__rank'>{props.brand.rank}</p>
           <h2 className='brand__title'>{props.brand.title}</h2>
+          <p className='title__tag'>{props.brand.chr}</p>
         </div>
         <div className='brand__card'>
           <img className='brand__img' src={brand1} />

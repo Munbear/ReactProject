@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import './App.css';
 import { GiConsoleController } from 'react-icons/gi';
 import { useSelector } from 'react-redux';
 import { connect } from 'react-redux';
@@ -18,7 +19,7 @@ let Div = styled.div`
 `;
 
 let Button = styled.button`
-  background-color white;
+  background-color: white;
   color: darkgray;
   border : none;
   cursor: pointer;
