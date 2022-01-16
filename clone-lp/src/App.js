@@ -218,7 +218,7 @@ function App() {
         })}
       </Route>
 
-      <Route path='/shopping'>
+      <Route path='/shopping/:type'>
         <Shopping product={product} />
       </Route>
 

@@ -13,7 +13,6 @@ import item2 from './images/item2.jpg';
 import item3 from './images/item3.jpg';
 import item4 from './images/item4.jpg';
 import item5 from './images/item5.jpg';
-import ItemInfo from './ItemInfo';
 
 let Header = styled.header`
   position: fixed;
@@ -80,68 +79,60 @@ let Text = styled.input`
   height: 100px;
 `;
 
-function Detail(props) {
-  let { id } = useParams();
-  let history = useHistory();
-  let [info, setInfo] = useState(0);
+function Iteminfo(props) {
+  let [inputData, setInputData] = useState('');
+  let [commentList, setCommentList] = useState([]);
 
-  let findItem = props.product.find((x) => x.id == id);
-  return (
-    <div>
-      <Header>
-        <Btn>
-          <IoMdArrowBack
-            onClick={() => {
-              history.push('/');
-            }}
-            size='24'
-            color='white'
-          />
-        </Btn>
-      </Header>
-      <div>
-        <img src={product5} width='100%' />
-      </div>
-      <div>
-        <Title>{findItem.title}</Title>
-        <Price>{findItem.price}</Price>
-      </div>
-      <nav className='btn__menu'>
-        <button
-          className='btn pointOn'
-          onClick={() => {
-            setInfo(0);
-          }}
-        >
-          상품정보
-        </button>
-        <button
-          className='btn pointOn'
-          onClick={() => {
-            setInfo(1);
-          }}
-        >
-          리뷰
-        </button>
-        <button
-          className='btn pointOn'
-          onClick={() => {
-            setInfo(2);
-          }}
-        >
-          Q&A
-        </button>
-      </nav>
-      <ItemInfo info={info} />
+  const onClickAddComment = () => {
+    setCommentList([inputData, ...commentList]);
+    setInputData('');
+  };
 
-      <Footer>
-        <Pin>
-          <AiFillPushpin color='white' size='55' />
-        </Pin>
-        <Paybtn>구매하기</Paybtn>
-      </Footer>
-    </div>
-  );
+  if (props.info === 0) {
+    return (
+      <div>
+        <Card>
+          <Foto src={item1} />
+        </Card>
+        <Card>
+          <Foto src={item2} />
+        </Card>
+        <Card>
+          <Foto src={item3} />
+        </Card>
+        <Card>
+          <Foto src={item4} />
+        </Card>
+        <Card>
+          <Foto src={item5} />
+        </Card>
+      </div>
+    );
+  } else if (props.info === 1) {
+    return (
+      <div>
+        <Review>구매후기가 없습니다.</Review>
+      </div>
+    );
+  } else if (props.info === 2) {
+    return (
+      <div>
+        <Text
+          onChange={(e) => {
+            setInputData(e.target.value);
+          }}
+          value={inputData}
+        />
+        <button onClick={onClickAddComment}>제출하기</button>
+
+        <div>
+          {commentList.map((value) => (
+            <p>{value}</p>
+          ))}
+        </div>
+      </div>
+    );
+  }
 }
 
-export default Detail;
+export default Iteminfo;
