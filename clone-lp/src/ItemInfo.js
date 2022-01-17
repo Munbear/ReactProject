@@ -1,60 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
-import reactRouterDom from 'react-router-dom';
-import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import { IoMdArrowBack } from 'react-icons/io';
-// import { BsInboxes } from 'react-icons/bs';
-import { AiFillPushpin } from 'react-icons/ai';
-
-import product5 from './images/product5.jpg';
 import item1 from './images/item1.jpg';
 import item2 from './images/item2.jpg';
 import item3 from './images/item3.jpg';
 import item4 from './images/item4.jpg';
 import item5 from './images/item5.jpg';
-
-let Header = styled.header`
-  position: fixed;
-  top: 0;
-  width: 550px;
-  background-color: black;
-`;
-
-let Btn = styled.div`
-  border none;
-  color : white;
-`;
-
-let Paybtn = styled.button`
-  width: 495px;
-  color: white;
-  background: black;
-  font-size: 50px;
-  border: none;
-`;
-
-let Footer = styled.footer`
-  width: 550px;
-  display: flex;
-  position: fixed;
-  bottom: 0;
-`;
-
-let Pin = styled.div`
-  background-color: lightgray;
-  width: 55px;
-  height: 65px;
-`;
-
-let Price = styled.p`
-  font-size: 50px;
-  font-weight: bold;
-`;
-
-let Title = styled.p`
-  font-size: 20px;
-`;
 
 let Foto = styled.img`
   width: 100%;
@@ -77,6 +28,20 @@ let Review = styled.div`
 let Text = styled.input`
   width: 98.8%;
   height: 100px;
+`;
+
+let Container = styled.div`
+  display: flex;
+`;
+
+let Button = styled.button`
+  cursor: pointer;
+  font-size: 18px;
+`;
+
+let Commend = styled.p`
+  height: 75px;
+  border-bottom: solid 1px black;
 `;
 
 function Iteminfo(props) {
@@ -117,17 +82,19 @@ function Iteminfo(props) {
   } else if (props.info === 2) {
     return (
       <div>
-        <Text
-          onChange={(e) => {
-            setInputData(e.target.value);
-          }}
-          value={inputData}
-        />
-        <button onClick={onClickAddComment}>제출하기</button>
+        <Container>
+          <Text
+            onChange={(e) => {
+              setInputData(e.target.value);
+            }}
+            value={inputData}
+          />
+          <Button onClick={onClickAddComment}>등록</Button>
+        </Container>
 
         <div>
           {commentList.map((value) => (
-            <p>{value}</p>
+            <Commend>{value}</Commend>
           ))}
         </div>
       </div>

@@ -1,9 +1,5 @@
 import React, { useContext, useState } from 'react';
 import './App.css';
-import { GiConsoleController } from 'react-icons/gi';
-import { useSelector } from 'react-redux';
-import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { IoMdArrowBack } from 'react-icons/io';
 import { useHistory } from 'react-router-dom';
@@ -40,7 +36,6 @@ let Arrow = styled.button`
 
 function Shopping(props) {
   let history = useHistory();
-  let [items, setItems] = useState(itemsData);
   return (
     <div>
       <div>
