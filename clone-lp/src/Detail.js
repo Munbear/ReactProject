@@ -7,7 +7,7 @@ import { AiFillPushpin } from 'react-icons/ai';
 
 import product5 from './images/product5.jpg';
 import ItemInfo from './ItemInfo.js';
-import Modal from './Modal.js';
+import Demo from './Modal.js';
 
 let Header = styled.header`
   position: fixed;
@@ -56,13 +56,6 @@ function Detail(props) {
   let { id } = useParams();
   let history = useHistory();
   let [info, setInfo] = useState(0);
-  const [modal, setModal] = useState(false);
-  const openModal = () => {
-    setModal(true);
-  };
-  const closeModal = () => {
-    setModal(false);
-  };
 
   let findItem = props.product.find((x) => x.id == id);
   return (
@@ -112,19 +105,19 @@ function Detail(props) {
         </button>
       </nav>
       <ItemInfo info={info} />
-      <Modal modal={modal} />
 
       <Footer>
         <Pin>
           <AiFillPushpin color='white' size='55' />
         </Pin>
-        <Paybtn
+        {/* <Paybtn
           onClick={() => {
-            modal(false);
+            setModal();
           }}
         >
           구매하기
-        </Paybtn>
+        </Paybtn> */}
+        <Demo />
       </Footer>
     </div>
   );

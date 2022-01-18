@@ -1,28 +1,39 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import { Modal, Button } from 'antd';
+import 'antd/dist/antd.css';
 
-let Modalcontainer = styled.div`
-  display: flex;
-  background-color: pink;
-  width: 100%;
-  height: 100px;
-`;
+const Demo = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
-function Modal(props) {
-  if (props.modal === false)
-    return (
-      <Modalcontainer>
-        <div>
-          <select name='' id=''>
-            <option value=''>M</option>
-            <option value=''>L</option>
-            <option value=''>XL</option>
-          </select>
-          <button>취소</button>
-          <button>구매하기</button>
-        </div>
-      </Modalcontainer>
-    );
-}
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
 
-export default Modal;
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  return (
+    <div>
+      <Button type='primary' onClick={showModal}>
+        Open Modal
+      </Button>
+      <Modal
+        title='Basic Modal'
+        visible={isModalVisible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
+    </div>
+  );
+};
+
+export default Demo;
