@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import './App.css';
+
 import { useHistory, useParams } from 'react-router-dom';
+import './App.css';
 import styled from 'styled-components';
+
 import { IoMdArrowBack } from 'react-icons/io';
 import { AiFillPushpin } from 'react-icons/ai';
-
 import product5 from './images/product5.jpg';
 import ItemInfo from './ItemInfo.js';
-import Demo from './Modal.js';
+import Demo from './AntdModal.js';
+import Modal from './components/Modal.js';
 
 let Header = styled.header`
   position: fixed;
@@ -53,6 +55,12 @@ let Title = styled.p`
 `;
 
 function Detail(props) {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
+
   let { id } = useParams();
   let history = useHistory();
   let [info, setInfo] = useState(0);
@@ -110,14 +118,11 @@ function Detail(props) {
         <Pin>
           <AiFillPushpin color='white' size='55' />
         </Pin>
-        {/* <Paybtn
-          onClick={() => {
-            setModal();
-          }}
-        >
-          구매하기
-        </Paybtn> */}
-        <Demo />
+        <>
+          <Paybtn onClick={openModal}>구매하기</Paybtn>
+          <Modal showModal={showModal} setShowModal={setShowModal} />
+        </>
+        {/* <Demo /> */}
       </Footer>
     </div>
   );

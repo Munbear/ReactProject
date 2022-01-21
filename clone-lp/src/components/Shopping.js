@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
-import './App.css';
+// import './App.css';
 import styled from 'styled-components';
 import { IoMdArrowBack } from 'react-icons/io';
 import { useHistory } from 'react-router-dom';
 
 import outerImg from './images/outer1.jpg';
-import itemsData from './productData.js';
+import itemsData from '../productData.js';
 
 let Div = styled.div`
   display: flex;

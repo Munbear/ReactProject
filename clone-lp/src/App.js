@@ -6,6 +6,7 @@ import { useHistory } from 'react-router';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
+
 import { BsBorderAll, BsHandbag, BsSearch } from 'react-icons/bs';
 import { FaTshirt } from 'react-icons/fa';
 import { GiMonclerJacket, GiArmoredPants, GiSonicShoes } from 'react-icons/gi';
@@ -15,12 +16,13 @@ import { RiWalletLine } from 'react-icons/ri';
 import productData from './productData.js';
 import mallsData from './mallData.js';
 import brandData from './brandData';
-import Shopping from './Shopping.js';
-import Detail from './Detail.js';
-import TabContent from './TabContent';
 
-import logo from './logo.svg';
-import box from './box.svg';
+import Shopping from './scr/components/Shopping.js';
+import Detail from './scr/components/Detail.js';
+import TabContent from './scr/components/TabContent';
+
+import logo from './images/logo.svg';
+import box from './images/box.svg';
 import img1 from './images/1.jpg';
 import img2 from './images/2.jpg';
 import img3 from './images/3.jpg';

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import './App.css';
+// import './App.css';
 import product1 from './images/product5.jpg';
 import mall1 from './images/brand2.jpg';
 import brand1 from './images/brand1.jpg';
