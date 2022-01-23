@@ -9,7 +9,8 @@ import { AiFillPushpin } from 'react-icons/ai';
 import product5 from './images/product5.jpg';
 import ItemInfo from './ItemInfo.js';
 import Demo from './AntdModal.js';
-import Modal from './components/Modal.js';
+import Modal from './Modal.js';
+import { GlobalStyle } from './globalStyles';
 
 let Header = styled.header`
   position: fixed;
@@ -113,16 +114,16 @@ function Detail(props) {
         </button>
       </nav>
       <ItemInfo info={info} />
+      <>
+        <Modal showModal={showModal} setShowModal={setShowModal} />
+        <GlobalStyle />
+      </>
 
       <Footer>
         <Pin>
           <AiFillPushpin color='white' size='55' />
         </Pin>
-        <>
-          <Paybtn onClick={openModal}>구매하기</Paybtn>
-          <Modal showModal={showModal} setShowModal={setShowModal} />
-        </>
-        {/* <Demo /> */}
+        <Paybtn onClick={openModal}>구매하기</Paybtn>
       </Footer>
     </div>
   );

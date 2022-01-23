@@ -17,9 +17,9 @@ import productData from './productData.js';
 import mallsData from './mallData.js';
 import brandData from './brandData';
 
-import Shopping from './scr/components/Shopping.js';
-import Detail from './scr/components/Detail.js';
-import TabContent from './scr/components/TabContent';
+import Shopping from './Shopping.js';
+import Detail from './Detail.js';
+import TabContent from './TabContent';
 
 import logo from './images/logo.svg';
 import box from './images/box.svg';
