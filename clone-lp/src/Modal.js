@@ -26,7 +26,7 @@ const ModalWrapper = styled.div`
 `;
 
 const ModalImg = styled.img`
-  width: 100%;
+  width: 60%;
   height: 100%;
   border-radius: 10px 0 0 10px;
   background: #000;
@@ -71,9 +71,9 @@ const Modal = ({ showModal, setShowModal }) => {
           <ModalWrapper showModal={showModal}>
             <ModalImg src={product5} alt='MentoMen' />
             <ModalContent>
-              <h1>ARe tyo asdfk</h1>
-              <p>a;lkfdj;askjd f;laksjdfl;aksjdfl</p>
-              <button>lig now</button>
+              <h1>This is a modal page</h1>
+              <p>this page what i try to make first modal page.</p>
+              <button>Pay now</button>
             </ModalContent>
             <CloseModalButton
               aria-label='Close modal'

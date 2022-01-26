@@ -80,6 +80,8 @@ function Detail(props) {
           />
         </Btn>
       </Header>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
+
       <div>
         <img src={product5} width='100%' />
       </div>
@@ -114,10 +116,7 @@ function Detail(props) {
         </button>
       </nav>
       <ItemInfo info={info} />
-      <>
-        <Modal showModal={showModal} setShowModal={setShowModal} />
-        <GlobalStyle />
-      </>
+      <GlobalStyle />
 
       <Footer>
         <Pin>
