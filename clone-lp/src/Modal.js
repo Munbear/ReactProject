@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
+import { useSpring, animated } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import product5 from './images/product5.jpg';
 
 const Background = styled.div`
-  width: 550px;
+  max-width: 550px;
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
   position: relative;
-  display: flex;
+  display: flex;q
   justify-content: center;
   align-items: center;
 `;
@@ -64,10 +65,32 @@ const CloseModalButton = styled(MdClose)`
 `;
 
 const Modal = ({ showModal, setShowModal }) => {
+  const modalRef = useRef();
+
+  const closeModal = (e) => {
+    if (modalRef.current === e.target) {
+      setShowModal(false);
+    }
+  };
+
+  const keyPress = useCallback(
+    (e) => {
+      if (e.key === 'Escape' && showModal) {
+        setShowModal(false);
+      }
+    },
+    [setShowModal, showModal]
+  );
+
+  useEffect(() => {
+    document.addEventListener('keydown', keyPress);
+    return () => document.removeEventListener('keydown', keyPress);
+  }, [keyPress]);
+
   return (
     <>
       {showModal ? (
-        <Background>
+        <Background ref={modalRef} onClick={closeModal}>
           <ModalWrapper showModal={showModal}>
             <ModalImg src={product5} alt='MentoMen' />
             <ModalContent>
