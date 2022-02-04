@@ -80,7 +80,11 @@ function Detail(props) {
           />
         </Btn>
       </Header>
-      <Modal showModal={showModal} setShowModal={setShowModal} value='10000' />
+      <Modal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        priceValue={findItem.price}
+      />
 
       <div>
         <img src={product5} width='100%' />

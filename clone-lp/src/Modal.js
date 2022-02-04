@@ -3,6 +3,7 @@ import { useSpring, animated } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import product5 from './images/product5.jpg';
+import { FormItemPrefixContext } from 'antd/lib/form/context';
 
 const Background = styled.div`
   max-width: 550px;
@@ -71,7 +72,7 @@ const Sum = styled.div`
 `;
 
 const Modal = (props) => {
-  const { showModal, setShowModal, value } = props;
+  const { showModal, setShowModal, priceValue } = props;
   const modalRef = useRef();
 
   const closeModal = (e) => {
@@ -109,7 +110,7 @@ const Modal = (props) => {
                 <option value=''>L</option>
                 <option value=''>XL</option>
               </Selection>
-              <Sum>총 금액: {value}</Sum>
+              <Sum>총 금액: {priceValue}</Sum>
             </ModalContent>
             <CloseModalButton
               aria-label='Close modal'
