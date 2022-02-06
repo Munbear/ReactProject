@@ -8,23 +8,22 @@ import { IoMdArrowBack } from 'react-icons/io';
 import { AiFillPushpin } from 'react-icons/ai';
 import product5 from './images/product5.jpg';
 import ItemInfo from './ItemInfo.js';
-import Demo from './AntdModal.js';
 import Modal from './Modal.js';
 import { GlobalStyle } from './globalStyles';
 
-let Header = styled.header`
+const Header = styled.header`
   position: fixed;
   top: 0;
   width: 550px;
   background-color: black;
 `;
 
-let Btn = styled.div`
+const Btn = styled.div`
   border none;
   color : white;
 `;
 
-let Paybtn = styled.button`
+const Paybtn = styled.button`
   width: 495px;
   color: white;
   background: black;
@@ -33,25 +32,25 @@ let Paybtn = styled.button`
   cursor: pointer;
 `;
 
-let Footer = styled.footer`
+const Footer = styled.footer`
   width: 550px;
   display: flex;
   position: fixed;
   bottom: 0;
 `;
 
-let Pin = styled.div`
+const Pin = styled.div`
   background-color: lightgray;
   width: 55px;
   height: 65px;
 `;
 
-let Price = styled.p`
+const Price = styled.p`
   font-size: 50px;
   font-weight: bold;
 `;
 
-let Title = styled.p`
+const Title = styled.p`
   font-size: 20px;
 `;
 

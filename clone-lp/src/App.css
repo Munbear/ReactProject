@@ -9,57 +9,12 @@ html {
   background-color: white;
 }
 
-.header {
-  background-color: black;
-  /* 헤더 고정 해야됨 */
-}
-
-.header__container {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-}
-
-.container__logo {
-  width: 150px;
-}
-
-.search__container {
-  display: flex;
-}
-
-.search__input {
-  width: 100%;
-  height: 30px;
-  border-radius: 20px 20px 20px 20px;
-  border: none;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
 .search__icon {
   margin: 0;
   padding: 0;
   position: relative;
   top: 8px;
   right: 20px;
-}
-
-.item__group {
-  display: flex;
-  overflow: auto;
-}
-
-.item__box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid 1px;
-  flex: 0 0 auto;
-  margin: 10px;
-  width: 80px;
-  height: 80px;
-  cursor: pointer;
 }
 
 .btn__menu {

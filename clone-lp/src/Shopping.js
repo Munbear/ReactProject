@@ -1,20 +1,18 @@
 import React, { useContext, useState } from 'react';
-// import './App.css';
 import styled from 'styled-components';
 import { IoMdArrowBack } from 'react-icons/io';
 import { useHistory } from 'react-router-dom';
 
 import outerImg from './images/outer1.jpg';
-import itemsData from './productData.js';
 
-let Div = styled.div`
+const Div = styled.div`
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid darkgray;
   padding: 15button;
 `;
 
-let Button = styled.button`
+const Button = styled.button`
   background-color: white;
   color: darkgray;
   border : none;
@@ -29,7 +27,7 @@ let Button = styled.button`
   }
 `;
 
-let Arrow = styled.button`
+const Arrow = styled.button`
   background-color: white;
   border none;
 `;

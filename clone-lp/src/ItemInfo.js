@@ -7,15 +7,15 @@ import item3 from './images/item3.jpg';
 import item4 from './images/item4.jpg';
 import item5 from './images/item5.jpg';
 
-let Foto = styled.img`
+const Foto = styled.img`
   width: 100%;
 `;
 
-let Card = styled.div`
+const Card = styled.div`
   padding-bottom: 50px;
 `;
 
-let Review = styled.div`
+const Review = styled.div`
   display: flex;
   -webkit-justify-content: center;
   justify-content: center;
@@ -25,21 +25,21 @@ let Review = styled.div`
   color: #868e96;
 `;
 
-let Text = styled.input`
+const Text = styled.input`
   width: 98.8%;
   height: 100px;
 `;
 
-let Container = styled.div`
+const Container = styled.div`
   display: flex;
 `;
 
-let Button = styled.button`
+const Button = styled.button`
   cursor: pointer;
   font-size: 18px;
 `;
 
-let Commend = styled.p`
+const Commend = styled.p`
   height: 75px;
   border-bottom: solid 1px black;
 `;
