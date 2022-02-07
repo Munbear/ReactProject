@@ -32,6 +32,14 @@ const Input = styled.input`
   placeholder= 'alsdkjflas'
 `;
 
+const Icon = styled(BsSearch)`
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 8px;
+  right: 20px;
+`;
+
 const Header = () => {
   return (
     <>
@@ -42,7 +50,7 @@ const Header = () => {
         </HeaderContainer>
         <SearchContainer>
           <Input />
-          <BsSearch className='search__icon' />
+          <Icon />
         </SearchContainer>
       </HeaderColor>
     </>

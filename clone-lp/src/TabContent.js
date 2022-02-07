@@ -1,54 +1,112 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-// import './App.css';
+import './App.css';
+import styled from 'styled-components';
+
 import product1 from './images/product5.jpg';
 import mall1 from './images/brand2.jpg';
 import brand1 from './images/brand1.jpg';
+
+const ListWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: solid 1px;
+`;
+
+const InfoWrap = styled.div`
+  padding: 10px;
+
+  p {
+    margin: 0;
+  }
+`;
+
+const CardBlock = styled.div`
+  padding: 10px;
+
+  img {
+    width: 100%;
+  }
+`;
+
+const TagName = styled.p`
+  font-size: small;
+  color: lightslategray;
+`;
+
+const ItemWrap = styled.div`
+  width: 50%;
+  display: inline-block;
+`;
+
+const ItemCard = styled.div`
+  padding: 8px;
+
+  img {
+    width: 100%;
+    border-radius: 6%;
+    box-shadow: 2px 1px 7px 0px;
+  }
+`;
+
+const ItemInfo = styled.div`
+  display: box;
+  position: relative;
+  left: 12px;
+
+  p {
+    margin: 0;
+  }
+`;
+
+const Price = styled.p`
+  font-weight: bold;
+`;
 
 function TabContent(props) {
   let history2 = useHistory();
   if (props.tab === 0) {
     return (
-      <div
-        className='products__list'
+      <ItemWrap
         onClick={() => {
           history2.push('/detail/' + props.product.id);
         }}
       >
-        <div className='products__card'>
-          <img src={product1} className='items__img' width='100%' />
-        </div>
-        <div className='products__info'>
-          <p className='products__title'>{props.product.title}</p>
-          <p className='products__price'>{props.product.price}</p>
-        </div>
-      </div>
+        <ItemCard>
+          <img src={product1} />
+        </ItemCard>
+        <ItemInfo>
+          <p>{props.product.title}</p>
+          <Price>{props.product.price}</Price>
+        </ItemInfo>
+      </ItemWrap>
     );
   } else if (props.tab === 1) {
     return (
-      <div className='mall__list'>
-        <div className='mall__info'>
-          <p className='mall__rank'>{props.mall.rank}</p>
-          <h2 className='mall__title'>{props.mall.title}</h2>
-          <p className='title__tag'>{props.mall.chr}</p>
-        </div>
-        <div className='mall__card'>
-          <img className='mall__img' src={mall1} width='100%' />
-        </div>
-      </div>
+      <ListWrap>
+        <InfoWrap>
+          <p>{props.mall.rank}</p>
+          <h2>{props.mall.title}</h2>
+          <TagName>{props.mall.chr}</TagName>
+        </InfoWrap>
+        <CardBlock>
+          <img src={mall1} />
+        </CardBlock>
+      </ListWrap>
     );
   } else if (props.tab === 2) {
     return (
-      <div className='brand__list'>
-        <div className='brand__info'>
-          <p className='brand__rank'>{props.brand.rank}</p>
-          <h2 className='brand__title'>{props.brand.title}</h2>
-          <p className='title__tag'>{props.brand.chr}</p>
-        </div>
-        <div className='brand__card'>
-          <img className='brand__img' src={brand1} />
-        </div>
-      </div>
+      <ListWrap>
+        <InfoWrap>
+          <p>{props.brand.rank}</p>
+          <h2>{props.brand.title}</h2>
+          <TagName>{props.brand.chr}</TagName>
+        </InfoWrap>
+        <CardBlock>
+          <img src={brand1} />
+        </CardBlock>
+      </ListWrap>
     );
   }
 }

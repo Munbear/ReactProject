@@ -54,6 +54,32 @@ const Title = styled.p`
   font-size: 20px;
 `;
 
+const NavMenue = styled.nav`
+  display: flex;
+  flex: 1 1 40%;
+  justify-content: center;
+  ursor: pointer;
+  border-bottom; solid 1px darkgray;
+`;
+
+const Button = styled.button`
+  background-color: white;
+  color: gray;
+  flex: 1 1 40%;
+  width: 120px;
+  height: 50px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+
+  :hover {
+    color: black;
+    border-bottom: 1px solid black;
+    font-weight: bold:
+  }
+`;
+
 function Detail(props) {
   const [showModal, setShowModal] = useState(false);
 
@@ -92,32 +118,29 @@ function Detail(props) {
         <Title>{findItem.title}</Title>
         <Price>{findItem.price}</Price>
       </div>
-      <nav className='btn__menu'>
-        <button
-          className='btn pointOn'
+      <NavMenue>
+        <Button
           onClick={() => {
             setInfo(0);
           }}
         >
           상품정보
-        </button>
-        <button
-          className='btn pointOn'
+        </Button>
+        <Button
           onClick={() => {
             setInfo(1);
           }}
         >
           리뷰
-        </button>
-        <button
-          className='btn pointOn'
+        </Button>
+        <Button
           onClick={() => {
             setInfo(2);
           }}
         >
           Q&A
-        </button>
-      </nav>
+        </Button>
+      </NavMenue>
       <ItemInfo info={info} />
       <GlobalStyle />
 

@@ -32,6 +32,35 @@ const Arrow = styled.button`
   border none;
 `;
 
+const CardWrap = styled.div`
+  width: 50%;
+  display: inline-block;
+`;
+
+const CardInfo = styled.div`
+  display: box;
+  position: relative;
+  left: 12px;
+
+  p {
+    margin: 0;
+  }
+`;
+
+const ImgWrap = styled.div`
+  padding: 8px;
+
+  img {
+    width: 100%;
+    border-radius: 6%;
+    box-shadow: 2px 1px 7px 0px;
+  }
+`;
+
+const CardPrice = styled.p`
+  font-weight: bold;
+`;
+
 function Shopping(props) {
   let history = useHistory();
   return (
@@ -57,17 +86,17 @@ function Shopping(props) {
         <Button>기타</Button>
       </Div>
 
-      {props.product.map((a, i) => {
+      {props.top.map((a, i) => {
         return (
-          <div className='tab__cards'>
-            <div className='card__img__area'>
-              <img src={outerImg} className='card__img' />
-            </div>
-            <div className='products__info'>
-              <p>{props.product[1].title}</p>
-              <p className='products__price'>{props.product[1].price}</p>
-            </div>
-          </div>
+          <CardWrap>
+            <ImgWrap>
+              <img src={outerImg} />
+            </ImgWrap>
+            <CardInfo>
+              <p>{props.top[i].title}</p>
+              <CardPrice>{props.top[i].price}</CardPrice>
+            </CardInfo>
+          </CardWrap>
         );
       })}
     </div>

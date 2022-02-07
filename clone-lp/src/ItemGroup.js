@@ -33,7 +33,7 @@ const ItemGroup = () => {
       <ItemBox
         className='item__box'
         onClick={() => {
-          history.push('/shopping');
+          history.push('/shopping/all');
         }}
       >
         <BsBorderAll size='30' />

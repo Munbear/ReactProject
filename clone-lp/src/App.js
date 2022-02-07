@@ -1,13 +1,13 @@
 import './App.css';
 import { Route } from 'react-router-dom';
 import React, { useState } from 'react';
-
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import styled from 'styled-components';
 
 import productData from './productData.js';
 import mallsData from './mallData.js';
-import brandData from './brandData';
+import brandData from './brandData.js';
+import topData from './topData.js';
+import pantsData from './pantsData.js';
 
 import Shopping from './Shopping.js';
 import Detail from './Detail.js';
@@ -16,45 +16,69 @@ import Header from './Header.js';
 import ItemGroup from './ItemGroup.js';
 import SlickSlider from './SlickSlider.js';
 
+const NavMenu = styled.nav`
+  display: flex;
+  flex: 1 1 40%;
+  justify-content: center;
+  border-bottom: solid 1px darkgray;
+`;
+
+const NavBtn = styled.button`
+  background-color: white;
+  color: gray;
+  flex: 1 1 40%;
+  width: 120px;
+  height: 50px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+
+  :hover {
+    color: black;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+  }
+`;
+
 function App() {
   let [mall, setMall] = useState(mallsData);
   let [product, setProduct] = useState(productData);
   let [brand, setBrand] = useState(brandData);
+  let [top, setTopData] = useState(topData);
+  let [pant, setPantData] = useState(pantsData);
   let [tab, setTab] = useState(0);
 
   return (
     <div className='App'>
       <Route exact path='/'>
         <Header />
-        <SlickSlider></SlickSlider>
+        <SlickSlider />
         <ItemGroup />
 
-        <nav className='btn__menu'>
-          <button
-            className='btn pointOn'
+        <NavMenu>
+          <NavBtn
             onClick={() => {
               setTab(0);
             }}
           >
             상품
-          </button>
-          <button
-            className='btn pointOn'
+          </NavBtn>
+          <NavBtn
             onClick={() => {
               setTab(1);
             }}
           >
             쇼핑몰
-          </button>
-          <button
-            className='btn pointOn'
+          </NavBtn>
+          <NavBtn
             onClick={() => {
               setTab(2);
             }}
           >
             브랜드
-          </button>
-        </nav>
+          </NavBtn>
+        </NavMenu>
 
         {product.map((a, i) => {
           return (
@@ -72,7 +96,7 @@ function App() {
 
       <Route path='/shopping/'>
         {/* 쇼핑 뒤에 :id 처럼 부여서 다른 페이지 보여주게하기*/}
-        <Shopping product={product} />
+        <Shopping top={top} pant={pant} />
       </Route>
 
       <Route path='/detail/:id'>

@@ -9,7 +9,7 @@ const Background = styled.div`
   max-width: 550px;
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
-  position: relative;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
