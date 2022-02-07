@@ -5,22 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import Items from './productData.js';
-
-// let ItemsData = useState(Items);
-
-let store = createStore(() => {
-  return [{ id: 0, name: '시발' }];
-});
-
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <App />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
