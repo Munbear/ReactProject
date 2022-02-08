@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 import outerImg from './images/outer1.jpg';
 
@@ -54,8 +55,8 @@ const MenuCards = (props) => {
           <img src={outerImg} />
         </ImgWrap>
         <CardInfo>
-          <p>{props.top.title}</p>
-          <CardPrice>{props.top.price}</CardPrice>
+          <p>{props.findMenu.title}</p>
+          <CardPrice>{props.findMenu.price}</CardPrice>
         </CardInfo>
       </CardWrap>
     );
