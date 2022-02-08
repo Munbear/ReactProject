@@ -44,7 +44,7 @@ const Commend = styled.p`
   border-bottom: solid 1px black;
 `;
 
-function Iteminfo(props) {
+const Iteminfo = (props) => {
   let [inputData, setInputData] = useState('');
   let [commentList, setCommentList] = useState([]);
 
@@ -100,6 +100,6 @@ function Iteminfo(props) {
       </div>
     );
   }
-}
+};
 
 export default Iteminfo;

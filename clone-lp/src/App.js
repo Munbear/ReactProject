@@ -1,5 +1,5 @@
 import './App.css';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
@@ -9,7 +9,7 @@ import brandData from './brandData.js';
 import topData from './topData.js';
 import pantsData from './pantsData.js';
 
-import Shopping from './Shopping.js';
+import ShoppingList from './shoppingList.js';
 import Detail from './Detail.js';
 import TabContent from './TabContent';
 import Header from './Header.js';
@@ -45,8 +45,6 @@ function App() {
   let [mall, setMall] = useState(mallsData);
   let [product, setProduct] = useState(productData);
   let [brand, setBrand] = useState(brandData);
-  let [top, setTopData] = useState(topData);
-  let [pant, setPantData] = useState(pantsData);
   let [tab, setTab] = useState(0);
 
   return (
@@ -93,15 +91,16 @@ function App() {
           );
         })}
       </Route>
+      <Switch>
+        <Route path='/shopping/:id'>
+          {/* 쇼핑 뒤에 :id 처럼 부여서 다른 페이지 보여주게하기*/}
+          <ShoppingList />
+        </Route>
 
-      <Route path='/shopping/'>
-        {/* 쇼핑 뒤에 :id 처럼 부여서 다른 페이지 보여주게하기*/}
-        <Shopping top={top} pant={pant} />
-      </Route>
-
-      <Route path='/detail/:id'>
-        <Detail product={product} />
-      </Route>
+        <Route path='/detail/:id'>
+          <Detail product={product} />
+        </Route>
+      </Switch>
     </div>
   );
 }

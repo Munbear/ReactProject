@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-import { BsBorderAll, BsHandbag } from 'react-icons/bs';
+import { BsBorderAll } from 'react-icons/bs';
 import { FaTshirt } from 'react-icons/fa';
 import { GiMonclerJacket, GiArmoredPants, GiSonicShoes } from 'react-icons/gi';
 import { VscWatch } from 'react-icons/vsc';
@@ -42,7 +42,7 @@ const ItemGroup = () => {
       <ItemBox
         className='item__box'
         onClick={() => {
-          history.push('/shopping');
+          history.push('/shopping/top');
         }}
       >
         <FaTshirt size='40' />
@@ -51,75 +51,42 @@ const ItemGroup = () => {
       <ItemBox
         className='item__box'
         onClick={() => {
-          history.push('/shopping');
+          history.push('/shopping/outer');
         }}
       >
-        <GiMonclerJacket
-          size='40'
-          onClick={() => {
-            history.push('/shopping');
-          }}
-        />
+        <GiMonclerJacket size='40' />
       </ItemBox>
       <ItemBox
         className='item__box'
         onClick={() => {
-          history.push('/shopping');
+          history.push('/shopping/pants');
         }}
       >
-        <GiArmoredPants
-          size='40'
-          onClick={() => {
-            history.push('/shopping');
-          }}
-        />
+        <GiArmoredPants size='40' />
       </ItemBox>
       <ItemBox
         className='item__box'
         onClick={() => {
-          history.push('/shopping');
+          history.push('/shopping/shoes');
         }}
       >
-        <GiSonicShoes
-          size='40'
-          onClick={() => {
-            history.push('/shopping');
-          }}
-        />
+        <GiSonicShoes size='40' />
       </ItemBox>
       <ItemBox
         className='item__box'
         onClick={() => {
-          history.push('/shopping');
+          history.push('/shopping/jewellery');
         }}
       >
-        <BsHandbag
-          size='40'
-          onClick={() => {
-            history.push('/shopping');
-          }}
-        />
+        <VscWatch size='40' />
       </ItemBox>
       <ItemBox
         className='item__box'
         onClick={() => {
-          history.push('/shopping');
+          history.push('/shopping/someting');
         }}
       >
-        <VscWatch
-          size='40'
-          onClick={() => {
-            history.push('/shopping');
-          }}
-        />
-      </ItemBox>
-      <ItemBox className='item__box'>
-        <RiWalletLine
-          size='40'
-          onClick={() => {
-            history.push('/shopping');
-          }}
-        />
+        <RiWalletLine size='40' />
       </ItemBox>
     </ItemMenue>
   );
