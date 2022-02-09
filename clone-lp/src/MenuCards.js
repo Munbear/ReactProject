@@ -55,8 +55,8 @@ const MenuCards = (props) => {
           <img src={outerImg} />
         </ImgWrap>
         <CardInfo>
-          <p>{props.findMenu.title}</p>
-          <CardPrice>{props.findMenu.price}</CardPrice>
+          <p>{props.top.title}</p>
+          <CardPrice>{props.top.price}</CardPrice>
         </CardInfo>
       </CardWrap>
     );

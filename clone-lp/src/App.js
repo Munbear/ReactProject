@@ -1,13 +1,11 @@
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import productData from './productData.js';
 import mallsData from './mallData.js';
 import brandData from './brandData.js';
-import topData from './topData.js';
-import pantsData from './pantsData.js';
 
 import ShoppingList from './shoppingList.js';
 import Detail from './Detail.js';
@@ -92,7 +90,7 @@ function App() {
         })}
       </Route>
       <Switch>
-        <Route path='/shopping/:id'>
+        <Route path='/shopping/:path'>
           {/* 쇼핑 뒤에 :id 처럼 부여서 다른 페이지 보여주게하기*/}
           <ShoppingList />
         </Route>

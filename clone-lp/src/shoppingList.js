@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { IoMdArrowBack } from 'react-icons/io';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams, Routes, Route } from 'react-router-dom';
 
 import MenuCards from './MenuCards.js';
 
@@ -54,10 +54,6 @@ const ShoppingList = (props) => {
   let [shoes, setShoesData] = useState(shoesData);
 
   let history = useHistory();
-  let { id } = useParams();
-  let findMenu = props.shoes.find((x) => {
-    x.id == id;
-  });
 
   return (
     <div>
@@ -129,24 +125,25 @@ const ShoppingList = (props) => {
           기타
         </Button>
       </Div>
-      {top.map((a, i) => {
-        return (
-          <MenuCards
-            CardMenu={CardMenu}
-            all={all[i]}
-            top={top[i]}
-            pant={pant[i]}
-            bag={bag[i]}
-            outer={outer[i]}
-            jewellery={jewellery[i]}
-            shoes={shoes[i]}
-            other={other[i]}
-            i={i}
-            key={i}
-            findMenu={findMenu}
-          />
-        );
-      })}
+      <Route path='/shopping/:id'>
+        {top.map((a, i) => {
+          return (
+            <MenuCards
+              CardMenu={CardMenu}
+              all={all[i]}
+              top={top[i]}
+              pant={pant[i]}
+              bag={bag[i]}
+              outer={outer[i]}
+              jewellery={jewellery[i]}
+              shoes={shoes[i]}
+              other={other[i]}
+              i={i}
+              key={i}
+            />
+          );
+        })}
+      </Route>
     </div>
   );
 };

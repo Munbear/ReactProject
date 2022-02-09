@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 
@@ -31,59 +32,52 @@ const ItemGroup = () => {
   return (
     <ItemMenue>
       <ItemBox
-        className='item__box'
         onClick={() => {
-          history.push('/shopping/all');
+          history.push('/shpping/all');
         }}
       >
         <BsBorderAll size='30' />
       </ItemBox>
 
       <ItemBox
-        className='item__box'
         onClick={() => {
-          history.push('/shopping/top');
+          history.push('/shopping');
         }}
       >
         <FaTshirt size='40' />
       </ItemBox>
 
       <ItemBox
-        className='item__box'
         onClick={() => {
-          history.push('/shopping/outer');
+          history.push('/shopping');
         }}
       >
         <GiMonclerJacket size='40' />
       </ItemBox>
       <ItemBox
-        className='item__box'
         onClick={() => {
-          history.push('/shopping/pants');
+          history.push('/shopping');
         }}
       >
         <GiArmoredPants size='40' />
       </ItemBox>
       <ItemBox
-        className='item__box'
         onClick={() => {
-          history.push('/shopping/shoes');
+          history.push('/shopping');
         }}
       >
         <GiSonicShoes size='40' />
       </ItemBox>
       <ItemBox
-        className='item__box'
         onClick={() => {
-          history.push('/shopping/jewellery');
+          history.push('/shopping');
         }}
       >
         <VscWatch size='40' />
       </ItemBox>
       <ItemBox
-        className='item__box'
         onClick={() => {
-          history.push('/shopping/someting');
+          history.push('/shopping');
         }}
       >
         <RiWalletLine size='40' />
