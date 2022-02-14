@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
@@ -9,6 +9,7 @@ import { FaTshirt } from 'react-icons/fa';
 import { GiMonclerJacket, GiArmoredPants, GiSonicShoes } from 'react-icons/gi';
 import { VscWatch } from 'react-icons/vsc';
 import { RiWalletLine } from 'react-icons/ri';
+import { useParams } from 'react-router-dom';
 
 const ItemMenue = styled.div`
   display: flex;
@@ -33,7 +34,7 @@ const ItemGroup = () => {
     <ItemMenue>
       <ItemBox
         onClick={() => {
-          history.push('/shpping/all');
+          history.push('/shopping');
         }}
       >
         <BsBorderAll size='30' />

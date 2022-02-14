@@ -93,7 +93,7 @@ function Detail(props) {
 
   let findItem = props.product.find((x) => x.id == id);
   return (
-    <div>
+    <>
       <Header>
         <Btn>
           <IoMdArrowBack
@@ -150,7 +150,7 @@ function Detail(props) {
         </Pin>
         <Paybtn onClick={openModal}>구매하기</Paybtn>
       </Footer>
-    </div>
+    </>
   );
 }
 

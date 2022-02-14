@@ -125,25 +125,23 @@ const ShoppingList = (props) => {
           기타
         </Button>
       </Div>
-      <Route path='/shopping/:id'>
-        {top.map((a, i) => {
-          return (
-            <MenuCards
-              CardMenu={CardMenu}
-              all={all[i]}
-              top={top[i]}
-              pant={pant[i]}
-              bag={bag[i]}
-              outer={outer[i]}
-              jewellery={jewellery[i]}
-              shoes={shoes[i]}
-              other={other[i]}
-              i={i}
-              key={i}
-            />
-          );
-        })}
-      </Route>
+      {top.map((a, i) => {
+        return (
+          <MenuCards
+            CardMenu={CardMenu}
+            all={all[i]}
+            top={top[i]}
+            pant={pant[i]}
+            bag={bag[i]}
+            outer={outer[i]}
+            jewellery={jewellery[i]}
+            shoes={shoes[i]}
+            other={other[i]}
+            i={i}
+            key={i}
+          />
+        );
+      })}
     </div>
   );
 };
