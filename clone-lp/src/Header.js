@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BsSearch } from 'react-icons/bs';
+import { GiShoppingCart as ShoppingCart } from 'react-icons/gi';
+
 import logo from './images/logo.svg';
 import box from './images/box.svg';
 
@@ -46,7 +48,7 @@ const Header = () => {
       <HeaderColor>
         <HeaderContainer>
           <LookpinLogo src={logo} />
-          <img src={box} />
+          <ShoppingCart color='white' size='30px' />
         </HeaderContainer>
         <SearchContainer>
           <Input />

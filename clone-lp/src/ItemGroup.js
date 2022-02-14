@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-import { BsBorderAll } from 'react-icons/bs';
+import { BsBorderAll, BsBagFill } from 'react-icons/bs';
 import { FaTshirt } from 'react-icons/fa';
 import { GiMonclerJacket, GiArmoredPants, GiSonicShoes } from 'react-icons/gi';
 import { VscWatch } from 'react-icons/vsc';
@@ -33,52 +33,63 @@ const ItemGroup = () => {
   return (
     <ItemMenue>
       <ItemBox
+        id='all'
         onClick={() => {
-          history.push('/shopping');
+          history.push('/shopping/all');
         }}
       >
         <BsBorderAll size='30' />
       </ItemBox>
 
       <ItemBox
+        id='top'
         onClick={() => {
-          history.push('/shopping');
+          history.push('/shopping/top');
         }}
       >
         <FaTshirt size='40' />
       </ItemBox>
 
       <ItemBox
+        id='outer'
         onClick={() => {
-          history.push('/shopping');
+          history.push('/shopping/outer');
         }}
       >
         <GiMonclerJacket size='40' />
       </ItemBox>
       <ItemBox
+        id='pant'
         onClick={() => {
-          history.push('/shopping');
+          history.push('/shopping/pant');
         }}
       >
         <GiArmoredPants size='40' />
       </ItemBox>
       <ItemBox
         onClick={() => {
-          history.push('/shopping');
+          history.push('/shopping/shoes');
         }}
       >
         <GiSonicShoes size='40' />
       </ItemBox>
       <ItemBox
         onClick={() => {
-          history.push('/shopping');
+          history.push('/shopping/bag');
+        }}
+      >
+        <BsBagFill size='40' />
+      </ItemBox>
+      <ItemBox
+        onClick={() => {
+          history.push('/shopping/jewellery');
         }}
       >
         <VscWatch size='40' />
       </ItemBox>
       <ItemBox
         onClick={() => {
-          history.push('/shopping');
+          history.push('/shopping/otherthing');
         }}
       >
         <RiWalletLine size='40' />
