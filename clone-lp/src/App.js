@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import productData from './productData.js';
 import mallsData from './mallData.js';
 import brandData from './brandData.js';
+import allData from './allData.js';
 
 import ShoppingList from './shoppingList.js';
 import Detail from './Detail.js';
@@ -13,6 +14,7 @@ import TabContent from './TabContent';
 import Header from './Header.js';
 import ItemGroup from './ItemGroup.js';
 import SlickSlider from './SlickSlider.js';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 const NavMenu = styled.nav`
   display: flex;
@@ -44,13 +46,14 @@ function App() {
   let [product, setProduct] = useState(productData);
   let [brand, setBrand] = useState(brandData);
   let [tab, setTab] = useState(0);
+  let [allItem, setAllItem] = useState(allData);
 
   return (
     <div className='App'>
       <Route exact path='/'>
         <Header />
         <SlickSlider />
-        <ItemGroup />
+        <ItemGroup allItem={allItem} />
 
         <NavMenu>
           <NavBtn
@@ -90,7 +93,7 @@ function App() {
         })}
       </Route>
       <Switch>
-        <Route path='/shopping' component={ShoppingList} />
+        <Route path='/shopping/:path' component={() => <ShoppingList />} />
         <Route
           path='/detail/:id'
           component={() => <Detail product={product} />}

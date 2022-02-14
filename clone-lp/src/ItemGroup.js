@@ -28,14 +28,15 @@ const ItemBox = styled.div`
   cursor: pointer;
 `;
 
-const ItemGroup = () => {
+const ItemGroup = (props) => {
   let history = useHistory();
+
   return (
     <ItemMenue>
       <ItemBox
-        id='all'
+        pathName='all'
         onClick={() => {
-          history.push('/shopping/all');
+          history.push('/shopping/' + props.allItem.path);
         }}
       >
         <BsBorderAll size='30' />
@@ -44,7 +45,7 @@ const ItemGroup = () => {
       <ItemBox
         id='top'
         onClick={() => {
-          history.push('/shopping/top');
+          history.push('/shopping/' + props.allItem.path);
         }}
       >
         <FaTshirt size='40' />
@@ -53,7 +54,7 @@ const ItemGroup = () => {
       <ItemBox
         id='outer'
         onClick={() => {
-          history.push('/shopping/outer');
+          history.push('/shopping/' + props.allItem.path);
         }}
       >
         <GiMonclerJacket size='40' />
@@ -61,35 +62,39 @@ const ItemGroup = () => {
       <ItemBox
         id='pant'
         onClick={() => {
-          history.push('/shopping/pant');
+          history.push('/shopping/' + props.allItem.path);
         }}
       >
         <GiArmoredPants size='40' />
       </ItemBox>
       <ItemBox
+        id='shoes'
         onClick={() => {
-          history.push('/shopping/shoes');
+          history.push('/shopping/' + props.allItem.path);
         }}
       >
         <GiSonicShoes size='40' />
       </ItemBox>
       <ItemBox
+        id='bag'
         onClick={() => {
-          history.push('/shopping/bag');
+          history.push('/shopping/' + props.allItem.path);
         }}
       >
         <BsBagFill size='40' />
       </ItemBox>
       <ItemBox
+        id='jewellery'
         onClick={() => {
-          history.push('/shopping/jewellery');
+          history.push('/shopping/' + props.allItem.path);
         }}
       >
         <VscWatch size='40' />
       </ItemBox>
       <ItemBox
+        id='otherthing'
         onClick={() => {
-          history.push('/shopping/otherthing');
+          history.push('/shopping/' + props.allItem.path);
         }}
       >
         <RiWalletLine size='40' />
