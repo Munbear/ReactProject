@@ -5,14 +5,16 @@ import { useHistory, useParams, Routes, Route } from 'react-router-dom';
 
 import MenuCards from './MenuCards.js';
 
-import allData from './allData.js';
-import topData from './topData.js';
-import pantsData from './pantsData.js';
-import outerData from './outerData.js';
-import shoesData from './shoesData.js';
-import jewelleryData from './jewelleryData.js';
-import otherData from './otherData.js';
-import bagData from './bagData.js';
+import allData from './Data/allData.js';
+import topData from './Data/topData.js';
+import pantsData from './Data/pantsData.js';
+import outerData from './Data/outerData.js';
+import shoesData from './Data/shoesData.js';
+import jewelleryData from './Data/jewelleryData.js';
+import otherData from './Data/otherData.js';
+import bagData from './Data/bagData.js';
+
+import menuData from './Data/testData.js';
 
 const Div = styled.div`
   display: flex;

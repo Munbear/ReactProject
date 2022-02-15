@@ -3,10 +3,11 @@ import { Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import productData from './productData.js';
-import mallsData from './mallData.js';
-import brandData from './brandData.js';
-import allData from './allData.js';
+import productData from './Data/productData.js';
+import mallsData from './Data/mallData.js';
+import brandData from './Data/brandData.js';
+
+// import testData from './Data/testData.js';
 
 import ShoppingList from './shoppingList.js';
 import Detail from './Detail.js';
@@ -14,71 +15,23 @@ import TabContent from './TabContent';
 import Header from './Header.js';
 import ItemGroup from './ItemGroup.js';
 import SlickSlider from './SlickSlider.js';
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
-
-const NavMenu = styled.nav`
-  display: flex;
-  flex: 1 1 40%;
-  justify-content: center;
-  border-bottom: solid 1px darkgray;
-`;
-
-const NavBtn = styled.button`
-  background-color: white;
-  color: gray;
-  flex: 1 1 40%;
-  width: 120px;
-  height: 50px;
-  font-size: 18px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in;
-
-  :hover {
-    color: black;
-    border-bottom: 1px solid black;
-    font-weight: bold;
-  }
-`;
+import NavMenu from './NavMenu.js';
 
 function App() {
   let [mall, setMall] = useState(mallsData);
   let [product, setProduct] = useState(productData);
   let [brand, setBrand] = useState(brandData);
   let [tab, setTab] = useState(0);
-  let [allItem, setAllItem] = useState(allData);
+
+  // let [test, setTestData] = useState(testData);
 
   return (
     <div className='App'>
       <Route exact path='/'>
         <Header />
         <SlickSlider />
-        <ItemGroup allItem={allItem} />
-
-        <NavMenu>
-          <NavBtn
-            onClick={() => {
-              setTab(0);
-            }}
-          >
-            상품
-          </NavBtn>
-          <NavBtn
-            onClick={() => {
-              setTab(1);
-            }}
-          >
-            쇼핑몰
-          </NavBtn>
-          <NavBtn
-            onClick={() => {
-              setTab(2);
-            }}
-          >
-            브랜드
-          </NavBtn>
-        </NavMenu>
-
+        <ItemGroup />
+        <NavMenu setTab={setTab} />
         {product.map((a, i) => {
           return (
             <TabContent
@@ -93,7 +46,7 @@ function App() {
         })}
       </Route>
       <Switch>
-        <Route path='/shopping/:path' component={() => <ShoppingList />} />
+        <Route path='/shopping/' component={() => <ShoppingList />} />
         <Route
           path='/detail/:id'
           component={() => <Detail product={product} />}

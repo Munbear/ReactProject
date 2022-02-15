@@ -1,6 +1,5 @@
 import React from 'react';
-import { useHistory, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import styled from 'styled-components';
 
@@ -9,7 +8,6 @@ import { FaTshirt } from 'react-icons/fa';
 import { GiMonclerJacket, GiArmoredPants, GiSonicShoes } from 'react-icons/gi';
 import { VscWatch } from 'react-icons/vsc';
 import { RiWalletLine } from 'react-icons/ri';
-import { useParams } from 'react-router-dom';
 
 const ItemMenue = styled.div`
   display: flex;
@@ -34,9 +32,8 @@ const ItemGroup = (props) => {
   return (
     <ItemMenue>
       <ItemBox
-        pathName='all'
         onClick={() => {
-          history.push('/shopping/' + props.allItem.path);
+          history.push('/shopping/');
         }}
       >
         <BsBorderAll size='30' />
@@ -45,7 +42,7 @@ const ItemGroup = (props) => {
       <ItemBox
         id='top'
         onClick={() => {
-          history.push('/shopping/' + props.allItem.path);
+          history.push('/shopping/');
         }}
       >
         <FaTshirt size='40' />
@@ -54,7 +51,7 @@ const ItemGroup = (props) => {
       <ItemBox
         id='outer'
         onClick={() => {
-          history.push('/shopping/' + props.allItem.path);
+          history.push('/shopping/');
         }}
       >
         <GiMonclerJacket size='40' />
@@ -62,7 +59,7 @@ const ItemGroup = (props) => {
       <ItemBox
         id='pant'
         onClick={() => {
-          history.push('/shopping/' + props.allItem.path);
+          history.push('/shopping/');
         }}
       >
         <GiArmoredPants size='40' />
@@ -70,7 +67,7 @@ const ItemGroup = (props) => {
       <ItemBox
         id='shoes'
         onClick={() => {
-          history.push('/shopping/' + props.allItem.path);
+          history.push('/shopping/');
         }}
       >
         <GiSonicShoes size='40' />
@@ -78,7 +75,7 @@ const ItemGroup = (props) => {
       <ItemBox
         id='bag'
         onClick={() => {
-          history.push('/shopping/' + props.allItem.path);
+          history.push('/shopping/');
         }}
       >
         <BsBagFill size='40' />
@@ -86,7 +83,7 @@ const ItemGroup = (props) => {
       <ItemBox
         id='jewellery'
         onClick={() => {
-          history.push('/shopping/' + props.allItem.path);
+          history.push('/shopping/');
         }}
       >
         <VscWatch size='40' />
@@ -94,7 +91,7 @@ const ItemGroup = (props) => {
       <ItemBox
         id='otherthing'
         onClick={() => {
-          history.push('/shopping/' + props.allItem.path);
+          history.push('/shopping/');
         }}
       >
         <RiWalletLine size='40' />

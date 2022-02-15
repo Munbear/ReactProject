@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import { useHistory, useParams } from 'react-router-dom';
-import './App.css';
 import styled from 'styled-components';
 
 import { IoMdArrowBack } from 'react-icons/io';
@@ -54,7 +53,7 @@ const Title = styled.p`
   font-size: 20px;
 `;
 
-const NavMenue = styled.nav`
+const MenuWrap = styled.nav`
   display: flex;
   flex: 1 1 40%;
   justify-content: center;
@@ -118,7 +117,7 @@ function Detail(props) {
         <Title>{findItem.title}</Title>
         <Price>{findItem.price}</Price>
       </div>
-      <NavMenue>
+      <MenuWrap>
         <Button
           onClick={() => {
             setInfo(0);
@@ -140,7 +139,7 @@ function Detail(props) {
         >
           Q&A
         </Button>
-      </NavMenue>
+      </MenuWrap>
       <ItemInfo info={info} />
       <GlobalStyle />
 
