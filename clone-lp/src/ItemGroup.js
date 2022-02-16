@@ -33,7 +33,7 @@ const ItemGroup = (props) => {
     <ItemMenue>
       <ItemBox
         onClick={() => {
-          history.push('/shopping/');
+          history.push('/shopping/' + props.test.path);
         }}
       >
         <BsBorderAll size='30' />

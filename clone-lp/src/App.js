@@ -7,7 +7,7 @@ import productData from './Data/productData.js';
 import mallsData from './Data/mallData.js';
 import brandData from './Data/brandData.js';
 
-// import testData from './Data/testData.js';
+import testData from './Data/testData.js';
 
 import ShoppingList from './shoppingList.js';
 import Detail from './Detail.js';
@@ -21,6 +21,9 @@ function App() {
   let [mall, setMall] = useState(mallsData);
   let [product, setProduct] = useState(productData);
   let [brand, setBrand] = useState(brandData);
+
+  let [test, setTest] = useState(testData);
+
   let [tab, setTab] = useState(0);
 
   // let [test, setTestData] = useState(testData);
@@ -30,7 +33,7 @@ function App() {
       <Route exact path='/'>
         <Header />
         <SlickSlider />
-        <ItemGroup />
+        <ItemGroup testData={testData} />
         <NavMenu setTab={setTab} />
         {product.map((a, i) => {
           return (
@@ -46,7 +49,10 @@ function App() {
         })}
       </Route>
       <Switch>
-        <Route path='/shopping/' component={() => <ShoppingList />} />
+        <Route
+          path='/shopping/:path'
+          component={() => <ShoppingList testData={testData} />}
+        />
         <Route
           path='/detail/:id'
           component={() => <Detail product={product} />}
