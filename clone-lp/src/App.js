@@ -1,13 +1,13 @@
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
-import styled from 'styled-components';
 
 import productData from './Data/productData.js';
 import mallsData from './Data/mallData.js';
 import brandData from './Data/brandData.js';
 
-import testData from './Data/testData.js';
+// import testData from './Data/testData.js';
+import { TestData } from './Data/testData.js';
 
 import ShoppingList from './shoppingList.js';
 import Detail from './Detail.js';
@@ -22,7 +22,7 @@ function App() {
   let [product, setProduct] = useState(productData);
   let [brand, setBrand] = useState(brandData);
 
-  let [test, setTest] = useState(testData);
+  // let [test, setTest] = useState(testData);
 
   let [tab, setTab] = useState(0);
 
@@ -33,7 +33,8 @@ function App() {
       <Route exact path='/'>
         <Header />
         <SlickSlider />
-        <ItemGroup testData={testData} />
+
+        <ItemGroup />
         <NavMenu setTab={setTab} />
         {product.map((a, i) => {
           return (
@@ -51,7 +52,7 @@ function App() {
       <Switch>
         <Route
           path='/shopping/:path'
-          component={() => <ShoppingList testData={testData} />}
+          component={() => <ShoppingList test={test} />}
         />
         <Route
           path='/detail/:id'

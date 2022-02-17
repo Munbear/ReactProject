@@ -1,32 +1,57 @@
-export default [
+import React from 'react';
+import { BsBorderAll, BsBagFill } from 'react-icons/bs';
+import { FaTshirt } from 'react-icons/fa';
+import { GiMonclerJacket, GiArmoredPants, GiSonicShoes } from 'react-icons/gi';
+import { VscWatch } from 'react-icons/vsc';
+import { RiWalletLine } from 'react-icons/ri';
+
+export const TestData = [
   {
-    path: '0',
-    title: '가나다람',
-    price: '777,000원',
+    title: 'All',
+    path: '/all',
+    icon: <BsBorderAll size='30' />,
+    cName: 'menu-box',
   },
   {
-    path: '1',
-    title: '거너더러머',
-    price: '900,000원',
+    title: 'Tkop',
+    path: '/top',
+    icon: <FaTshirt size='40' />,
+    cName: 'menu-box',
   },
   {
-    path: '2',
-    title: '기니디리',
-    price: '287,200원',
+    title: 'Outer',
+    path: '/outer',
+    icon: <GiMonclerJacket size='40' />,
+    cName: 'menu-box',
   },
   {
-    path: '3',
-    title: '개내대래',
-    price: '70,000원',
+    title: 'Pant',
+    path: '/pants',
+    icon: <GiArmoredPants size='40' />,
+    cName: 'menu-box',
   },
   {
-    path: '4',
-    title: '아몰라 ㅅ비ㅏㄹ',
-    price: '67,000원',
+    title: 'Shoes',
+    path: '/shoes',
+    icon: <GiSonicShoes size='40' />,
+    cName: 'menu-box',
   },
   {
-    path: '5',
-    title: '몰라몰람라ㅓ미아러',
-    price: '129,000원',
+    title: 'Bag',
+    path: '/bag',
+    icon: <BsBagFill size='40' />,
+    cName: 'menu-box',
+  },
+  {
+    title: 'Jewellery',
+    path: '/jewellery',
+    icon: <VscWatch size='40' />,
+    cName: 'menu-box',
+  },
+  {
+    title: 'Otherthing',
+    path: '/Otherthing',
+    icon: <RiWalletLine size='40' />,
+    cName: 'menu-box',
   },
 ];

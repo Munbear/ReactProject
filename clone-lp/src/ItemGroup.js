@@ -1,6 +1,6 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
-
+import { useHistory, Link } from 'react-router-dom';
+import './MenuBox.css';
 import styled from 'styled-components';
 
 import { BsBorderAll, BsBagFill } from 'react-icons/bs';
@@ -8,6 +8,8 @@ import { FaTshirt } from 'react-icons/fa';
 import { GiMonclerJacket, GiArmoredPants, GiSonicShoes } from 'react-icons/gi';
 import { VscWatch } from 'react-icons/vsc';
 import { RiWalletLine } from 'react-icons/ri';
+
+import { TestData } from './Data/testData.js';
 
 const ItemMenue = styled.div`
   display: flex;
@@ -31,27 +33,30 @@ const ItemGroup = (props) => {
 
   return (
     <ItemMenue>
-      <ItemBox
+      {TestData.map((item, index) => {
+        return (
+          <ItemBox key={item} className={item.cName}>
+            <Link to={item.path}>{item.icon}</Link>
+          </ItemBox>
+        );
+      })}
+      {/* <ItemBox
         onClick={() => {
           history.push('/shopping/' + props.test.path);
         }}
-      >
-        <BsBorderAll size='30' />
-      </ItemBox>
+      ></ItemBox>
 
       <ItemBox
-        id='top'
         onClick={() => {
-          history.push('/shopping/');
+          history.push('/shopping/' + props.test.path);
         }}
       >
         <FaTshirt size='40' />
       </ItemBox>
 
       <ItemBox
-        id='outer'
         onClick={() => {
-          history.push('/shopping/');
+          history.push('/shopping/' + props.test.path);
         }}
       >
         <GiMonclerJacket size='40' />
@@ -59,43 +64,41 @@ const ItemGroup = (props) => {
       <ItemBox
         id='pant'
         onClick={() => {
-          history.push('/shopping/');
+          history.push('/shopping/' + props.test.path);
         }}
       >
         <GiArmoredPants size='40' />
       </ItemBox>
+
       <ItemBox
-        id='shoes'
         onClick={() => {
-          history.push('/shopping/');
+          history.push('/shopping/' + props.test.path);
         }}
       >
         <GiSonicShoes size='40' />
       </ItemBox>
+
       <ItemBox
-        id='bag'
         onClick={() => {
-          history.push('/shopping/');
+          history.push('/shopping/' + props.test.path);
         }}
       >
         <BsBagFill size='40' />
       </ItemBox>
       <ItemBox
-        id='jewellery'
         onClick={() => {
-          history.push('/shopping/');
+          history.push('/shopping/' + props.test.path);
         }}
       >
         <VscWatch size='40' />
       </ItemBox>
       <ItemBox
-        id='otherthing'
         onClick={() => {
-          history.push('/shopping/');
+          history.push('/shopping/' + props.test.path);
         }}
       >
         <RiWalletLine size='40' />
-      </ItemBox>
+      </ItemBox> */}
     </ItemMenue>
   );
 };

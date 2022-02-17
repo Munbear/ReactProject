@@ -57,7 +57,7 @@ const ShoppingList = (props) => {
 
   let history = useHistory();
   let { path } = useParams();
-  let findContents = props.test.find((x) => x.path == path);
+  let findContents = props.test.find((a) => a.path == path);
 
   return (
     <div>
