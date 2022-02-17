@@ -5,7 +5,7 @@ import { GiMonclerJacket, GiArmoredPants, GiSonicShoes } from 'react-icons/gi';
 import { VscWatch } from 'react-icons/vsc';
 import { RiWalletLine } from 'react-icons/ri';
 
-export const TestData = [
+export const MenuData = [
   {
     title: 'All',
     path: '/all',

@@ -5,9 +5,7 @@ import React, { useState } from 'react';
 import productData from './Data/productData.js';
 import mallsData from './Data/mallData.js';
 import brandData from './Data/brandData.js';
-
-// import testData from './Data/testData.js';
-import { TestData } from './Data/testData.js';
+import { MenuData } from './Data/menuData.js';
 
 import ShoppingList from './shoppingList.js';
 import Detail from './Detail.js';
@@ -21,19 +19,13 @@ function App() {
   let [mall, setMall] = useState(mallsData);
   let [product, setProduct] = useState(productData);
   let [brand, setBrand] = useState(brandData);
-
-  // let [test, setTest] = useState(testData);
-
   let [tab, setTab] = useState(0);
-
-  // let [test, setTestData] = useState(testData);
 
   return (
     <div className='App'>
       <Route exact path='/'>
         <Header />
         <SlickSlider />
-
         <ItemGroup />
         <NavMenu setTab={setTab} />
         {product.map((a, i) => {
@@ -50,10 +42,7 @@ function App() {
         })}
       </Route>
       <Switch>
-        <Route
-          path='/shopping/:path'
-          component={() => <ShoppingList test={test} />}
-        />
+        <Route path='/:path' component={() => <ShoppingList />} />
         <Route
           path='/detail/:id'
           component={() => <Detail product={product} />}

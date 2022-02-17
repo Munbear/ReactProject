@@ -14,7 +14,7 @@ import jewelleryData from './Data/jewelleryData.js';
 import otherData from './Data/otherData.js';
 import bagData from './Data/bagData.js';
 
-import menuData from './Data/testData.js';
+import menuData from './Data/menuData.js';
 
 const Div = styled.div`
   display: flex;
@@ -56,8 +56,6 @@ const ShoppingList = (props) => {
   let [shoes, setShoesData] = useState(shoesData);
 
   let history = useHistory();
-  let { path } = useParams();
-  let findContents = props.test.find((a) => a.path == path);
 
   return (
     <div>
@@ -141,7 +139,6 @@ const ShoppingList = (props) => {
             jewellery={jewellery[i]}
             shoes={shoes[i]}
             other={other[i]}
-            findContents={findContents}
             i={i}
             key={i}
           />
