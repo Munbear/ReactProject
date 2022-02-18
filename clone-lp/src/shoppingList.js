@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import { IoMdArrowBack } from 'react-icons/io';
-import { useHistory, useParams, Routes, Route } from 'react-router-dom';
 
 import MenuCards from './MenuCards.js';
+import NavBtn from './NavBtn';
 
 import allData from './Data/allData.js';
 import topData from './Data/topData.js';
@@ -13,35 +11,6 @@ import shoesData from './Data/shoesData.js';
 import jewelleryData from './Data/jewelleryData.js';
 import otherData from './Data/otherData.js';
 import bagData from './Data/bagData.js';
-
-import menuData from './Data/menuData.js';
-
-const Div = styled.div`
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 1px solid darkgray;
-  padding: 15button;
-`;
-
-const Button = styled.button`
-  background-color: white;
-  color: darkgray;
-  border : none;
-  cursor: pointer;
-  padding : 15px;
-  font-size : large;
-  
-  &:hover {
-    color: black;
-    border-bottom: 1px solid black;
-    font-weight: 700:
-  }
-`;
-
-const Arrow = styled.button`
-  background-color: white;
-  border none;
-`;
 
 const ShoppingList = (props) => {
   let [CardMenu, setCardMenu] = useState(0);
@@ -55,78 +24,9 @@ const ShoppingList = (props) => {
   let [other, setOtherData] = useState(otherData);
   let [shoes, setShoesData] = useState(shoesData);
 
-  let history = useHistory();
-
   return (
     <div>
-      <div>
-        <Arrow>
-          <IoMdArrowBack
-            onClick={() => {
-              history.goBack();
-            }}
-            size='20'
-          />
-        </Arrow>
-      </div>
-      <Div>
-        <Button
-          onClick={() => {
-            setCardMenu(0);
-          }}
-        >
-          전체
-        </Button>
-        <Button
-          onClick={() => {
-            setCardMenu(1);
-          }}
-        >
-          상의
-        </Button>
-        <Button
-          onClick={() => {
-            setCardMenu(2);
-          }}
-        >
-          아우터
-        </Button>
-        <Button
-          onClick={() => {
-            setCardMenu(3);
-          }}
-        >
-          하의
-        </Button>
-        <Button
-          onClick={() => {
-            setCardMenu(4);
-          }}
-        >
-          신발
-        </Button>
-        <Button
-          onClick={() => {
-            setCardMenu(5);
-          }}
-        >
-          가방
-        </Button>
-        <Button
-          onClick={() => {
-            setCardMenu(6);
-          }}
-        >
-          악세사리
-        </Button>
-        <Button
-          onClick={() => {
-            setCardMenu(7);
-          }}
-        >
-          기타
-        </Button>
-      </Div>
+      <NavBtn setCardMenu={setCardMenu} />
       {top.map((a, i) => {
         return (
           <MenuCards
@@ -139,6 +39,7 @@ const ShoppingList = (props) => {
             jewellery={jewellery[i]}
             shoes={shoes[i]}
             other={other[i]}
+            MenuData={props.MenuData}
             i={i}
             key={i}
           />

@@ -26,7 +26,7 @@ function App() {
       <Route exact path='/'>
         <Header />
         <SlickSlider />
-        <ItemGroup />
+        <ItemGroup MenuData={MenuData} />
         <NavMenu setTab={setTab} />
         {product.map((a, i) => {
           return (
@@ -42,7 +42,10 @@ function App() {
         })}
       </Route>
       <Switch>
-        <Route path='/:path' component={() => <ShoppingList />} />
+        <Route
+          path='/:itemN'
+          component={() => <ShoppingList MenuData={MenuData} />}
+        />
         <Route
           path='/detail/:id'
           component={() => <Detail product={product} />}

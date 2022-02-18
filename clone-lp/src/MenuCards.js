@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 import outerImg from './images/outer1.jpg';
+// import { MenuData } from './Data/menuData';
 
 const CardWrap = styled.div`
   width: 50%;
@@ -34,6 +35,9 @@ const CardPrice = styled.p`
 `;
 
 const MenuCards = (props) => {
+  let { itemN } = useParams();
+  let findProducts = props.MenuData.find((a) => a.itemN == itemN);
+
   if (props.CardMenu === 0) {
     return (
       <>
@@ -55,8 +59,8 @@ const MenuCards = (props) => {
           <img src={outerImg} />
         </ImgWrap>
         <CardInfo>
-          <p>{props.top.title}</p>
-          <CardPrice>{props.top.price}</CardPrice>
+          <p>{findProducts.title}</p>
+          <CardPrice>{findProducts.price}</CardPrice>
         </CardInfo>
       </CardWrap>
     );

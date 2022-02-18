@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './MenuBox.css';
 import styled from 'styled-components';
-import { MenuData } from './Data/menuData.js';
 
 const ItemMenue = styled.div`
   display: flex;
@@ -24,7 +23,7 @@ const ItemBox = styled.div`
 const ItemGroup = (props) => {
   return (
     <ItemMenue>
-      {MenuData.map((item, index) => {
+      {props.MenuData.map((item, index) => {
         return (
           <ItemBox key={item} className={item.cName}>
             <Link to={item.path}>{item.icon}</Link>
