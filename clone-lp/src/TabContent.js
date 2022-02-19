@@ -3,9 +3,9 @@ import { useHistory } from 'react-router';
 import './App.css';
 import styled from 'styled-components';
 
-import product1 from './images/product5.jpg';
-import mall1 from './images/brand2.jpg';
-import brand1 from './images/brand1.jpg';
+import product1 from './img/product5.jpg';
+import mall1 from './img/brand2.jpg';
+import brand1 from './img/brand1.jpg';
 
 const ListWrap = styled.div`
   display: flex;
@@ -66,19 +66,20 @@ const Price = styled.p`
 
 function TabContent(props) {
   let history2 = useHistory();
+
   if (props.tab === 0) {
     return (
       <ItemWrap
         onClick={() => {
-          history2.push('/detail/' + props.product.id);
+          history2.push('/detail/' + props.productsData.id);
         }}
       >
         <ItemCard>
           <img src={product1} />
         </ItemCard>
         <ItemInfo>
-          <p>{props.product.title}</p>
-          <Price>{props.product.price}</Price>
+          <p>{props.productsData.title}</p>
+          <Price>{props.productsData.price}</Price>
         </ItemInfo>
       </ItemWrap>
     );

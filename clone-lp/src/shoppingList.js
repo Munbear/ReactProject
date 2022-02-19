@@ -12,7 +12,7 @@ import jewelleryData from './Data/jewelleryData.js';
 import otherData from './Data/otherData.js';
 import bagData from './Data/bagData.js';
 
-const ShoppingList = (props) => {
+const ShoppingList = (props, ItemGroup) => {
   let [CardMenu, setCardMenu] = useState(0);
 
   let [all, setAll] = useState(allData);
@@ -25,11 +25,13 @@ const ShoppingList = (props) => {
   let [shoes, setShoesData] = useState(shoesData);
 
   return (
-    <div>
-      <NavBtn setCardMenu={setCardMenu} />
+    <>
+      <NavBtn setCardMenu={setCardMenu} top={top} />
+      {/* <ItemGroup /> */}
       {top.map((a, i) => {
         return (
           <MenuCards
+            setCardMenu={setCardMenu}
             CardMenu={CardMenu}
             all={all[i]}
             top={top[i]}
@@ -39,13 +41,12 @@ const ShoppingList = (props) => {
             jewellery={jewellery[i]}
             shoes={shoes[i]}
             other={other[i]}
-            MenuData={props.MenuData}
             i={i}
             key={i}
           />
         );
       })}
-    </div>
+    </>
   );
 };
 

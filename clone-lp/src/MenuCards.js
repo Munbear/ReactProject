@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
-import outerImg from './images/outer1.jpg';
+import outerImg from './img/outer1.jpg';
 // import { MenuData } from './Data/menuData';
 
 const CardWrap = styled.div`
@@ -35,9 +35,6 @@ const CardPrice = styled.p`
 `;
 
 const MenuCards = (props) => {
-  let { itemN } = useParams();
-  let findProducts = props.MenuData.find((a) => a.itemN == itemN);
-
   if (props.CardMenu === 0) {
     return (
       <>
@@ -59,8 +56,8 @@ const MenuCards = (props) => {
           <img src={outerImg} />
         </ImgWrap>
         <CardInfo>
-          <p>{findProducts.title}</p>
-          <CardPrice>{findProducts.price}</CardPrice>
+          <p>{props.top.title}</p>
+          <CardPrice>{props.top.price}</CardPrice>
         </CardInfo>
       </CardWrap>
     );
@@ -138,5 +135,6 @@ const MenuCards = (props) => {
     );
   }
 };
+console.log(MenuCards);
 
 export default MenuCards;

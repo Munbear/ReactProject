@@ -1,9 +1,7 @@
 import React, { useRef, useEffect, useCallback } from 'react';
-import { useSpring, animated } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
-import product5 from './images/product5.jpg';
-import { FormItemPrefixContext } from 'antd/lib/form/context';
+import product5 from './img/product5.jpg';
 
 const Background = styled.div`
   max-width: 550px;

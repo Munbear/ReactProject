@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { IoMdArrowBack } from 'react-icons/io';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory, Link } from 'react-router-dom';
+
+import MenuData from './Data/menuData.js';
 
 const Div = styled.div`
   display: flex;
@@ -34,16 +36,15 @@ const NavBtn = (props) => {
   let history = useHistory();
   return (
     <>
-      <div>
-        <Arrow>
-          <IoMdArrowBack
-            onClick={() => {
-              history.goBack();
-            }}
-            size='20'
-          />
-        </Arrow>
-      </div>
+      <Arrow>
+        <IoMdArrowBack
+          onClick={() => {
+            history.goBack();
+          }}
+          size='20'
+        />
+      </Arrow>
+
       <Div>
         <Button
           onClick={() => {
@@ -52,6 +53,7 @@ const NavBtn = (props) => {
         >
           전체
         </Button>
+
         <Button
           onClick={() => {
             props.setCardMenu(1);
@@ -59,6 +61,7 @@ const NavBtn = (props) => {
         >
           상의
         </Button>
+
         <Button
           onClick={() => {
             props.setCardMenu(2);
@@ -66,6 +69,7 @@ const NavBtn = (props) => {
         >
           아우터
         </Button>
+
         <Button
           onClick={() => {
             props.setCardMenu(3);
@@ -73,6 +77,7 @@ const NavBtn = (props) => {
         >
           하의
         </Button>
+
         <Button
           onClick={() => {
             props.setCardMenu(4);
@@ -80,6 +85,7 @@ const NavBtn = (props) => {
         >
           신발
         </Button>
+
         <Button
           onClick={() => {
             props.setCardMenu(5);
@@ -87,6 +93,7 @@ const NavBtn = (props) => {
         >
           가방
         </Button>
+
         <Button
           onClick={() => {
             props.setCardMenu(6);
@@ -94,6 +101,7 @@ const NavBtn = (props) => {
         >
           악세사리
         </Button>
+
         <Button
           onClick={() => {
             props.setCardMenu(7);

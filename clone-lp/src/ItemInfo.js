@@ -1,11 +1,11 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import styled from 'styled-components';
-import item1 from './images/item1.jpg';
-import item2 from './images/item2.jpg';
-import item3 from './images/item3.jpg';
-import item4 from './images/item4.jpg';
-import item5 from './images/item5.jpg';
+import item1 from './img/item1.jpg';
+import item2 from './img/item2.jpg';
+import item3 from './img/item3.jpg';
+import item4 from './img/item4.jpg';
+import item5 from './img/item5.jpg';
 
 const Foto = styled.img`
   width: 100%;

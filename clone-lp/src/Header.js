@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { BsSearch } from 'react-icons/bs';
 import { GiShoppingCart as ShoppingCart } from 'react-icons/gi';
 
-import logo from './images/logo.svg';
-import box from './images/box.svg';
+import logo from './img/logo.svg';
 
 const HeaderColor = styled.header`
   background-color: black;

@@ -1,4 +1,8 @@
-export default [
+// import products1 from './img/product5.jpg';
+
+import { useState } from 'react';
+
+export const productsData = [
   {
     id: 0,
     title: '1+1 가성비 롱슬리브',

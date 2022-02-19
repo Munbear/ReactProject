@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import { IoMdArrowBack } from 'react-icons/io';
 import { AiFillPushpin } from 'react-icons/ai';
-import product5 from './images/product5.jpg';
+import product5 from './img/product5.jpg';
 import ItemInfo from './ItemInfo.js';
 import Modal from './Modal.js';
 import { GlobalStyle } from './globalStyles';
@@ -90,7 +90,7 @@ function Detail(props) {
   let history = useHistory();
   let [info, setInfo] = useState(0);
 
-  let findItem = props.product.find((x) => x.id == id);
+  let findItem = props.productsData.find((x) => x.id == id);
   return (
     <>
       <Header>
