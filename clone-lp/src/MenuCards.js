@@ -1,9 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { useParams, useHistory } from 'react-router-dom';
 
-import outerImg from './img/outer1.jpg';
-// import { MenuData } from './Data/menuData';
+import outerImg from './img/outer6.jpeg';
+import shoesImg from './img/shoes.jpg';
+import bagImg from './img/bagpack.jpg';
+import pantImg from './img/pant.jpg';
+import jewelleryImg from './img/jewellery.jpg';
+import topImg from './img/top.jpg';
+import otherImg from './img/other.jpg';
+import allImg from './img/all.jpg';
 
 const CardWrap = styled.div`
   width: 50%;
@@ -35,106 +41,25 @@ const CardPrice = styled.p`
 `;
 
 const MenuCards = (props) => {
-  if (props.CardMenu === 0) {
-    return (
-      <>
-        <CardWrap>
-          <ImgWrap>
-            <img src={outerImg} />
-          </ImgWrap>
-          <CardInfo>
-            <p>{props.all.title}</p>
-            <CardPrice>{props.all.price}</CardPrice>
-          </CardInfo>
-        </CardWrap>
-      </>
-    );
-  } else if (props.CardMenu === 1) {
-    return (
-      <CardWrap>
-        <ImgWrap>
-          <img src={outerImg} />
-        </ImgWrap>
-        <CardInfo>
-          <p>{props.top.title}</p>
-          <CardPrice>{props.top.price}</CardPrice>
-        </CardInfo>
-      </CardWrap>
-    );
-  } else if (props.CardMenu === 2) {
-    return (
-      <CardWrap>
-        <ImgWrap>
-          <img src={outerImg} />
-        </ImgWrap>
-        <CardInfo>
-          <p>{props.outer.title}</p>
-          <CardPrice>{props.outer.price}</CardPrice>
-        </CardInfo>
-      </CardWrap>
-    );
-  } else if (props.CardMenu === 3) {
-    return (
-      <CardWrap>
-        <ImgWrap>
-          <img src={outerImg} />
-        </ImgWrap>
-        <CardInfo>
-          <p>{props.pant.title}</p>
-          <CardPrice>{props.pant.price}</CardPrice>
-        </CardInfo>
-      </CardWrap>
-    );
-  } else if (props.CardMenu === 4) {
-    return (
-      <CardWrap>
-        <ImgWrap>
-          <img src={outerImg} />
-        </ImgWrap>
-        <CardInfo>
-          <p>{props.shoes.title}</p>
-          <CardPrice>{props.shoes.price}</CardPrice>
-        </CardInfo>
-      </CardWrap>
-    );
-  } else if (props.CardMenu === 5) {
-    return (
-      <CardWrap>
-        <ImgWrap>
-          <img src={outerImg} />
-        </ImgWrap>
-        <CardInfo>
-          <p>{props.bag.title}</p>
-          <CardPrice>{props.bag.price}</CardPrice>
-        </CardInfo>
-      </CardWrap>
-    );
-  } else if (props.CardMenu === 6) {
-    return (
-      <CardWrap>
-        <ImgWrap>
-          <img src={outerImg} />
-        </ImgWrap>
-        <CardInfo>
-          <p>{props.jewellery.title}</p>
-          <CardPrice>{props.jewellery.price}</CardPrice>
-        </CardInfo>
-      </CardWrap>
-    );
-  } else if (props.CardMenu === 7) {
-    return (
-      <CardWrap>
-        <ImgWrap>
-          <img src={outerImg} />
-        </ImgWrap>
-        <CardInfo>
-          <p>{props.other.title}</p>
-          <CardPrice>{props.other.price}</CardPrice>
-        </CardInfo>
-      </CardWrap>
-    );
-  }
+  let history = useHistory();
+
+  const { product } = props;
+
+  return (
+    <CardWrap
+      onClick={() => {
+        history.push('/detailpage/' + product.productsN);
+      }}
+    >
+      <ImgWrap>
+        <img src={'http://localhost:3000' + product.thumnailImage} />
+      </ImgWrap>
+      <CardInfo>
+        <p>{product.title}</p>
+        <CardPrice>{product.price}</CardPrice>
+      </CardInfo>
+    </CardWrap>
+  );
 };
-console.log(MenuCards);
 
 export default MenuCards;

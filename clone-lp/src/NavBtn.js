@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { IoMdArrowBack } from 'react-icons/io';
 import { useHistory, Link } from 'react-router-dom';
+import Category from './Data/categories';
 
 import MenuData from './Data/menuData.js';
 
@@ -39,7 +40,7 @@ const NavBtn = (props) => {
       <Arrow>
         <IoMdArrowBack
           onClick={() => {
-            history.goBack();
+            history.push('/');
           }}
           size='20'
         />
@@ -48,7 +49,7 @@ const NavBtn = (props) => {
       <Div>
         <Button
           onClick={() => {
-            props.setCardMenu(0);
+            props.goToOtherCategory('all');
           }}
         >
           전체
@@ -56,7 +57,7 @@ const NavBtn = (props) => {
 
         <Button
           onClick={() => {
-            props.setCardMenu(1);
+            props.goToOtherCategory(Category.TOP);
           }}
         >
           상의
@@ -64,7 +65,7 @@ const NavBtn = (props) => {
 
         <Button
           onClick={() => {
-            props.setCardMenu(2);
+            props.goToOtherCategory(Category.OUTER);
           }}
         >
           아우터
@@ -72,7 +73,7 @@ const NavBtn = (props) => {
 
         <Button
           onClick={() => {
-            props.setCardMenu(3);
+            props.goToOtherCategory(Category.PANTS);
           }}
         >
           하의
@@ -80,7 +81,7 @@ const NavBtn = (props) => {
 
         <Button
           onClick={() => {
-            props.setCardMenu(4);
+            props.goToOtherCategory(Category.SHOES);
           }}
         >
           신발
@@ -88,7 +89,7 @@ const NavBtn = (props) => {
 
         <Button
           onClick={() => {
-            props.setCardMenu(5);
+            props.goToOtherCategory(Category.BAG);
           }}
         >
           가방
@@ -96,7 +97,7 @@ const NavBtn = (props) => {
 
         <Button
           onClick={() => {
-            props.setCardMenu(6);
+            props.goToOtherCategory(Category.JEWELLERY);
           }}
         >
           악세사리
@@ -104,7 +105,7 @@ const NavBtn = (props) => {
 
         <Button
           onClick={() => {
-            props.setCardMenu(7);
+            props.goToOtherCategory(Category.OTHER);
           }}
         >
           기타

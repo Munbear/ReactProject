@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-
 import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import { GlobalStyle } from './globalStyles';
 
 import { IoMdArrowBack } from 'react-icons/io';
 import { AiFillPushpin } from 'react-icons/ai';
 import product5 from './img/product5.jpg';
 import ItemInfo from './ItemInfo.js';
+
 import Modal from './Modal.js';
-import { GlobalStyle } from './globalStyles';
 
 const Header = styled.header`
   position: fixed;
@@ -91,6 +91,7 @@ function Detail(props) {
   let [info, setInfo] = useState(0);
 
   let findItem = props.productsData.find((x) => x.id == id);
+
   return (
     <>
       <Header>
