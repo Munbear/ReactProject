@@ -18,7 +18,7 @@ const Header = styled.header`
 `;
 
 const Btn = styled.div`
-  border none;
+  border : none;
   color : white;
 `;
 
@@ -75,7 +75,7 @@ const Button = styled.button`
   :hover {
     color: black;
     border-bottom: 1px solid black;
-    font-weight: bold:
+    font-weight: bold;
   }
 `;
 

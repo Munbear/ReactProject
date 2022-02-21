@@ -1,6 +1,6 @@
 export default {
   TOP: 'top',
-  PANTS: 'pant',
+  PANTS: 'pants',
   BAG: 'bag',
   OUTER: 'outer',
   SHOES: 'shoes',
