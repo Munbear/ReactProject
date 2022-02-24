@@ -13,3 +13,8 @@ html {
     min-height: 100vh;
     background-color: white;
 }
+
+.menu-box a {
+    text-decoration: none;
+    color: black;
+}
