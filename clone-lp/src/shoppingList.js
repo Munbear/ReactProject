@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import ProductApi from './api/ProductApi';
 
@@ -7,7 +7,7 @@ import MenuCards from './MenuCards.js';
 import NavBtn from './NavBtn';
 
 const ShoppingList = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { category } = useParams();
   const [products, setProducts] = useState([]);
 
@@ -24,7 +24,7 @@ const ShoppingList = () => {
     <>
       <NavBtn
         goToOtherCategory={(category) => {
-          history.push(`/shopping/${category}`);
+          navigate(`/shopping/${category}`);
         }}
       />
       {/* <ItemGroup /> */}

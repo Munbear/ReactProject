@@ -1,7 +1,7 @@
-import Rect from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
-import { CategoryMenuData } from '../Data/CategoryMenuData';
+import { categoryMenuData } from '../Data/categoryMenuData';
 
 const MenuWrap =styled.div`
   display: flex;
@@ -20,10 +20,11 @@ const MenuBox = styled.div`
   cursor: pointer;
 `;
 
+
 const CategoryMenu = () => {
     return(
         <MenuWrap>
-            {CategoryMenuData.map((obj, index)=>{
+            {categoryMenuData.map((obj, index)=>{
                 return(
                     <MenuBox key={obj} className={obj.cName}>
                         <Link to={obj.path}>{obj.icon}</Link>

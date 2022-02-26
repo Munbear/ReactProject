@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 
 import { productsData } from './Data/productData.js';
@@ -23,40 +23,41 @@ function App() {
   let [tab, setTab] = useState(0);
 
   return (
-    <div className='App'>
-      <Switch>
-        <Route exact path='/'>
-          <Header />
-          <SlickSlider />
-          <ItemGroup MenuData={MenuData} />
-          <NavMenu setTab={setTab} />
-          {productsData.map((a, i) => {
-            return (
-              <TabContent
-                tab={tab}
-                productsData={productsData[i]}
-                mall={mall[i]}
-                brand={brand[i]}
-                i={i}
-                key={i}
-              />
-            );
-          })}
-        </Route>
+    <Router>
+      <div className='App'>
+        <Routes>
+          <Route path='/'>
+            <Header />
+            <SlickSlider />
+            <ItemGroup MenuData={MenuData} />
+            <NavMenu setTab={setTab} />
+            {productsData.map((a, i) => {
+              return (
+                <TabContent
+                  tab={tab}
+                  productsData={productsData[i]}
+                  mall={mall[i]}
+                  brand={brand[i]}
+                  i={i}
+                  key={i}
+                />
+              );
+            })}
+          </Route>
 
-        <Route
-          path='/shopping/:category'
-          component={() => <ShoppingList MenuData={MenuData} />}
-          exact
-        />
-        <Route
-          path='/detail/:id'
-          component={() => <Detail productsData={productsData} />}
-          exact
-        />
-        <Route path='/detailpage/:productsN' component={DetailContent} exact />
-      </Switch>
-    </div>
+          <Route path='/shopping/:category' element={() => <ShoppingList />} />
+          <Route
+            path='/detail/:id'
+            element={() => <Detail productsData={productsData} />}
+          />
+          <Route
+            path='/detailpage/:productsN'
+            element={DetailContent}
+            exact={true}
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -1,17 +1,21 @@
 import React from 'react';
 import './App.css';
-import {Route, Routes} from "react-router-dom";
-import Header from './components/Header';
-import SlickSlider from "./components/Slider";
-import CategoryMenu from "./components/CategoryMenu";
+import { BrowserRouter as Router , Routes, Route} from "react-router-dom";
+
+import Home from './pages/Home';
+import ShoppingLIst from './pages/ShoppingList';
+
 
 function App() {
   return (
-    <div className="App">
-        <Header />
-        <SlickSlider/>
-        <CategoryMenu />
-    </div>
+      <Router>
+          <div className='App'>
+              <Routes>
+                  <Route path='/' element={<Home />} />
+                  <Route path='/shopping/:category' element={<ShoppingLIst />}/>
+              </Routes>
+          </div>
+      </Router>
   );
 }
 

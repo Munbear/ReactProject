@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useParams, useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import outerImg from './img/outer6.jpeg';
 import shoesImg from './img/shoes.jpg';
@@ -41,19 +41,20 @@ const CardPrice = styled.p`
 `;
 
 const MenuCards = (props) => {
-  let history = useHistory();
+  let navigate = useNavigate();
 
   const { product } = props;
 
   return (
     <CardWrap
       onClick={() => {
-        history.push('/detailpage/' + product.productsN);
+        navigate('/detailpage/' + product.productsN);
       }}
     >
       <ImgWrap>
         <img src={'http://localhost:3003' + product.thumnailImage} />
       </ImgWrap>
+
       <CardInfo>
         <p>{product.title}</p>
         <CardPrice>{product.price}</CardPrice>

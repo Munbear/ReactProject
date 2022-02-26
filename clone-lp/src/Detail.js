@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { GlobalStyle } from './globalStyles';
 
@@ -18,8 +18,8 @@ const Header = styled.header`
 `;
 
 const Btn = styled.div`
-  border : none;
-  color : white;
+  border: none;
+  color: white;
 `;
 
 const Paybtn = styled.button`
@@ -87,7 +87,7 @@ function Detail(props) {
   };
 
   let { id } = useParams();
-  let history = useHistory();
+  let navigate = useNavigate();
   let [info, setInfo] = useState(0);
 
   let findItem = props.productsData.find((x) => x.id == id);
@@ -98,7 +98,7 @@ function Detail(props) {
         <Btn>
           <IoMdArrowBack
             onClick={() => {
-              history.push('/');
+              navigate('/');
             }}
             size='24'
             color='white'

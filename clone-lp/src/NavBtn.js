@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { IoMdArrowBack } from 'react-icons/io';
-import { useHistory, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Category from './Data/categories';
 
 import MenuData from './Data/menuData.js';
@@ -34,13 +34,13 @@ const Arrow = styled.button`
 `;
 
 const NavBtn = (props) => {
-  let history = useHistory();
+  let navigate = useNavigate();
   return (
     <>
       <Arrow>
         <IoMdArrowBack
           onClick={() => {
-            history.push('/');
+            navigate('/');
           }}
           size='20'
         />

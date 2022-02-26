@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import './App.css';
 import styled from 'styled-components';
 
@@ -65,13 +65,13 @@ const Price = styled.p`
 `;
 
 function TabContent(props) {
-  let history2 = useHistory();
+  let navigate = useNavigate();
 
   if (props.tab === 0) {
     return (
       <ItemWrap
         onClick={() => {
-          history2.push('/detail/' + props.productsData.id);
+          navigate('/detail/' + props.productsData.id);
         }}
       >
         <ItemCard>

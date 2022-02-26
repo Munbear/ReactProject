@@ -5,7 +5,7 @@ import { GiMonclerJacket, GiArmoredPants, GiSonicShoes } from 'react-icons/gi';
 import { VscWatch } from 'react-icons/vsc';
 import { RiWalletLine } from 'react-icons/ri';
 
-export const CategoryMenuData = [
+export const categoryMenuData = [
     {
         path: '/shopping/all',
         icon: <BsBorderAll size='40' />,
