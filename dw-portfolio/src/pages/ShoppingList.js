@@ -13,6 +13,7 @@ const ShoppingList = () => {
     const [products, setProducts] = useState([]);
 
     const productsApi = new ProductsApi();
+
     useEffect( () => {
         if (category === 'all') {
             setProducts(productsApi.getRecentProducts());

@@ -30,7 +30,7 @@ const ImgWrap = styled.div`
   padding: 8px;
 
   img {
-    width: 100%;
+    width: 100%;v
     border-radius: 6%;
     box-shadow: 2px 1px 7px 0px;
   }
