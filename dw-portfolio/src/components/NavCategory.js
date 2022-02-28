@@ -68,7 +68,7 @@ const NavCategory = (props) => {
                 }}>기타</NavBtn>
             </NavWrap>
         </>
-    )
-}
+    );
+};
 
 export default NavCategory;

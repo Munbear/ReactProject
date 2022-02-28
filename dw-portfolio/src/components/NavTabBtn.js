@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
 import NavTabContents from "./NavTabContents";
+
+import ProductsApi from "../api/ProductsApi";
 
 const TabWrap = styled.nav`
   display: flex;
@@ -28,8 +30,12 @@ const TabBtn = styled.button`
 `;
 
 const NavTabBtn = () => {
-    const [productsItem, setProductsItem] = useState([]);
     let [navTab, setNavTab] = useState(0);
+
+
+
+    const productsApi = new ProductsApi();
+    const SaleProducts = productsApi.getSaleProducts();
 
     return(
         <>
@@ -44,8 +50,11 @@ const NavTabBtn = () => {
                     setNavTab(2);
                 }}>브랜드</TabBtn>
             </TabWrap>
+            {SaleProducts.map( (items, i) => {
+                return(<NavTabContents navTab={navTab} items={items} key={i}/>);
+            } )}
         </>
-    )
-}
+    );
+};
 
 export default NavTabBtn;

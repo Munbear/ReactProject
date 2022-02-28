@@ -32,7 +32,7 @@ const CategoryMenu = () => {
                 )
             })}
         </MenuWrap>
-    )
-}
+    );
+};
 
 export default CategoryMenu;

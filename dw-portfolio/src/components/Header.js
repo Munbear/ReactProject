@@ -34,7 +34,7 @@ const Header = () => {
                 <ShoppingCart color="white" size="30px" margin-top="10px"/>
             </HeaderWrap>
         </>
-    )
-}
+    );
+};
 
 export default Header;

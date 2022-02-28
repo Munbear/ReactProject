@@ -2,6 +2,7 @@ import React, { useState, useEffect}from 'react';
 import { useNavigate, useParams} from "react-router-dom";
 
 import ProductsApi from '../api/ProductsApi';
+
 import NavCategory from "../components/NavCategory";
 import ProductContents from "../components/ProductContents";
 
@@ -30,7 +31,7 @@ const ShoppingList = () => {
                 return<ProductContents product={product} key={i} />
             })}
         </>
-    )
-}
+    );
+};
 
 export default ShoppingList;

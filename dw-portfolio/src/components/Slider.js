@@ -34,9 +34,9 @@ const SlickSlider = () => {
                 <img src={img6} alt='event products'/>
             </Slider>
         </>
-        )
+        );
 
-}
+};
 
 function SampleNextArrow(props) {
     const { className, style } = props;

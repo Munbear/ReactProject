@@ -32,22 +32,31 @@ const ItemPrice = styled.p`
 `;
 
 const NavTabContents = (props) => {
-    const { item } = props
-    if (item.navTab === 0){
+
+    const { items } = props;
+
+
+    if (props.navTab === 0) {
         return(
-            <div>
-                <img src={item.thumnailImage}/>
-            </div>
-        )
-    } else if (item.navTab === 1 ) {
+            <ItemWrap>
+                <ItemImg>
+                    <img src={items.thumnailImage}/>
+                </ItemImg>
+                <InfoWrap>
+                    <p>{items.title}</p>
+                    <ItemPrice>{items.price}</ItemPrice>
+                </InfoWrap>
+            </ItemWrap>
+        );
+    } else if ( props.navTab === 1) {
         return (
-            <h1>asldfjalsdf</h1>
-        )
-    } else if (item.navTab === 2) {
+            <h1>this is page 2</h1>
+        );
+    } else if (props.navTab === 2) {
         return (
-            <h1>this is smosdf </h1>
-        )
-    }
-}
+            <h1>this is page 3</h1>
+        );
+    };
+};
 
 export default NavTabContents;

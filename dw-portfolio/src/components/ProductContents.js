@@ -47,7 +47,7 @@ const ProductContents = (props) => {
                 <ProductsPrice>{product.price}</ProductsPrice>
             </ProductsInfo>
         </ContentsWrap>
-    )
-}
+    );
+};
 
 export default ProductContents

@@ -14,7 +14,11 @@ class ProductsApi {
     }
 
     getBestProducts() {
-        return productsData.filter((product)=> product.Category === Category.JEWELLERY);
+        return productsData.filter((product)=> product.category === Category.JEWELLERY);
+    }
+
+    getSaleProducts() {
+        return productsData.filter( (product)=> product.id > 48);
     }
 
     getRecentProducts() {
