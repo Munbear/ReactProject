@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 
+import ProductsApi from "../api/ProductsApi";
+
 
 const ItemWrap = styled.div`
   width: 50%;
@@ -31,7 +33,26 @@ const ItemPrice = styled.p`
   font-weight: bold;
 `;
 
+const BrandListWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: solid 1px;
+`;
+
+const BrandInfo = styled.div`
+  padding: 10px;
+  
+  p {
+    margin: 0;
+  }
+`;
+
+
 const NavTabContents = (props) => {
+
+    const productsApi = new ProductsApi();
+    let brandList = productsApi.getBrandList();
 
     const { items } = props;
 

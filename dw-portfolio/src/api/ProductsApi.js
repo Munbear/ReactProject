@@ -18,7 +18,11 @@ class ProductsApi {
     }
 
     getSaleProducts() {
-        return productsData.filter( (product)=> product.id > 48);
+        return productsData.filter( (product)=> product.id > 48 && product.id < 55);
+    }
+
+    getBrandList() {
+        return productsData.filter( (brand) => brand.id > 99 && brand.id < 151);
     }
 
     getRecentProducts() {
