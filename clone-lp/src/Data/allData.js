@@ -2,7 +2,7 @@ import Category from './categories';
 
 export default [
   {
-    productsN: 1,
+    prvoductsN: 1,
     category: Category.BAG,
     title: '샤넬 가방',
     price: '777,000원',

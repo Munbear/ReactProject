@@ -38,7 +38,9 @@ const ProductContents = (props) => {
     let navigate = useNavigate();
     const { product } = props
     return(
-        <ContentsWrap>
+        <ContentsWrap onClick={ () => {
+            navigate('/detail/' + product.id);
+        }}>
             <ImgContents>
                 <img src={product.thumnailImage}/>
             </ImgContents>

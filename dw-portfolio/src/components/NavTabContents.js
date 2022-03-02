@@ -1,8 +1,6 @@
 import React from 'react';
+import {useNavigate} from "react-router-dom";
 import styled from "styled-components";
-
-import ProductsApi from "../api/ProductsApi";
-
 
 const ItemWrap = styled.div`
   width: 50%;
@@ -33,14 +31,14 @@ const ItemPrice = styled.p`
   font-weight: bold;
 `;
 
-const BrandListWrap = styled.div`
+const ListWrap = styled.div`
   display: flex;
   justify-content: space-between;
   cursor: pointer;
   border-bottom: solid 1px;
 `;
 
-const BrandInfo = styled.div`
+const InfoList = styled.div`
   padding: 10px;
   
   p {
@@ -48,18 +46,30 @@ const BrandInfo = styled.div`
   }
 `;
 
+const TagName = styled.p`
+  font-size: small;
+  color: lightslategray;
+  
+`;
+
+const ImgBlock = styled.div`
+  padding: 10px;
+  
+  img {
+    width: 30%;
+  }
+`;
+
+
 
 const NavTabContents = (props) => {
-
-    const productsApi = new ProductsApi();
-    let brandList = productsApi.getBrandList();
-
+    let navigate = useNavigate();
     const { items } = props;
-
 
     if (props.navTab === 0) {
         return(
-            <ItemWrap>
+            <ItemWrap onClick={ () => { navigate('/detail/' + items.id)}}
+            >
                 <ItemImg>
                     <img src={items.thumnailImage}/>
                 </ItemImg>
@@ -71,11 +81,31 @@ const NavTabContents = (props) => {
         );
     } else if ( props.navTab === 1) {
         return (
-            <h1>this is page 2</h1>
+            <ListWrap>
+                <InfoList>
+                    <p>{props.mallData.rank}</p>
+                    <h2>{props.mallData.title}</h2>
+                    <TagName>선호도 2위</TagName>
+                </InfoList>
+
+                <ImgBlock>
+                    <img src={props.mallData.thumnailImage} />
+                </ImgBlock>
+            </ListWrap>
         );
     } else if (props.navTab === 2) {
         return (
-            <h1>this is page 3</h1>
+            <ListWrap>
+                <InfoList>
+                    <p>{props.brandData.rank}</p>
+                    <h2>{props.brandData.title}</h2>
+                    <TagName>선호도 1위</TagName>
+                </InfoList>
+
+                <ImgBlock>
+                    <img src={props.brandData.thumnailImage} />
+                </ImgBlock>
+            </ListWrap>
         );
     };
 };

@@ -91,6 +91,7 @@ function TabContent(props) {
           <h2>{props.mall.title}</h2>
           <TagName>{props.mall.chr}</TagName>
         </InfoWrap>
+
         <CardBlock>
           <img src={mall1} />
         </CardBlock>
@@ -104,6 +105,7 @@ function TabContent(props) {
           <h2>{props.brand.title}</h2>
           <TagName>{props.brand.chr}</TagName>
         </InfoWrap>
+
         <CardBlock>
           <img src={brand1} />
         </CardBlock>

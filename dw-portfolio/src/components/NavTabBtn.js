@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import NavTabContents from "./NavTabContents";
 
@@ -32,10 +32,11 @@ const TabBtn = styled.button`
 const NavTabBtn = () => {
     let [navTab, setNavTab] = useState(0);
 
-
-
     const productsApi = new ProductsApi();
     const SaleProducts = productsApi.getSaleProducts();
+    const mallData = productsApi.getMallList();
+    const brandData = productsApi.getBrandList();
+
 
     return(
         <>
@@ -51,7 +52,7 @@ const NavTabBtn = () => {
                 }}>브랜드</TabBtn>
             </TabWrap>
             {SaleProducts.map( (items, i) => {
-                return(<NavTabContents navTab={navTab} items={items} key={i}/>);
+                return(<NavTabContents navTab={navTab} items={items} mallData={mallData[i]} brandData={brandData[i]} key={i}/>);
             } )}
         </>
     );
