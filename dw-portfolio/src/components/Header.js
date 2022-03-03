@@ -7,6 +7,7 @@ const HeaderWrap = styled.header`
   display: flex;
   posistion: fixed;
   justify-content: space-around;
+  top: 0;
   
   h1 {
     color: white;

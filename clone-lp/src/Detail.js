@@ -105,11 +105,13 @@ function Detail(props) {
           />
         </Btn>
       </Header>
+
       <Modal
         showModal={showModal}
         setShowModal={setShowModal}
         priceValue={findItem.price}
       />
+
       <div>
         <img src={product5} width='100%' />
       </div>
@@ -117,6 +119,7 @@ function Detail(props) {
         <Title>{findItem.title}</Title>
         <Price>{findItem.price}</Price>
       </div>
+
       <MenuWrap>
         <Button
           onClick={() => {
@@ -140,8 +143,10 @@ function Detail(props) {
           Q&A
         </Button>
       </MenuWrap>
+
       <ItemInfo info={info} />
       <GlobalStyle />
+
       <Footer>
         <Pin>
           <AiFillPushpin color='white' size='55' />

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { IoMdArrowBack } from 'react-icons/io';
+import { useNavigate } from "react-router-dom";
 
 const Header = styled.header`
   position: fixed;
@@ -15,17 +16,15 @@ const Btn = styled.div`
   color: white;
 `;
 
-const BackArrowBtn = styled(IoMdArrowBack)`
-  size: 30px;
-  
-`;
-
 const DetailHeader = () => {
+    let navigate = useNavigate();
     return (
         <>
             <Header>
                 <Btn>
-                    <BackArrowBtn />
+                    < IoMdArrowBack size='30' onClick={() => {
+                        navigate(-1);
+                    }}/>
                 </Btn>
             </Header>
         </>
