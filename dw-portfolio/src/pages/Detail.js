@@ -7,6 +7,7 @@ import DetailHeader from "../components/DetailHeader";
 import DetailTab from "../components/DetailTab";
 import Modal from '../components/Modal';
 import {AiFillPushpin} from "react-icons/ai";
+import DetailInfo from "../components/DetailInfo";
 
 
 const ItemTitle = styled.p`
@@ -46,6 +47,7 @@ const Pin = styled.div`
 
 
 const Detail= () => {
+    let [infoTab, setInfoTab] = useState(0);
     const [showModal, setShowModal] = useState(false);
     const openModal = () => {
       setShowModal((prev) => !prev);
@@ -58,13 +60,17 @@ const Detail= () => {
     return(
         <>
             <DetailHeader />
-            <Modal showModal={showModal} setShowModal={setShowModal}/>
+            <Modal showModal={showModal} setShowModal={setShowModal} productsId={productsId}/>
+
             <div>
                 <ItemImg src={productsId.thumnailImage} />
                 <ItemTitle>{productsId.title}</ItemTitle>
                 <ItemPrice>{productsId.price}</ItemPrice>
             </div>
-            <DetailTab />
+            <DetailTab setInfoTab={setInfoTab}/>
+            <DetailInfo infoTab={infoTab} productsId={productsId}/>
+
+
             <GlobalStyles/>
             <Footer>
                 <Pin>

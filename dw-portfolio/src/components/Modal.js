@@ -44,7 +44,7 @@ const ModalContent = styled.div`
     background: #141414;
     color: #fff;
     border: none;
-    cursor: pointer
+    cursor: pointer;
   }
 `;
 
@@ -69,7 +69,7 @@ const Sum = styled.div`
 `;
 
 const Modal = (props) => {
-    const { showModal, setShowModal} = props;
+    const { showModal, setShowModal, productsId} = props;
     const modalRef = useRef();
 
     const closeModal = (e) => {
@@ -94,7 +94,7 @@ const Modal = (props) => {
             {showModal ? (
                 <Background ref={modalRef} onClick={closeModal}>
                     <ModalWrapper showModal={showModal}>
-                        <ModalImg />
+                        <ModalImg src={productsId.thumnailImage}/>
                         <ModalContent>
                             <button>구매하기</button>
                             <Selection>
@@ -104,6 +104,7 @@ const Modal = (props) => {
                                 <option>L</option>
                                 <option>XL</option>
                             </Selection>
+                            <Sum>총 금액: {productsId.price}</Sum>
                         </ModalContent>
                         <CloseModalButton aria-label='Close modal' onClick={()=> setShowModal( (prev) => !prev)} />
                     </ModalWrapper>

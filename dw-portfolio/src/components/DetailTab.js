@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components";
 
 const TabWrap = styled.div`
@@ -27,14 +27,21 @@ const TabBtn = styled.button`
   }
 `;
 
-const DetailTab = () => {
+const DetailTab = (props) => {
     return(
         <>
             <TabWrap>
-                <TabBtn>상품정보</TabBtn>
-                <TabBtn>리뷰</TabBtn>
-                <TabBtn>Q&A</TabBtn>
+                <TabBtn onClick={ () => {
+                    props.setInfoTab(0)
+                }}>상품정보</TabBtn>
+                <TabBtn onClick={ () => {
+                    props.setInfoTab(1)
+                }}>리뷰</TabBtn>
+                <TabBtn onClick={ () => {
+                    props.setInfoTab(2)
+                }}>Q&A</TabBtn>
             </TabWrap>
+
         </>
     );
 };

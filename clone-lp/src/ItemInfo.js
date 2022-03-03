@@ -34,10 +34,7 @@ const Container = styled.div`
   display: flex;
 `;
 
-const Button = styled.button`
-  cursor: pointer;
-  font-size: 18px;
-`;
+const Button = styled.button``;
 
 const Commend = styled.p`
   height: 75px;
