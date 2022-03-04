@@ -8,10 +8,13 @@ const ContentsWrap = styled.div`
 `;
 
 const ImgContents = styled.div`
-  padding: 8px;
+  padding-left: 8px;
+  width: 259px;
+  height: 310px;
   
   img {
     width: 100%;
+    height: 100%;
     border-radius: 6%;
     box-shadow: 2px 1px 7px 0px;
   }

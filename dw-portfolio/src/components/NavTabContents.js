@@ -8,10 +8,13 @@ const ItemWrap = styled.div`
 `;
 
 const ItemImg = styled.div`
-  padding: 8px;
+  padding-left: 8px;
+  width: 259px;
+  height: 310px;
   
   img {
     width: 100%;
+    height: 100%;
     border-radius: 6%;
     box-shadow: 2px 1px 7px 0px;
   }
@@ -46,17 +49,15 @@ const InfoList = styled.div`
   }
 `;
 
-const TagName = styled.p`
-  font-size: small;
-  color: lightslategray;
-  
-`;
 
 const ImgBlock = styled.div`
-  padding: 10px;
+  width: 20%;
+  height: 77px;
   
   img {
-    width: 30%;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -65,11 +66,11 @@ const ImgBlock = styled.div`
 const NavTabContents = (props) => {
     let navigate = useNavigate();
     const { items } = props;
+    console.log(items);
 
     if (props.navTab === 0) {
         return(
-            <ItemWrap onClick={ () => { navigate('/detail/' + items.id)}}
-            >
+            <ItemWrap onClick={ () => { navigate('/detail/' + items.id)}}>
                 <ItemImg>
                     <img src={items.thumnailImage}/>
                 </ItemImg>
@@ -81,11 +82,10 @@ const NavTabContents = (props) => {
         );
     } else if ( props.navTab === 1) {
         return (
-            <ListWrap>
+            <ListWrap onClick={ () => { navigate('/mall/' + props.mallData.id)}}>
                 <InfoList>
                     <p>{props.mallData.rank}</p>
                     <h2>{props.mallData.title}</h2>
-                    <TagName>선호도 2위</TagName>
                 </InfoList>
 
                 <ImgBlock>
@@ -95,11 +95,10 @@ const NavTabContents = (props) => {
         );
     } else if (props.navTab === 2) {
         return (
-            <ListWrap>
+            <ListWrap onClick={ () => { navigate('/brand/' + props.brandData.id)}}>
                 <InfoList>
                     <p>{props.brandData.rank}</p>
                     <h2>{props.brandData.title}</h2>
-                    <TagName>선호도 1위</TagName>
                 </InfoList>
 
                 <ImgBlock>

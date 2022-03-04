@@ -5,6 +5,8 @@ import { BrowserRouter as Router , Routes, Route} from "react-router-dom";
 import Home from './pages/Home';
 import ShoppingLIst from './pages/ShoppingList';
 import Detail from "./pages/Detail";
+import Brand from './pages/Brand';
+import Mall from './pages/Mall';
 
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
                   <Route path='/' element={ <Home /> } />
                   <Route path='/shopping/:category' element={ <ShoppingLIst /> } />
                   <Route path='/detail/:id' element={ <Detail /> } />
+                  <Route path='/brand/:id' element={<Brand />} />
+                  <Route path='/mall/:id' element={<Mall />} />
               </Routes>
           </div>
       </Router>

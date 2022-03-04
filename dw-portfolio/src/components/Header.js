@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import { GiShoppingCart as ShoppingCart } from 'react-icons/gi';
+import {useNavigate} from "react-router-dom";
 
 const HeaderWrap = styled.header`
   background-color: black;
@@ -23,14 +24,18 @@ const InputBox = styled.input`
   font-size: 14px;
   margin-bottom: 0px;
   outline: 0;
+  padding-left: 10px;
 `;
 
 
 const Header = () => {
+    let navigate = useNavigate();
     return(
         <>
             <HeaderWrap>
-                <h1>ReactShop</h1>
+                <h1 onClick={() => {
+                    navigate('/')
+                }}>ReactShop</h1>
                 <InputBox/>
                 <ShoppingCart color="white" size="30px" margin-top="10px"/>
             </HeaderWrap>

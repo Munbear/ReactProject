@@ -6,4 +6,6 @@ export default {
     SHOES: 'shoes',
     JEWELLERY: 'jewellery',
     OTHER: 'otherthing',
+    BRAND: 'brand',
+    MALL: 'mall',
 };
