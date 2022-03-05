@@ -11,11 +11,12 @@ const Mall = () => {
     let { id } = useParams();
     const productsApi = new ProductsApi();
     const mallId = productsApi.getProductsById(id);
+    console.log(mallId);
 
     return(
         <>
             <Header/>
-            <EventSlider />
+            <EventSlider mallId={mallId}/>
             <h1>{mallId.title}</h1>
         </>
     );

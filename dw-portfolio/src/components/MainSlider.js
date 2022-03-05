@@ -22,7 +22,7 @@ const RightArrow = styled(FaArrowAltCircleRight)`
   top: 45%;
   right: 32px;
   font-size: 2rem;
-  color: #000;
+  color: white;
   z-index: 10;
   cursor: pointer;
   user-select: none;
@@ -33,7 +33,7 @@ const LeftArrow = styled(FaArrowAltCircleLeft)`
   top: 45%;
   left: 32px;
   font-size: 2rem;
-  color: #000;
+  color: white;
   z-index: 10;
   cursor: pointer;
   user-select: none;

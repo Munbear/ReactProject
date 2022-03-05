@@ -440,11 +440,16 @@ export default [
         id: 200,
         rank: '1',
         category: Category.MALL,
-        title: '룩핀',
+        brand: 200,
         price: '75,000원',
         thumnailImage: 'https://yt3.ggpht.com/G9CdCHBwULAVWmBj4k04zSZNsHC6bTruCyidB4iWVuOWdJ4wp29KhMZeJEUc8L_jXpAytJGOv_0=s900-c-k-c0x00ffffff-no-rj',
-        eventImg: ['https://static.lookpin.co.kr/20220228221741-2c0d/368e17fa7629fde3d84152d25be0df60.jpg?resize=1000','https://static.lookpin.co.kr/20220302144727-50d6/570b31de6e259c8433d6e89c341d8a34.jpg?resize=1000','https://static.lookpin.co.kr/20220228211529-ac74/cdc7cd7e3610fbc368011fc1fcf74d5f.jpg?resize=1000']
+        eventImg: [
+            'https://static.lookpin.co.kr/20220221200636-4198/3ebf5615a28a6107c070b51343d21f22.jpg?resize=1000',
+            'https://static.lookpin.co.kr/20220223120300-1091/9071a5c936e373895556e268bef068ed.jpg?resize=1000',
+            'https://static.lookpin.co.kr/20220215164958-6bed/f58690562dcd302eca6fcb75ca603847.jpg?resize=1000',
+        ]
     },
+
     {
         id: 202,
         rank: '2',

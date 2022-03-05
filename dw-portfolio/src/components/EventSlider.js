@@ -17,18 +17,11 @@ const SliderImg = styled.img`
   border-radius: 10px;
 `;
 
-const EventSlider = () => {
-    let { event } = useParams();
-    const productsApi = new ProductsApi();
-    const sliderImg = productsApi.getProductsById(event)
-    ;
-    console.log(sliderImg);
+const EventSlider = (props) => {
 
     return(
         <ImgSection>
-            {sliderImg.map( (slide, index) => {
-                return(<SliderImg src={slide.eventImg}/> )
-            }) }
+            <SliderImg src={props.mallId.eventImg[0]} />
         </ImgSection>
     )
 
