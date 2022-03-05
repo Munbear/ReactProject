@@ -5,6 +5,10 @@ class ProductsApi {
     constructor() {
     }
 
+    getMainSliderImg() {
+        return productsData.filter( (slide) => slide.id > 89 && slide.id < 95 );
+    }
+
     getProductsByCategory(category) {
         return productsData.filter((product) => product.category === category);
     }
@@ -22,11 +26,12 @@ class ProductsApi {
     }
 
     getMallList() {
-        return productsData.filter( (mall) => mall.id > 199 && mall.id < 251);
+        return productsData.filter( (mall) => mall.id > 199 && mall.id < 207);
     }
 
+
     getBrandList() {
-        return productsData.filter( (brand) => brand.id > 99 && brand.id < 151);
+        return productsData.filter( (brand) => brand.id > 99 && brand.id < 106);
     }
 
     getRecentProducts() {

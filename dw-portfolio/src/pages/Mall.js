@@ -3,21 +3,20 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import {useParams} from "react-router-dom";
 import ProductsApi from "../api/ProductsApi";
+import EventSlider from "../components/EventSlider";
 
 
 const Mall = () => {
 
-    let [mall, setMall] = useState([]);
     let { id } = useParams();
     const productsApi = new ProductsApi();
-    const mallId = productsApi.getMallList(mall);
-
-    console.log(mallId);
+    const mallId = productsApi.getProductsById(id);
 
     return(
         <>
             <Header/>
-            <p>{mallId[1].title}</p>
+            <EventSlider />
+            <h1>{mallId.title}</h1>
         </>
     );
 };

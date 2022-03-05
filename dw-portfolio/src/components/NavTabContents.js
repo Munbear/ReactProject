@@ -66,7 +66,6 @@ const ImgBlock = styled.div`
 const NavTabContents = (props) => {
     let navigate = useNavigate();
     const { items } = props;
-    console.log(items);
 
     if (props.navTab === 0) {
         return(
