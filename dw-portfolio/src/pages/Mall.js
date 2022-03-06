@@ -3,19 +3,19 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import {useParams} from "react-router-dom";
 import EventSlider from "../components/EventSlider";
-import shopApi from "../api/ShopApi";
+import ShopApi from "../api/ShopApi";
+import SliderApi from "../api/SliderApi";
+
 
 
 const Mall = () => {
 
-    let { shop } = useParams();
-    const mallId = shopApi.getShopById(shop);
+    const sliderApi = new SliderApi();
+    const subSlides = sliderApi.getMainSliderImg();
     return(
         <>
             <Header/>
-            <EventSlider mallId={mallId}/>
-            <h1>{mallId.title}</h1>
-
+            <EventSlider subSlides={subSlides}/>
         </>
     );
 };

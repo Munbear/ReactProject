@@ -8,8 +8,6 @@ class ShopApi {
         return shopData.find( (market) => market.shopId == market);
     }
 
-
-
     getMallList() {
         return shopData.filter( (mall) => mall.shopId > 0 && mall.shopId < 7);
     }
