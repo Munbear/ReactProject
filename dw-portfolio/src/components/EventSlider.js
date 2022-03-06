@@ -15,8 +15,8 @@ const ImgSection = styled.section`
     align-items: center;
     
     img {
-        width: 550px;
-        height: 450px;
+        width: 450px;
+        height: 350px;
         border-radius: 10px;
     }
 `;
@@ -24,7 +24,7 @@ const ImgSection = styled.section`
 const RightArrow = styled(FaArrowAltCircleRight)`
   position: absolute;
   top: 45%;
-  right: 32px;
+  right: 62px;
   font-size: 2rem;
   color: white;
   z-index: 10;
@@ -35,7 +35,7 @@ const RightArrow = styled(FaArrowAltCircleRight)`
 const LeftArrow = styled(FaArrowAltCircleLeft)`
   position: absolute;
   top: 45%;
-  left: 32px;
+  left: 62px;
   font-size: 2rem;
   color: white;
   z-index: 10;
@@ -73,7 +73,7 @@ const EventSlider = (props) => {
             {mallSliderImg.map( (slide, index) => {
                 return(
                     <div>
-                        <img src={slide.sliderImg} />
+                        { index === current && (<img src={slide.sliderImg} />)}
                     </div>
                 )
             })}
