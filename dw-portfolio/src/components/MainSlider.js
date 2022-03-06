@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
 import {FaArrowAltCircleRight, FaArrowAltCircleLeft} from "react-icons/fa";
-import ProductsApi from "../api/ProductsApi";
+import SliderApi from "../api/SliderApi";
 
 const SliderSection = styled.section`
   position: relative;
@@ -41,8 +41,9 @@ const LeftArrow = styled(FaArrowAltCircleLeft)`
 
 
 const MainSlider = (props) => {
-    const productsApi = new ProductsApi();
-    const mainSlider = productsApi.getMainSliderImg();
+
+    const sliderApi = new SliderApi();
+    const mainSlider = sliderApi.getMainSliderImg();
 
     const { slides } = props;
 
