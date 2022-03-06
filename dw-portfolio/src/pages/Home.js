@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import CategoryMenu from "../components/CategoryMenu";
 import NavTabBtn from "../components/NavTabBtn";
 import MainSlider from "../components/MainSlider";
+import ShopApi from "../api/ShopApi";
 
 
 const Home = () => {

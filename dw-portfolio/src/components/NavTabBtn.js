@@ -3,6 +3,7 @@ import styled from "styled-components";
 import NavTabContents from "./NavTabContents";
 
 import ProductsApi from "../api/ProductsApi";
+import ShopApi from "../api/ShopApi";
 
 const TabWrap = styled.nav`
   display: flex;
@@ -34,9 +35,10 @@ const NavTabBtn = () => {
 
     const productsApi = new ProductsApi();
     const SaleProducts = productsApi.getSaleProducts();
-    const mallData = productsApi.getMallList();
-    const brandData = productsApi.getBrandList();
 
+    const shopApi = new ShopApi();
+    const mallData = shopApi.getMallList();
+    const brandData = shopApi.getBrandList();
 
     return(
         <>

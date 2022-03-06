@@ -6,14 +6,10 @@ import ProductsApi from "../api/ProductsApi";
 
 
 const Brand = () => {
-    let { id } = useParams();
-    const productsApi = new ProductsApi();
-    const brandId = productsApi.getBrandList(id);
 
     return(
         <>
             <Header />
-            <p>{brandId[0].title}</p>
         </>
     );
 };

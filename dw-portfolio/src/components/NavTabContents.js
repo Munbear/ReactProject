@@ -1,5 +1,5 @@
 import React from 'react';
-import {useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import styled from "styled-components";
 
 const ItemWrap = styled.div`
@@ -81,27 +81,27 @@ const NavTabContents = (props) => {
         );
     } else if ( props.navTab === 1) {
         return (
-            <ListWrap onClick={ () => { navigate('/mall/' + props.mallData.id)}}>
+            <ListWrap onClick={ () => { navigate('/mall/' + props.mallData.shopId)}}>
                 <InfoList>
                     <p>{props.mallData.rank}</p>
-                    <h2>{props.mallData.title}</h2>
+                    <h2>{props.mallData.shopName}</h2>
                 </InfoList>
 
                 <ImgBlock>
-                    <img src={props.mallData.thumnailImage} />
+                    <img src={props.mallData.logoImage} />
                 </ImgBlock>
             </ListWrap>
         );
     } else if (props.navTab === 2) {
         return (
-            <ListWrap onClick={ () => { navigate('/brand/' + props.brandData.id)}}>
+            <ListWrap onClick={ () => { navigate('/brand/' + props.brandData.shopId)}}>
                 <InfoList>
                     <p>{props.brandData.rank}</p>
-                    <h2>{props.brandData.title}</h2>
+                    <h2>{props.brandData.shopName}</h2>
                 </InfoList>
 
                 <ImgBlock>
-                    <img src={props.brandData.thumnailImage} />
+                    <img src={props.brandData.logoImage} />
                 </ImgBlock>
             </ListWrap>
         );

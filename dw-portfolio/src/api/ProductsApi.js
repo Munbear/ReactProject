@@ -25,14 +25,6 @@ class ProductsApi {
         return productsData.filter( (product)=> product.id > 48 && product.id < 55);
     }
 
-    getMallList() {
-        return productsData.filter( (mall) => mall.id > 199 && mall.id < 207);
-    }
-
-
-    getBrandList() {
-        return productsData.filter( (brand) => brand.id > 99 && brand.id < 106);
-    }
 
     getRecentProducts() {
         const copyProductsData = productsData;
