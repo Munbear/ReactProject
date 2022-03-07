@@ -45,6 +45,7 @@ const Brand = () => {
     const findSubSlides = sliderApi.getFindSliderById(shopId);
     const findShopItems = productsApi.getFindShopItems(shopId);
 
+    console.log(findShopItems);
     return(
         <>
             <Header />
