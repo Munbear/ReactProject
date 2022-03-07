@@ -18,6 +18,7 @@ const ImgSection = styled.section`
         width: 450px;
         height: 350px;
         border-radius: 10px;
+        object-fit: scale-down;
     }
 `;
 
@@ -26,7 +27,7 @@ const RightArrow = styled(FaArrowAltCircleRight)`
   top: 45%;
   right: 62px;
   font-size: 2rem;
-  color: white;
+  color: black;
   z-index: 10;
   cursor: pointer;
   user-select: none;
@@ -37,7 +38,7 @@ const LeftArrow = styled(FaArrowAltCircleLeft)`
   top: 45%;
   left: 62px;
   font-size: 2rem;
-  color: white;
+  color: gray;
   z-index: 10;
   cursor: pointer;
   user-select: none;

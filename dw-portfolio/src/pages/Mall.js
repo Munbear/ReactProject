@@ -11,11 +11,8 @@ import SliderApi from "../api/SliderApi";
 const Mall = () => {
 
     const sliderApi = new SliderApi();
-    // const subSlides = sliderApi.getMainSliderImg();
-
     let { shopId } = useParams();
     const findSubSlides = sliderApi.getFindSliderById(shopId);
-    console.log(findSubSlides);
 
     return(
         <>
