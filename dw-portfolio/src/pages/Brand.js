@@ -57,7 +57,7 @@ const Brand = () => {
                 return(
                     <ItemsWrap>
                         <ItemImgCard>
-                            <img src={items.shopItems}/>
+                            <img src={items.thumnailImage}/>
                         </ItemImgCard>
                         <h3>{items.title}</h3>
                         <p>{items.price}</p>
