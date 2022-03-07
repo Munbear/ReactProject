@@ -45,10 +45,12 @@ const LeftArrow = styled(FaArrowAltCircleLeft)`
 
 const EventSlider = (props) => {
 
-    const sliderApi = new SliderApi();
-    const mallSliderImg = sliderApi.getMainSliderImg();
 
-    const { subSlides } = props;
+    let { shopId } = useParams()
+    const sliderApi = new SliderApi();
+    const mallSliderImg = sliderApi.getFindSliderById(shopId);
+
+    const { findSubSlides } = props;
     const [current, setCurrent] = useState(0);
     const length = mallSliderImg.length;
 
@@ -60,7 +62,7 @@ const EventSlider = (props) => {
         setCurrent( current === 0 ? length -1 : current -1);
     }
 
-    if(!Array.isArray(subSlides) || subSlides.length <= 0) {
+    if(!Array.isArray(findSubSlides) || findSubSlides.length <= 0) {
         return null;
     }
 

@@ -56,6 +56,7 @@ const Detail= () => {
     let { id } = useParams();
     const productsApi = new ProductsApi();
     const productsId = productsApi.getProductsById(id);
+
     console.log(productsId);
 
 

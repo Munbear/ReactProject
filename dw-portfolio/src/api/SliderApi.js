@@ -5,7 +5,11 @@ class SliderApi{
     }
 
     getMainSliderImg() {
-        return sliderImgData.filter( (slide) => slide.id > 0 && slide.id < 6);
+        return sliderImgData.filter( (slide) => slide.shopId == 1);
+    }
+
+    getFindSliderById(shopId) {
+        return sliderImgData.filter( (slide) => slide.shopId == shopId);
     }
 
 
