@@ -7,19 +7,62 @@ import EventSlider from "../components/EventSlider";
 import SliderApi from "../api/SliderApi";
 
 
+const ItemsWrap = styled.div`
+    display: inline-block;
+    width: 50%;
+    align-items: center;
+    
+    h3{
+        padding-left: 10px;
+    }
+    
+    p{
+        padding-left: 10px;
+    }
+`;
+
+const ItemImgCard =styled.div`
+    justify-content: center;
+    align-items: center;
+    width: 255px;
+    height: 255px;
+    padding: 10px;
+  
+    img{
+        width: 100%;
+        height: 100%;
+        
+    }
+`;
+
 const Brand = () => {
 
     const sliderApi = new SliderApi();
+    const productsApi = new ProductsApi();
+
     let { shopId } = useParams();
+
     const findSubSlides = sliderApi.getFindSliderById(shopId);
-
-    console.log(findSubSlides);
-
+    const findShopItems = productsApi.getFindShopItems(shopId);
 
     return(
         <>
             <Header />
             <EventSlider findSubSlides={findSubSlides}/>
+            <nav>
+                <h2>브랜드 상품</h2>
+            </nav>
+            {findShopItems.map( (items, index) => {
+                return(
+                    <ItemsWrap>
+                        <ItemImgCard>
+                            <img src={items.shopItems}/>
+                        </ItemImgCard>
+                        <h3>{items.title}</h3>
+                        <p>{items.price}</p>
+                    </ItemsWrap>
+                );
+            })}
         </>
     );
 };

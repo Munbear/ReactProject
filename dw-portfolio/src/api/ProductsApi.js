@@ -17,6 +17,10 @@ class ProductsApi {
         return productsData.find((product)=> product.id == id);
     }
 
+    getFindShopItems(shopId) {
+        return productsData.filter( (product) => product.shopId == shopId)
+    }
+
     getBestProducts() {
         return productsData.filter((product)=> product.category === Category.JEWELLERY);
     }
