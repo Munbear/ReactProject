@@ -30,7 +30,15 @@ const InputBox = styled.input`
 
 const Header = (props) => {
     let navigate = useNavigate();
-    console.log(props.setSearchItems.value);
+    const onClick = () => {
+        alert('alsdkfjla');
+    }
+    const enterKey = (e) => {
+        if(e.key == 'Enter') {
+            navigate('/result')
+        }
+    }
+
     return(
         <>
             <HeaderWrap>
@@ -39,7 +47,7 @@ const Header = (props) => {
                 }}>ReactShop</h1>
                 <InputBox onChange={ (event) => {
                     props.setSearchItems(event.target.value);
-                } }/>
+                }} onKeyPress={enterKey}/>
                 <ShoppingCart color="white" size="30px" margin-top="10px"/>
             </HeaderWrap>
         </>
