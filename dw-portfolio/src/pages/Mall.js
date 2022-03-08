@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, } from 'react';
 import styled from "styled-components";
 import Header from "../components/Header";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams,} from "react-router-dom";
 import EventSlider from "../components/EventSlider";
 import SliderApi from "../api/SliderApi";
 import ProductsApi from "../api/ProductsApi";
@@ -47,6 +47,7 @@ const Mall = () => {
     const findSubSlides = sliderApi.getFindSliderById(shopId);
     const findShopItems = productsApi.getFindShopItems(shopId);
     console.log(findShopItems);
+    const navigate = useNavigate();
 
     return(
         <>
@@ -57,7 +58,9 @@ const Mall = () => {
             </nav>
                 {findShopItems.map( (items, index) => {
                     return(
-                        <ItemsWrap>
+                        <ItemsWrap onClick={ () => {
+                            navigate('/detail/' + items.id);
+                        }}>
                             <ItemImgCard>
                                 <img src={items.thumnailImage}/>
                             </ItemImgCard>

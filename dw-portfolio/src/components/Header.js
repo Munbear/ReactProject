@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from 'styled-components';
 import { GiShoppingCart as ShoppingCart } from 'react-icons/gi';
 import {useNavigate} from "react-router-dom";
@@ -28,15 +28,18 @@ const InputBox = styled.input`
 `;
 
 
-const Header = () => {
+const Header = (props) => {
     let navigate = useNavigate();
+    console.log(props.setSearchItems.value);
     return(
         <>
             <HeaderWrap>
                 <h1 onClick={() => {
                     navigate('/')
                 }}>ReactShop</h1>
-                <InputBox/>
+                <InputBox onChange={ (event) => {
+                    props.setSearchItems(event.target.value);
+                } }/>
                 <ShoppingCart color="white" size="30px" margin-top="10px"/>
             </HeaderWrap>
         </>

@@ -5,10 +5,6 @@ class ProductsApi {
     constructor() {
     }
 
-    // getMainSliderImg() {
-    //     return productsData.filter( (slide) => slide.id > 89 && slide.id < 95 );
-    // }
-
     getProductsByCategory(category) {
         return productsData.filter((product) => product.category === category);
     }

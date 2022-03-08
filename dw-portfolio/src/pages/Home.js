@@ -12,10 +12,11 @@ const Home = () => {
 
     const sliderApi = new SliderApi();
     const slides = sliderApi.getMainSliderImg();
+    const [searchItems, setSearchItems] = useState('');
 
     return(
         <>
-            <Header />
+            <Header setSearchItems={setSearchItems} />
             <MainSlider slides={slides}/>
             <CategoryMenu />
             <NavTabBtn />

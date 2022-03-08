@@ -38,7 +38,7 @@ const LeftArrow = styled(FaArrowAltCircleLeft)`
   top: 45%;
   left: 62px;
   font-size: 2rem;
-  color: gray;
+  color: black;
   z-index: 10;
   cursor: pointer;
   user-select: none;

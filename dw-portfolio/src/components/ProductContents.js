@@ -40,6 +40,7 @@ const ProductContents = (props) => {
 
     let navigate = useNavigate();
     const { product } = props
+    console.log( product);
     return(
         <ContentsWrap onClick={ () => {
             navigate('/detail/' + product.id);
