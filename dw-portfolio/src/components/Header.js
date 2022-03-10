@@ -30,14 +30,18 @@ const InputBox = styled.input`
 
 const Header = (props) => {
     let navigate = useNavigate();
-    const onClick = () => {
-        alert('alsdkfjla');
-    }
+    const [showResult, setShowResult] = useState(false);
+    const moveResult = () => {
+        setShowResult( (prev) => !prev);
+    };
+
     const enterKey = (e) => {
         if(e.key == 'Enter') {
             navigate('/result')
         }
     }
+
+
 
     return(
         <>
@@ -52,6 +56,7 @@ const Header = (props) => {
             </HeaderWrap>
         </>
     );
+    console.log(props.setSearchItems);
 };
 
 export default Header;

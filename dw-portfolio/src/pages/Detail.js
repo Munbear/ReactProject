@@ -57,8 +57,6 @@ const Detail= () => {
     const productsApi = new ProductsApi();
     const productsId = productsApi.getProductsById(id);
 
-    console.log(productsId);
-
 
     return(
         <>

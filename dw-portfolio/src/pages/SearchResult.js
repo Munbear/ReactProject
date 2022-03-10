@@ -4,11 +4,34 @@ import Header from "../components/Header";
 import ProductsApi from "../api/ProductsApi";
 import productsData from "../Data/productsData";
 
+const Container = styled.div`
+    display: inline-flex;
+    position: relative;
+    flex-flow: column;
+    align-items: center;
+    width: 50%;
+`;
+
+const ImageWrap = styled.div`
+    padding: 10px;
+    width: 250px;
+    height: 280px;
+    
+    img{
+        width: 100%;
+        height: 100%;
+    }
+`;
+
+const InfoContainer = styled.div`
+
+`;
+
 const SearchResult = () => {
     const [searchItems, setSearchItems] = useState('');
     return(
         <>
-            <Header setSearchItems={setSearchItems}/>
+            <Header setSearchItems={setSearchItems} searchItems={searchItems} />
             {productsData.filter( (value) => {
                 if(searchItems == '') {
                     return value
@@ -17,9 +40,15 @@ const SearchResult = () => {
                 }
             }).map( (value, key) => {
                 return(
-                    <div>
-                        <p>{value.title}</p>
-                    </div>
+                    <Container>
+                        <ImageWrap>
+                            <img src={value.thumnailImage} />
+                        </ImageWrap>
+                        <InfoContainer>
+                            <p>{value.title}</p>
+                            <p>{value.price}</p>
+                        </InfoContainer>
+                    </Container>
                 );
             })}
         </>
