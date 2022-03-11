@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styled from 'styled-components';
 import { GiShoppingCart as ShoppingCart } from 'react-icons/gi';
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 const HeaderWrap = styled.header`
   background-color: black;
@@ -12,7 +12,7 @@ const HeaderWrap = styled.header`
   
   h1 {
     color: white;
-    margin: 0px 5px 5px 0px;
+    margin: 2px 5px 5px 0px;
   }
 `
 const InputBox = styled.input`
@@ -29,18 +29,20 @@ const InputBox = styled.input`
 
 
 const Header = (props) => {
+    let { value } = useParams();
     let navigate = useNavigate();
-    const [showResult, setShowResult] = useState(false);
-    const moveResult = () => {
-        setShowResult( (prev) => !prev);
-    };
+    const [inputValue, setInputvalue] = useState('');
+
+
+    const handleChange = (event) => {
+        props.setSearchItems(event.target.value);
+    }
 
     const enterKey = (e) => {
         if(e.key == 'Enter') {
-            navigate('/result')
+            navigate('/result' )
         }
     }
-
 
 
     return(
@@ -49,14 +51,11 @@ const Header = (props) => {
                 <h1 onClick={() => {
                     navigate('/')
                 }}>ReactShop</h1>
-                <InputBox onChange={ (event) => {
-                    props.setSearchItems(event.target.value);
-                }} onKeyPress={enterKey}/>
-                <ShoppingCart color="white" size="30px" margin-top="10px"/>
+                 <InputBox onChange={handleChange} onKeyPress={enterKey}/>
+                <ShoppingCart color="white" size="40px"/>
             </HeaderWrap>
         </>
     );
-    console.log(props.setSearchItems);
 };
 
 export default Header;

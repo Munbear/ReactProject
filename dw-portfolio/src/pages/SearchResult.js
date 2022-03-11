@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import ProductsApi from "../api/ProductsApi";
 import productsData from "../Data/productsData";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
     display: inline-flex;
@@ -29,9 +30,11 @@ const InfoContainer = styled.div`
 
 const SearchResult = () => {
     const [searchItems, setSearchItems] = useState('');
+    const naigate = useNavigate();
     return(
         <>
             <Header setSearchItems={setSearchItems} searchItems={searchItems} />
+
             {productsData.filter( (value) => {
                 if(searchItems == '') {
                     return value
@@ -40,7 +43,9 @@ const SearchResult = () => {
                 }
             }).map( (value, key) => {
                 return(
-                    <Container>
+                    <Container onClick={ () => {
+                        naigate('/detail/' + value.id)
+                    }}>
                         <ImageWrap>
                             <img src={value.thumnailImage} />
                         </ImageWrap>
@@ -51,6 +56,7 @@ const SearchResult = () => {
                     </Container>
                 );
             })}
+
         </>
     );
 }

@@ -48,6 +48,7 @@ const Pin = styled.div`
 
 const Detail= () => {
     let [infoTab, setInfoTab] = useState(0);
+
     const [showModal, setShowModal] = useState(false);
     const openModal = () => {
       setShowModal((prev) => !prev);
