@@ -13,19 +13,19 @@ const Background = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-  width: 550px;
-  height: 500px;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  background: #fff;
-  display: grid;
-  grid-template-colums: 1fr 1fr;
-  position: relative;
-  z-index: 10;
-  border-radius: 10px;
+    width: 550px;
+    height: 500px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    display: flex;
+    
+    position: relative;
+    z-index: 10;
+    border-radius: 10px;
 `;
 
 const ModalImg = styled.img`
-  width: 60%;
+  width: 80%;
   height: 100%;
   border-radius: 10px 0 0 10px;
 `;
@@ -35,7 +35,6 @@ const ModalContent = styled.div`
   flex: 0 0 auto;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   line-height: 1.8;
   color: #141414;
 

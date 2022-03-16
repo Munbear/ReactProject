@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import ProductsApi from "../api/ProductsApi";
 import productsData from "../Data/productsData";
-import { useNavigate } from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 const Container = styled.div`
     display: inline-flex;
@@ -31,6 +31,7 @@ const InfoContainer = styled.div`
 const SearchResult = () => {
     const [searchItems, setSearchItems] = useState('');
     const naigate = useNavigate();
+
     return(
         <>
             <Header setSearchItems={setSearchItems} searchItems={searchItems} />

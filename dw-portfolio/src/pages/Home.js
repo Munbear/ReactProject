@@ -6,17 +6,17 @@ import CategoryMenu from "../components/CategoryMenu";
 import NavTabBtn from "../components/NavTabBtn";
 import MainSlider from "../components/MainSlider";
 import SliderApi from "../api/SliderApi";
+import SearchResult from "./SearchResult";
 
 
 const Home = () => {
 
     const sliderApi = new SliderApi();
     const slides = sliderApi.getMainSliderImg();
-    const [searchItems, setSearchItems] = useState('');
 
     return(
         <>
-            <Header setSearchItems={setSearchItems} />
+            <Header  />
             <MainSlider slides={slides}/>
             <CategoryMenu />
             <NavTabBtn />
