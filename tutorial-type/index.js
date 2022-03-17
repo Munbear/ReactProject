@@ -18,8 +18,10 @@
 //     [key: string] : string,
 // }
 // let john : Member = { name : 'kim', age: '123'}
-class User {
-    constructor(name) {
-        this.name = name;
-    }
-}
+// class User {
+//     name: string;
+//     constructor(name : string) {
+//         this.name = name;
+//     }
+// }
+let subName = 'dowon';
