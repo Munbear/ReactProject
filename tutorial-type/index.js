@@ -24,4 +24,3 @@
 //         this.name = name;
 //     }
 // }
-let subName = 'dowon';
