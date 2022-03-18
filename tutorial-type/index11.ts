@@ -20,5 +20,5 @@ type Cat = { age : number} & Animal // &기호(intersection type) 두 타입을 
 // type은 중복선언 불가능
 // 외부 라이브러리같은 경우 interface를 많이 사용한다.
 
-// &기호 쓸때 중복속성이 발생하면 미리 에러가 안나옴 
+// &기호 쓸때 중복속성이 발생하면 미리 에러가 안나옴
 
