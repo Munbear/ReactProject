@@ -3,6 +3,8 @@
       "target": "ES6",
       "module": "CommonJS",
       "noImplicitAny": true, // any라는 타입이 의도치않게 발생할 경우 에러를 띄움
-      "strictNullChecks": true // null, undefined 타입에 이상한 조작하면 에러를 띄움
+      "strictNullChecks": true, // null, undefined 타입에 이상한 조작하면 에러를 띄움
+      "declaration": true, // 모든
+      "typeRoots": ["./types"] // d.ts파일 글로벌 모듈로 만들때 사용 
     }
 }
