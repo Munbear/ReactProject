@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Gallery from "./Gallery";
-import NavBar from "./NavBar";
+import Gallery from "./Gallery/Gallery";
+import NavBar from "./NavBar/NavBar";
 
 const MainContainer = styled.div`
   padding: 0px 32px 32px;

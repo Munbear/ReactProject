@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Header = styled.div`
+export const HeaderWrap = styled.div`
   position: relative;
   width: 100vw;
   min-width: 1024px;
@@ -13,7 +13,7 @@ export const Header = styled.div`
   align-items: center;
 `;
 
-export const Button = styled.button`
+export const Btn = styled.button`
   width: 44px;
   height: 32px;
   background: rgba(238, 238, 238, 0.8);
