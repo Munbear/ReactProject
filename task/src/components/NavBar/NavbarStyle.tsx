@@ -12,6 +12,15 @@ export const SelectionItem = styled.div`
   flex: 1 1 0%;
 `;
 
+export const Selection = styled.span`
+  padding-left: 10px;
+  
+  span{
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+`;
+
 export const TitleItems =styled.div`
   flex: 1 1 0%;
   text-align: center;
@@ -25,5 +34,13 @@ export const BtnItems = styled.div`
   flex: 1 1 0%;
   display: flex;
   justify-content: flex-end;
-    
+  
+  button{
+    background-color: #fff;
+    border: 1px solid transparent;
+    width: 30px;
+    margin-left: 0px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
 `

@@ -1,6 +1,6 @@
 import React from 'react'
 import {HeaderWrap, Btn}from './HeaderStyle';
-import Cancel from './xIcon.svg';
+import Cancel from '../../../../../archisketch-project/archisketch-gallery/src/components/Header/xIcon.svg';
 
 
 const Header = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {SubContainer,SelectionItem, TitleItems, BtnItems } from './NavbarStyle'
+import {SubContainer, SelectionItem, TitleItems, BtnItems, Selection} from './NavbarStyle'
 
 const NavBar = () => {
     return(
@@ -7,6 +7,10 @@ const NavBar = () => {
             <SubContainer>
                 <SelectionItem>
                     <span>~개의 렌더샷</span>
+                    <Selection>
+                        <input type='checkbox'/>
+                        <span>모두 선택</span>
+                    </Selection>
                 </SelectionItem>
 
                 <TitleItems>
