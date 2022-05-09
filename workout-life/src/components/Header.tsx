@@ -1,9 +1,14 @@
 import React from 'react';
+import '../HeaderStyle.sass';
 
 const Header = () => {
     return(
         <>
-            <h1>Working out is life</h1>
+            <div className={'headerWrapper'}>
+                <div>
+                    <span>this is header section</span>
+                </div>
+            </div>
         </>
     )
 }
