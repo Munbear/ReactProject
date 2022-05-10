@@ -1,10 +1,10 @@
 import React from 'react';
-import '../HeaderStyle.sass';
+import '../style/HeaderStyle.scss';
 
 const Header = () => {
     return(
         <>
-            <div className={'headerWrapper'}>
+            <div className='headerWrapper'>
                 <div>
                     <span>this is header section</span>
                 </div>
