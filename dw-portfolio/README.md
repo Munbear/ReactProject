@@ -23,4 +23,4 @@
 |검색기능|설명8|
 |:---:|:---:|
 |![part7](https://user-images.githubusercontent.com/54834533/158560933-cc57ac27-3942-43c1-98cb-80f070686bfb.gif)|![part8](https://user-images.githubusercontent.com/54834533/158560946-fedc7faf-9603-48aa-a3e3-4927fb60c002.gif)|
-|검색 키워드로 원하는 상품을 보여줍니다.|설명88|
+|검색 키워드로 원하는 상품을 보여줍니다.|Tab형식 Nav Bar|
