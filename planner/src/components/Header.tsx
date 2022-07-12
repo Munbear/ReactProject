@@ -7,7 +7,6 @@ const Header = () => {
             <header className='header-container'>
                 <h1>planner</h1>
             </header>
-            <h2>asdfad</h2>
         </>
     )
 }
